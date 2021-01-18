@@ -174,6 +174,7 @@ namespace UnitTestProject3
             driver.Quit();
         }
 
+        /*
         [TestMethod]
         public void LogInError()
         {
@@ -202,6 +203,6 @@ namespace UnitTestProject3
             Console.WriteLine("Tiempo de ejecucion : " + (time = ExecTime()));
 
             driver.Quit();
-        }
+        }*/
     }
 }
