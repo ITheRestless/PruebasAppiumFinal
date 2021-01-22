@@ -6,11 +6,14 @@ using OpenQA.Selenium.Remote;
 using OpenQA.Selenium.Support.UI;
 using System.Collections.Generic;
 using System.Diagnostics;
+using OpenQA.Selenium.Appium.Interfaces;
+using OpenQA.Selenium.Appium.MultiTouch;
+using System.Threading;
 
 namespace UnitTestProject3
 {
     [TestClass]
-    public class LogIn
+    public class MisDirecciones
     {
         Stopwatch timer;
         double time;
@@ -30,6 +33,28 @@ namespace UnitTestProject3
             caps.PlatformName = "Android";
             caps.AddAdditionalCapability("project", "AppSoriana");
             caps.AddAdditionalCapability("build", "Android");
+        }
+
+        public void ScrollDown(AndroidDriver<AndroidElement> driver)
+        {
+            ITouchAction touchAction = new TouchAction(driver)
+            .Press(200, 1000)
+            .Wait(500)
+            .MoveTo(200, 200)
+            .Release();
+
+            touchAction.Perform();
+        }
+
+        public void ScrollUp(AndroidDriver<AndroidElement> driver)
+        {
+            ITouchAction touchAction = new TouchAction(driver)
+            .Press(200, 200)
+            .Wait(500)
+            .MoveTo(200, 1000)
+            .Release();
+
+            touchAction.Perform();
         }
 
         public void InputText(string id, string text, AndroidDriver<AndroidElement> driver)
@@ -87,10 +112,10 @@ namespace UnitTestProject3
         }
 
         [TestMethod]
-        public void LogInMenu()
+        public void MisDireccionesAEliminar()
         {
             CapsInit();
-            caps.AddAdditionalCapability("name", "LogIn-Menu");
+            caps.AddAdditionalCapability("name", "Mis Direcciones - Eliminar");
 
             AndroidDriver<AndroidElement> driver = new AndroidDriver<AndroidElement>(
                     new Uri("http://hub-cloud.browserstack.com/wd/hub"), caps);
@@ -106,80 +131,25 @@ namespace UnitTestProject3
             InputText("com.soriana.appsoriana:id/editPass", "developmx12", driver);
             ClickButton("com.soriana.appsoriana:id/btn_login", driver);
             ClickButton("com.soriana.appsoriana:id/nuevoInicioFragment", driver);
-
-            if (CheckElement("com.soriana.appsoriana:id/txtNombreUsuario", driver))
-            {
-                Console.WriteLine("Ejecucion Exitosa");
-            }
-
-            Console.WriteLine("Tiempo de ejecucion : " + (time = ExecTime()));
+            ClickButton("com.soriana.appsoriana:id/menuPerfilFragment", driver);
+            ClickButton("com.soriana.appsoriana:id/item_direcciones", driver);
+            ClickButton("com.soriana.appsoriana:id/txtCFDI", driver);
+            ClickButton("com.soriana.appsoriana:id/action_delete", driver);
+            ClickButton("com.soriana.appsoriana:id/menuPerfilFragment", driver);
+            ClickButton("com.soriana.appsoriana:id/item_direcciones", driver);
+            ClickButton("com.soriana.appsoriana:id/txtCFDI", driver);
+            ClickButton("com.soriana.appsoriana:id/action_delete", driver);
+            ClickButton("android:id/button1", driver);
+            ClickButton("com.soriana.appsoriana:id/nuevoInicioFragment", driver);
 
             driver.Quit();
         }
 
         [TestMethod]
-        public void LogInHome()
+        public void MisDireccionesMenu()
         {
             CapsInit();
-            caps.AddAdditionalCapability("name", "LogIn-Home");
-
-            AndroidDriver<AndroidElement> driver = new AndroidDriver<AndroidElement>(
-                    new Uri("http://hub-cloud.browserstack.com/wd/hub"), caps);
-
-
-            //--------------------------Secuencia----------------------------------
-            StartTimer();
-
-            ClickButton("com.soriana.appsoriana:id/imgArrow", driver);
-            ClickButton("com.soriana.appsoriana:id/btnIniciaSesion", driver);
-            InputText("com.soriana.appsoriana:id/editEmail", "autodevelopmx@gmail.com", driver);
-            InputText("com.soriana.appsoriana:id/editPass", "developmx12", driver);
-            ClickButton("com.soriana.appsoriana:id/btn_login", driver);
-
-            if (CheckElement("com.soriana.appsoriana:id/txtNombreUsuario", driver))
-            {
-                Console.WriteLine("Ejecucion Exitosa");
-            }
-
-            Console.WriteLine("Tiempo de ejecucion : " + (time = ExecTime()));
-            driver.Quit();
-        }
-
-        [TestMethod]
-        public void LogInCarrito()
-        {
-            CapsInit();
-            caps.AddAdditionalCapability("name", "LogIn-Carrito");
-
-            AndroidDriver<AndroidElement> driver = new AndroidDriver<AndroidElement>(
-                    new Uri("http://hub-cloud.browserstack.com/wd/hub"), caps);
-
-
-            //--------------------------Secuencia----------------------------------
-            StartTimer();
-
-            ClickButton("com.soriana.appsoriana:id/imageCart", driver);
-            ClickButton("com.soriana.appsoriana:id/btnIniciaSesion", driver);
-            InputText("com.soriana.appsoriana:id/editEmail", "autodevelopmx@gmail.com", driver);
-            InputText("com.soriana.appsoriana:id/editPass", "developmx12", driver);
-            ClickButton("com.soriana.appsoriana:id/btn_login", driver);
-
-            if (CheckElement("com.soriana.appsoriana:id/txtNombreUsuario", driver))
-            {
-                Console.WriteLine("Ejecucion Exitosa");
-            }
-
-            Console.WriteLine("Tiempo de ejecucion : " + (time = ExecTime()));
-
-            driver.Quit();
-        }
-
-        /*
-        [TestMethod]
-        public void LogInError()
-        {
-            CapsInit();
-            caps.AddAdditionalCapability("name", "LogIn-Menu");
+            caps.AddAdditionalCapability("name", "Mis Direcciones - Menu");
 
             AndroidDriver<AndroidElement> driver = new AndroidDriver<AndroidElement>(
                     new Uri("http://hub-cloud.browserstack.com/wd/hub"), caps);
@@ -192,18 +162,69 @@ namespace UnitTestProject3
             ClickButton("com.soriana.appsoriana:id/btnIniciaSesion", driver);
             ClickButton("com.soriana.appsoriana:id/btnIniciaSesion", driver);
             InputText("com.soriana.appsoriana:id/editEmail", "autodevelopmx@gmail.com", driver);
-            InputText("com.soriana.appsoriana:id/editPass", "adhjadgfj", driver);
+            InputText("com.soriana.appsoriana:id/editPass", "developmx12", driver);
             ClickButton("com.soriana.appsoriana:id/btn_login", driver);
-
-            if (CheckElement("com.soriana.appsoriana:id/txtNombreUsuario", driver))
-            {
-                Console.WriteLine("Ejecucion Exitosa");
-            }
-
-            Console.WriteLine("Tiempo de ejecucion : " + (time = ExecTime()));
+            ClickButton("com.soriana.appsoriana:id/nuevoInicioFragment", driver);
+            ClickButton("com.soriana.appsoriana:id/menuPerfilFragment", driver);
+            ClickButton("com.soriana.appsoriana:id/item_direcciones", driver);
+            ClickButton("com.soriana.appsoriana:id/action_add", driver);
+            InputText("com.soriana.appsoriana:id/txtNomDir", "Casa de Pruebas", driver);
+            InputText("com.soriana.appsoriana:id/txtTelefonoDomic", "8711199728", driver);
+            InputText("com.soriana.appsoriana:id/txtCalle", "Calle Carrara", driver);
+            InputText("com.soriana.appsoriana:id/txtNumeroExterior", "421", driver);
+            InputText("com.soriana.appsoriana:id/txtNumInt", "15", driver);
+            ScrollDown(driver);
+            InputText("com.soriana.appsoriana:id/txtCP", "27268", driver);
+            InputText("com.soriana.appsoriana:id/txtColonia", "Torreon Residencial", driver);
+            ClickButton("com.soriana.appsoriana:id/btnGuardar", driver);
 
             driver.Quit();
-            hola
-        }*/
+        }
+
+        [TestMethod]
+        public void MisDireccionesCheckout()
+        {
+            CapsInit();
+            caps.AddAdditionalCapability("name", "Mis Direcciones - Checkout");
+
+            AndroidDriver<AndroidElement> driver = new AndroidDriver<AndroidElement>(
+                    new Uri("http://hub-cloud.browserstack.com/wd/hub"), caps);
+
+
+            //--------------------------Secuencia----------------------------------
+            StartTimer();
+
+            ClickButton("com.soriana.appsoriana:id/menuPerfilFragment", driver);
+            ClickButton("com.soriana.appsoriana:id/btnIniciaSesion", driver);
+            ClickButton("com.soriana.appsoriana:id/btnIniciaSesion", driver);
+            InputText("com.soriana.appsoriana:id/editEmail", "autodevelopmx@gmail.com", driver);
+            InputText("com.soriana.appsoriana:id/editPass", "developmx12", driver);
+            ClickButton("com.soriana.appsoriana:id/btn_login", driver);
+            ClickButton("com.soriana.appsoriana:id/nuevoInicioFragment", driver);
+            ScrollDown(driver);
+            ClickButton("com.soriana.appsoriana:id/btnArt", driver);
+            ClickButton("com.soriana.appsoriana:id/txtDomicilio", driver);
+            InputText("com.soriana.appsoriana:id/etCodigoPostal", "27268", driver);
+            ClickButton("com.soriana.appsoriana:id/btnSeleccionar", driver);
+            Thread.Sleep(2000);
+            ClickButton("com.soriana.appsoriana:id/imageCart", driver);
+            ClickButton("com.soriana.appsoriana:id/comprarLayout", driver);
+            ClickButton("com.soriana.appsoriana:id/txtDomicilio", driver);
+            ClickButton("com.soriana.appsoriana:id/txtAgregarNueva", driver);
+            InputText("com.soriana.appsoriana:id/txtNomDir", "Casa de Pruebas", driver);
+            InputText("com.soriana.appsoriana:id/txtTelefonoDomic", "8711199728", driver);
+            InputText("com.soriana.appsoriana:id/txtCalle", "Calle Carrara", driver);
+            InputText("com.soriana.appsoriana:id/txtNumeroExterior", "421", driver);
+            InputText("com.soriana.appsoriana:id/txtNumInt", "15", driver);
+            ScrollDown(driver);
+
+            InputText("com.soriana.appsoriana:id/txtCP", "27268", driver);
+            InputText("com.soriana.appsoriana:id/txtColonia", "Torreon Residencial", driver);
+            ClickButton("com.soriana.appsoriana:id/btnGuardar", driver);
+            ClickButton("com.soriana.appsoriana:id/menuPerfilFragment", driver);
+            ClickButton("com.soriana.appsoriana:id/item_direcciones", driver);
+
+            driver.Quit();
+        }
     }
 }

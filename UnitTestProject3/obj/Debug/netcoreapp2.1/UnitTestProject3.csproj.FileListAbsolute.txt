@@ -12,3 +12,17 @@ C:\Users\Mauricio\source\repos\UnitTestProject3\UnitTestProject3\obj\Debug\netco
 C:\Users\Mauricio\source\repos\UnitTestProject3\UnitTestProject3\obj\Debug\netcoreapp2.1\UnitTestProject3.AssemblyInfo.cs
 C:\Users\Mauricio\source\repos\UnitTestProject3\UnitTestProject3\obj\Debug\netcoreapp2.1\PruebasAppium.dll
 C:\Users\Mauricio\source\repos\UnitTestProject3\UnitTestProject3\obj\Debug\netcoreapp2.1\PruebasAppium.pdb
+C:\Users\Mauricio\Documents\GitHub\PruebasAppiumFinal\UnitTestProject3\bin\Debug\netcoreapp2.1\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\Users\Mauricio\Documents\GitHub\PruebasAppiumFinal\UnitTestProject3\bin\Debug\netcoreapp2.1\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\Users\Mauricio\Documents\GitHub\PruebasAppiumFinal\UnitTestProject3\bin\Debug\netcoreapp2.1\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\Users\Mauricio\Documents\GitHub\PruebasAppiumFinal\UnitTestProject3\bin\Debug\netcoreapp2.1\PruebasAppium.deps.json
+C:\Users\Mauricio\Documents\GitHub\PruebasAppiumFinal\UnitTestProject3\bin\Debug\netcoreapp2.1\PruebasAppium.runtimeconfig.json
+C:\Users\Mauricio\Documents\GitHub\PruebasAppiumFinal\UnitTestProject3\bin\Debug\netcoreapp2.1\PruebasAppium.runtimeconfig.dev.json
+C:\Users\Mauricio\Documents\GitHub\PruebasAppiumFinal\UnitTestProject3\bin\Debug\netcoreapp2.1\PruebasAppium.dll
+C:\Users\Mauricio\Documents\GitHub\PruebasAppiumFinal\UnitTestProject3\bin\Debug\netcoreapp2.1\PruebasAppium.pdb
+C:\Users\Mauricio\Documents\GitHub\PruebasAppiumFinal\UnitTestProject3\obj\Debug\netcoreapp2.1\UnitTestProject3.csproj.CoreCompileInputs.cache
+C:\Users\Mauricio\Documents\GitHub\PruebasAppiumFinal\UnitTestProject3\obj\Debug\netcoreapp2.1\UnitTestProject3.AssemblyInfoInputs.cache
+C:\Users\Mauricio\Documents\GitHub\PruebasAppiumFinal\UnitTestProject3\obj\Debug\netcoreapp2.1\UnitTestProject3.AssemblyInfo.cs
+C:\Users\Mauricio\Documents\GitHub\PruebasAppiumFinal\UnitTestProject3\obj\Debug\netcoreapp2.1\PruebasAppium.dll
+C:\Users\Mauricio\Documents\GitHub\PruebasAppiumFinal\UnitTestProject3\obj\Debug\netcoreapp2.1\PruebasAppium.pdb
+C:\Users\Mauricio\Documents\GitHub\PruebasAppiumFinal\UnitTestProject3\obj\Debug\netcoreapp2.1\UnitTestProject3.csprojAssemblyReference.cache
