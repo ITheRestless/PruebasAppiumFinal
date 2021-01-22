@@ -135,6 +135,7 @@ namespace UnitTestProject3
             ClickButton("com.soriana.appsoriana:id/item_direcciones", driver);
             ClickButton("com.soriana.appsoriana:id/txtCFDI", driver);
             ClickButton("com.soriana.appsoriana:id/action_delete", driver);
+            ClickButton("android:id/button1", driver);
             ClickButton("com.soriana.appsoriana:id/menuPerfilFragment", driver);
             ClickButton("com.soriana.appsoriana:id/item_direcciones", driver);
             ClickButton("com.soriana.appsoriana:id/txtCFDI", driver);
