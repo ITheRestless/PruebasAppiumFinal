@@ -6,7 +6,7 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v2.1": {
-      "DatosFiscales/1.0.0": {
+      "AgregarACarrito/1.0.0": {
         "dependencies": {
           "Appium.WebDriver": "4.3.1",
           "DotNetSeleniumExtras.WaitHelpers": "3.11.0",
@@ -15,7 +15,7 @@
           "Microsoft.NET.Test.Sdk": "15.9.0"
         },
         "runtime": {
-          "DatosFiscales.dll": {}
+          "AgregarACarrito.dll": {}
         }
       },
       "Appium.WebDriver/4.3.1": {
@@ -1067,7 +1067,7 @@
     }
   },
   "libraries": {
-    "DatosFiscales/1.0.0": {
+    "AgregarACarrito/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

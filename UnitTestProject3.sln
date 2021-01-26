@@ -3,16 +3,20 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.1231
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mis Direcciones", "Mis Direcciones\Mis Direcciones.csproj", "{55F353C1-DF63-4534-84E4-09A747CE53D4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mis Direcciones", "Mis Direcciones\Mis Direcciones.csproj", "{55F353C1-DF63-4534-84E4-09A747CE53D4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Login", "Login\Login.csproj", "{CCD603E1-5568-4439-B013-099726DE7756}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Login", "Login\Login.csproj", "{CCD603E1-5568-4439-B013-099726DE7756}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatosFiscales", "DatosFiscales\DatosFiscales.csproj", "{95908F62-D2C4-49E4-B7ED-B0F0E0FA3BD0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DatosFiscales", "DatosFiscales\DatosFiscales.csproj", "{95908F62-D2C4-49E4-B7ED-B0F0E0FA3BD0}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{59F09530-0F2F-4EDE-AECC-3424991B037B}"
 	ProjectSection(SolutionItems) = preProject
-		ApkURL.cs = ApkURL.cs
+		Ambiente.cs = Ambiente.cs
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AgregarACarrito", "AgregarACarrito\AgregarACarrito.csproj", "{276C29BA-13BB-472B-908A-96B9A9BEC854}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Listas", "Listas\Listas.csproj", "{1D99A48A-C5E9-4401-8A57-62EE67FC7C54}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -32,6 +36,14 @@ Global
 		{95908F62-D2C4-49E4-B7ED-B0F0E0FA3BD0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{95908F62-D2C4-49E4-B7ED-B0F0E0FA3BD0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{95908F62-D2C4-49E4-B7ED-B0F0E0FA3BD0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{276C29BA-13BB-472B-908A-96B9A9BEC854}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{276C29BA-13BB-472B-908A-96B9A9BEC854}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{276C29BA-13BB-472B-908A-96B9A9BEC854}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{276C29BA-13BB-472B-908A-96B9A9BEC854}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1D99A48A-C5E9-4401-8A57-62EE67FC7C54}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D99A48A-C5E9-4401-8A57-62EE67FC7C54}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D99A48A-C5E9-4401-8A57-62EE67FC7C54}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D99A48A-C5E9-4401-8A57-62EE67FC7C54}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

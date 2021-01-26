@@ -9,10 +9,10 @@ using System.Diagnostics;
 using OpenQA.Selenium.Appium.Interfaces;
 using OpenQA.Selenium.Appium.MultiTouch;
 
-namespace DatosFiscales
+namespace Listas
 {
     [TestClass]
-    public class DatosFiscales
+    public class Listas
     {
         Stopwatch timer;
         double time;
@@ -111,36 +111,28 @@ namespace DatosFiscales
         }
 
         [TestMethod]
-        public void DatosFiscalesAgregar()
+        public void MisListas()
         {
-            CapsInit();
-            caps.AddAdditionalCapability("name", "Datos Fiscales");
+        }
 
-            AndroidDriver<AndroidElement> driver = new AndroidDriver<AndroidElement>(
-                    new Uri("http://hub-cloud.browserstack.com/wd/hub"), caps);
+        [TestMethod]
+        public void DetalleDeArticulo()
+        {
+        }
 
+        [TestMethod]
+        public void CarritoBotonGuardarLista()
+        {
+        }
 
-            //--------------------------Secuencia----------------------------------
-            StartTimer();
+        [TestMethod]
+        public void Carrito3Puntos()
+        {
+        }
 
-            ClickButton("com.soriana.appsoriana:id/menuPerfilFragment", driver);
-            ClickButton("com.soriana.appsoriana:id/btnIniciaSesion", driver);
-            ClickButton("com.soriana.appsoriana:id/btnIniciaSesion", driver);
-            InputText("com.soriana.appsoriana:id/editEmail", "autodevelopmx@gmail.com", driver);
-            InputText("com.soriana.appsoriana:id/editPass", "developmx12", driver);
-            ClickButton("com.soriana.appsoriana:id/btn_login", driver);
-            ClickButton("com.soriana.appsoriana:id/nuevoInicioFragment", driver);
-            ClickButton("com.soriana.appsoriana:id/menuPerfilFragment", driver);
-            ClickButton("com.soriana.appsoriana:id/item_facturacion", driver);
-            ClickButton("com.soriana.appsoriana:id/action_add", driver);
-            InputText("com.soriana.appsoriana:id/txtRazonSoc", "PruebasAutomatizadas", driver);
-            InputText("com.soriana.appsoriana:id/txtRfc", "LAN7008173R5", driver);
-            InputText("com.soriana.appsoriana:id/txtCP", "27268", driver);
-            ClickButton("com.soriana.appsoriana:id/btnGuardar", driver);
-            ClickButton("com.soriana.appsoriana:id/menuPerfilFragment", driver);
-            ClickButton("com.soriana.appsoriana:id/item_facturacion", driver);
-
-            driver.Quit();
+        [TestMethod]
+        public void CarritoDetalleAñadir()
+        {
         }
     }
 }
