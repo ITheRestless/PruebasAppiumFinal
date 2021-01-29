@@ -14,6 +14,7 @@ namespace Listas
     [TestClass]
     public class Listas
     {
+        List<string> logs = new List<string>();
         Stopwatch timer;
         double time;
         AppiumOptions caps;
@@ -80,6 +81,30 @@ namespace Listas
             searchElement.Click();
         }
 
+        public void ClickText(string txt, AndroidDriver<AndroidElement> driver)
+        {
+            AndroidElement searchElement = (AndroidElement)new WebDriverWait(
+                driver, TimeSpan.FromSeconds(20)).Until(
+                SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(
+                    MobileBy.AndroidUIAutomator("new UiSelector().textContains(\"" + txt + "\")"))
+            );
+            
+
+
+            searchElement.Click();
+        }
+
+        public void ClickClass(string clss, AndroidDriver<AndroidElement> driver)
+        {
+            AndroidElement searchElement = (AndroidElement)new WebDriverWait(
+                driver, TimeSpan.FromSeconds(20)).Until(
+                SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(
+                    MobileBy.ClassName(clss))
+            );
+            
+            searchElement.Click();
+        }
+
         public bool CheckElement(string id, AndroidDriver<AndroidElement> driver)
         {
             AndroidElement searchElement = (AndroidElement)new WebDriverWait(
@@ -100,6 +125,24 @@ namespace Listas
             }
         }
 
+        public bool CheckText(string txt, AndroidDriver<AndroidElement> driver)
+        {
+            AndroidElement searchElement = (AndroidElement)new WebDriverWait(
+                driver, TimeSpan.FromSeconds(10)).Until(
+                SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(
+                    MobileBy.AndroidUIAutomator("new UiSelector().textContains(\"" + txt + "\")"))
+            );
+
+            if (searchElement == null)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
         public void StartTimer()
         {
             timer = Stopwatch.StartNew();
@@ -111,28 +154,139 @@ namespace Listas
         }
 
         [TestMethod]
-        public void MisListas()
-        {
-        }
-
-        [TestMethod]
         public void DetalleDeArticulo()
         {
+            CapsInit();
+            caps.AddAdditionalCapability("name", "Listas - DetalleDeArticulo");
+
+            AndroidDriver<AndroidElement> driver = new AndroidDriver<AndroidElement>(
+                    new Uri("http://hub-cloud.browserstack.com/wd/hub"), caps);
+
+
+            //--------------------------Secuencia----------------------------------
+            StartTimer();
+
+            ClickButton("com.soriana.appsoriana:id/menuPerfilFragment", driver);
+            ClickButton("com.soriana.appsoriana:id/btnIniciaSesion", driver);
+            ClickButton("com.soriana.appsoriana:id/btnIniciaSesion", driver);
+            InputText("com.soriana.appsoriana:id/editEmail", "autodevelopmx@gmail.com", driver);
+            InputText("com.soriana.appsoriana:id/editPass", "developmx12", driver);
+            ClickButton("com.soriana.appsoriana:id/btn_login", driver);
+            ClickButton("com.soriana.appsoriana:id/misListasFragment", driver);
+            ClickButton("com.soriana.appsoriana:id/action_agregar_lista", driver);
+            InputText("com.soriana.appsoriana:id/editNombre", "ListaPrueba", driver);
+            ClickButton("com.soriana.appsoriana:id/btnGuardar", driver);
+
+            if (CheckText("ListaPrueba", driver))
+            {
+                logs.Add("Se añadió correctamente la lista");
+            } else
+            {
+                logs.Add("No se añadió correctamente la lista");
+            }
+
+            ClickText("ListaPrueba", driver);
+            ClickButton("com.soriana.appsoriana:id/productosFragment", driver);
+            ClickText("DESPENSA", driver);
+            InputText("android:id/search_src_text", "atun", driver);
+            ClickText("LOMO DE ATÚN HERDEZ EN AGUA 130 GR", driver);
+            ScrollDown(driver);
+            ClickButton("com.soriana.appsoriana:id/btnAgregarALista", driver);
+            ClickText("ListaPrueba", driver);
+            driver.HideKeyboard();
+            ClickButton("com.soriana.appsoriana:id/misListasFragment", driver);
+            ClickText("ListaPrueba", driver);
+
+            if(!CheckText("LOMO DE ATÚN", driver))
+            {
+                logs.Add("No se registró el articulo esperado");
+            } else {
+                logs.Add("Se registró el articulo esperado");
+            }
+
+            ClickButton("com.soriana.appsoriana:id/action_delete", driver);
+            ClickButton("android:id/button1", driver);
+
+            if (CheckText("ListaPrueba", driver))
+            {
+                logs.Add("No se eliminó correctamente la lista");
+            } else
+            {
+                logs.Add("Se eliminó correctamente la lista");
+            }
+
+            driver.Quit();
         }
 
         [TestMethod]
         public void CarritoBotonGuardarLista()
         {
-        }
+            CapsInit();
+            caps.AddAdditionalCapability("name", "Listas - CarritoBotonGuardar");
 
-        [TestMethod]
-        public void Carrito3Puntos()
-        {
-        }
+            AndroidDriver<AndroidElement> driver = new AndroidDriver<AndroidElement>(
+                    new Uri("http://hub-cloud.browserstack.com/wd/hub"), caps);
+            
+            //--------------------------Secuencia----------------------------------
+            StartTimer();
 
-        [TestMethod]
-        public void CarritoDetalleAñadir()
-        {
+            ClickButton("com.soriana.appsoriana:id/menuPerfilFragment", driver);
+            ClickButton("com.soriana.appsoriana:id/btnIniciaSesion", driver);
+            ClickButton("com.soriana.appsoriana:id/btnIniciaSesion", driver);
+            InputText("com.soriana.appsoriana:id/editEmail", "autodevelopmx@gmail.com", driver);
+            InputText("com.soriana.appsoriana:id/editPass", "developmx12", driver);
+            ClickButton("com.soriana.appsoriana:id/btn_login", driver);
+            ClickButton("com.soriana.appsoriana:id/productosFragment", driver);
+            ClickText("DESPENSA", driver);
+            InputText("android:id/search_src_text", "atun", driver);
+            ClickText("LOMO DE ATÚN HERDEZ EN AGUA 130 GR", driver);
+            ScrollDown(driver);
+            ClickButton("com.soriana.appsoriana:id/bntAgregarACarrito", driver);
+            ClickButton("com.soriana.appsoriana:id/txtDomicilio", driver);
+            InputText("com.soriana.appsoriana:id/etCodigoPostal", "27268", driver);
+            ClickButton("com.soriana.appsoriana:id/btnSeleccionar", driver);
+            driver.HideKeyboard();
+            ClickButton("com.soriana.appsoriana:id/imageCart", driver);
+            ClickButton("com.soriana.appsoriana:id/action_save", driver);
+            InputText("com.soriana.appsoriana:id/editNombre", "ListaPruebaDesdeCarrito", driver);
+            ClickButton("com.soriana.appsoriana:id/btnGuardar", driver);
+            driver.HideKeyboard();
+            ClickClass("android.widget.ImageButton", driver);
+
+            if (CheckText("ListaPruebaDesdeCarrito", driver))
+            {
+                logs.Add("Se añadió correctamente la lista");
+            }
+            else
+            {
+                logs.Add("No se añadió correctamente la lista");
+            }
+
+            ClickText("ListaPruebaDesdeCarrito", driver);
+
+            if (!CheckText("LOMO DE ATÚN", driver))
+            {
+                logs.Add("No se registró el articulo esperado");
+            }
+            else
+            {
+                logs.Add("Se registró el articulo esperado");
+            }
+
+            ClickButton("com.soriana.appsoriana:id/action_delete", driver);
+            ClickButton("android:id/button1", driver);
+
+            if (CheckText("ListaPruebaDesdeCarrito", driver))
+            {
+                logs.Add("No se eliminó correctamente la lista");
+            }
+            else
+            {
+                logs.Add("Se eliminó correctamente la lista");
+            }
+
+
+            driver.Quit();
         }
     }
 }
