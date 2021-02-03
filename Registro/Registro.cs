@@ -173,12 +173,74 @@ namespace Registro
             InputText("com.soriana.appsoriana:id/editNombre", "PruebaAuto" + date, driver);
             InputText("com.soriana.appsoriana:id/editAP", "Dev", driver);
             InputText("com.soriana.appsoriana:id/editAM", "Mx", driver);
-            InputText("com.soriana.appsoriana:id/editMail", "PruebaAuto" + date + "yopmail.net", driver);
+            InputText("com.soriana.appsoriana:id/editMail", "PruebaAuto" + date + "@yopmail.net", driver);
             InputText("com.soriana.appsoriana:id/editTel", "8711199728", driver);
             ScrollDown(driver);
             InputText("com.soriana.appsoriana:id/editPass", "Contramamona12.", driver);
             InputText("com.soriana.appsoriana:id/editConfirm", "Contramamona12.", driver);
             ClickClass("android.widget.Button", driver);
+            CheckText("PruebaAuto" + date + "@yopmail.net", driver);
+
+            driver.Quit();
+        }
+
+        [TestMethod]
+        public void RegistroHome()
+        {
+            CapsInit();
+            caps.AddAdditionalCapability("name", "Registro - Menu sin tarjeta");
+
+            string date = DateTime.Now.Day.ToString() + DateTime.Now.Month.ToString() + DateTime.Now.Year.ToString() + DateTime.Now.Hour.ToString();
+
+            AndroidDriver<AndroidElement> driver = new AndroidDriver<AndroidElement>(
+                    new Uri("http://hub-cloud.browserstack.com/wd/hub"), caps);
+
+            //--------------------------Secuencia----------------------------------
+            StartTimer();
+
+            ClickButton("com.soriana.appsoriana:id/menuPerfilFragment", driver);
+            ClickButton("com.soriana.appsoriana:id/btnIniciaSesion", driver);
+            ClickButton("com.soriana.appsoriana:id/btnRegistrate", driver);
+            InputText("com.soriana.appsoriana:id/editNombre", "PruebaAuto" + date, driver);
+            InputText("com.soriana.appsoriana:id/editAP", "Dev", driver);
+            InputText("com.soriana.appsoriana:id/editAM", "Mx", driver);
+            InputText("com.soriana.appsoriana:id/editMail", "PruebaAuto" + date + "@yopmail.net", driver);
+            InputText("com.soriana.appsoriana:id/editTel", "8711199728", driver);
+            ScrollDown(driver);
+            InputText("com.soriana.appsoriana:id/editPass", "Contramamona12.", driver);
+            InputText("com.soriana.appsoriana:id/editConfirm", "Contramamona12.", driver);
+            ClickClass("android.widget.Button", driver);
+            CheckText("PruebaAuto" + date + "@yopmail.net", driver);
+
+            driver.Quit();
+        }
+
+        [TestMethod]
+        public void RegistroCarrito()
+        {
+            CapsInit();
+            caps.AddAdditionalCapability("name", "Registro - Carrito");
+
+            AndroidDriver<AndroidElement> driver = new AndroidDriver<AndroidElement>(
+                    new Uri("http://hub-cloud.browserstack.com/wd/hub"), caps);
+
+            string date = DateTime.Now.Day.ToString() + DateTime.Now.Month.ToString() + DateTime.Now.Year.ToString() + DateTime.Now.Hour.ToString();
+
+            //--------------------------Secuencia----------------------------------
+            StartTimer();
+
+            ClickButton("com.soriana.appsoriana:id/imageCart", driver);
+            ClickButton("com.soriana.appsoriana:id/btnRegistrate", driver);
+            InputText("com.soriana.appsoriana:id/editNombre", "PruebaAuto" + date, driver);
+            InputText("com.soriana.appsoriana:id/editAP", "Dev", driver);
+            InputText("com.soriana.appsoriana:id/editAM", "Mx", driver);
+            InputText("com.soriana.appsoriana:id/editMail", "PruebaAuto" + date + "@yopmail.net", driver);
+            InputText("com.soriana.appsoriana:id/editTel", "8711199728", driver);
+            ScrollDown(driver);
+            InputText("com.soriana.appsoriana:id/editPass", "Contramamona12.", driver);
+            InputText("com.soriana.appsoriana:id/editConfirm", "Contramamona12.", driver);
+            ClickClass("android.widget.Button", driver);
+            CheckText("PruebaAuto" + date + "@yopmail.net", driver);
 
             driver.Quit();
         }
