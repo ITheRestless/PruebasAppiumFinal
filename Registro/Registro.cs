@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using OpenQA.Selenium.Appium.Interfaces;
 using OpenQA.Selenium.Appium.MultiTouch;
+using OpenQA.Selenium;
 
 namespace Registro
 {
@@ -143,6 +144,11 @@ namespace Registro
             }
         }
 
+        public void setState(string state, string arguments, AndroidDriver<AndroidElement> driver)
+        {
+            ((IJavaScriptExecutor)driver).ExecuteScript("browserstack_executor: {\"action\": \"setSessionStatus\", \"arguments\": {\"status\":\"" + state + "\", \"reason\": \" " + arguments + " \"}}");
+        }
+
         public void StartTimer()
         {
             timer = Stopwatch.StartNew();
@@ -159,7 +165,7 @@ namespace Registro
             CapsInit();
             caps.AddAdditionalCapability("name", "Registro - Menu sin tarjeta");
 
-            string date = DateTime.Now.Day.ToString() + DateTime.Now.Month.ToString() + DateTime.Now.Year.ToString() + DateTime.Now.Hour.ToString();
+            string date = DateTime.Now.Day.ToString() + DateTime.Now.Month.ToString() + DateTime.Now.Year.ToString() + DateTime.Now.Hour.ToString() + DateTime.Now.Minute.ToString() + DateTime.Now.Second.ToString();
 
             AndroidDriver<AndroidElement> driver = new AndroidDriver<AndroidElement>(
                     new Uri("http://hub-cloud.browserstack.com/wd/hub"), caps);
@@ -167,19 +173,42 @@ namespace Registro
             //--------------------------Secuencia----------------------------------
             StartTimer();
 
+            setState("failed", "Boton --Inicio-- no encontrado", driver);
             ClickButton("com.soriana.appsoriana:id/menuPerfilFragment", driver);
+
+            setState("failed", "Boton --Iniciar sesion-- no encontrado", driver);
             ClickButton("com.soriana.appsoriana:id/btnIniciaSesion", driver);
+
+            setState("failed", "Boton --Registrate-- no encontrado", driver);
             ClickButton("com.soriana.appsoriana:id/btnRegistrate", driver);
+
+            setState("failed", "Campo --Nombre-- no encontrado", driver);
             InputText("com.soriana.appsoriana:id/editNombre", "PruebaAuto" + date, driver);
+
+            setState("failed", "Campo --Apellido paterno-- no encontrado", driver);
             InputText("com.soriana.appsoriana:id/editAP", "Dev", driver);
+
+            setState("failed", "Campo --Apellido materno-- no encontrado", driver);
             InputText("com.soriana.appsoriana:id/editAM", "Mx", driver);
+
+            setState("failed", "Campo --Email-- no encontrado", driver);
             InputText("com.soriana.appsoriana:id/editMail", "PruebaAuto" + date + "@yopmail.net", driver);
+
+            setState("failed", "Campo --Telefono-- no encontrado", driver);
             InputText("com.soriana.appsoriana:id/editTel", "8711199728", driver);
+
+            setState("failed", "Campo --Contraseña-- no encontrado", driver);
             ScrollDown(driver);
             InputText("com.soriana.appsoriana:id/editPass", "Contramamona12.", driver);
             InputText("com.soriana.appsoriana:id/editConfirm", "Contramamona12.", driver);
+
+            setState("failed", "Boton --Registrar-- no encontrado", driver);
             ClickClass("android.widget.Button", driver);
-            CheckText("PruebaAuto" + date + "@yopmail.net", driver);
+
+            setState("failed", "Proceso de registro completado con error al final", driver);
+            ClickText("PruebaAuto" + date + "@yopmail.net", driver);
+
+            setState("passed", "Registrado con exito faltando confirmacion de email", driver);
 
             driver.Quit();
         }
@@ -190,7 +219,7 @@ namespace Registro
             CapsInit();
             caps.AddAdditionalCapability("name", "Registro - Menu sin tarjeta");
 
-            string date = DateTime.Now.Day.ToString() + DateTime.Now.Month.ToString() + DateTime.Now.Year.ToString() + DateTime.Now.Hour.ToString();
+            string date = DateTime.Now.Day.ToString() + DateTime.Now.Month.ToString() + DateTime.Now.Year.ToString() + DateTime.Now.Hour.ToString() + DateTime.Now.Minute.ToString() + DateTime.Now.Second.ToString();
 
             AndroidDriver<AndroidElement> driver = new AndroidDriver<AndroidElement>(
                     new Uri("http://hub-cloud.browserstack.com/wd/hub"), caps);
@@ -198,19 +227,42 @@ namespace Registro
             //--------------------------Secuencia----------------------------------
             StartTimer();
 
+            setState("failed", "Boton --Mi Perfil-- no encontrado", driver);
             ClickButton("com.soriana.appsoriana:id/menuPerfilFragment", driver);
+
+            setState("failed", "Boton --Iniciar Sesion o Registrarse-- no encontrado", driver);
             ClickButton("com.soriana.appsoriana:id/btnIniciaSesion", driver);
+
+            setState("failed", "Boton --Registrate-- no encontrado", driver);
             ClickButton("com.soriana.appsoriana:id/btnRegistrate", driver);
+
+            setState("failed", "Campo --Nombre-- no encontrado", driver);
             InputText("com.soriana.appsoriana:id/editNombre", "PruebaAuto" + date, driver);
+
+            setState("failed", "Campo --Apellido paterno-- no encontrado", driver);
             InputText("com.soriana.appsoriana:id/editAP", "Dev", driver);
+
+            setState("failed", "Campo --Apellido materno-- no encontrado", driver);
             InputText("com.soriana.appsoriana:id/editAM", "Mx", driver);
+
+            setState("failed", "Campo --Email-- no encontrado", driver);
             InputText("com.soriana.appsoriana:id/editMail", "PruebaAuto" + date + "@yopmail.net", driver);
+
+            setState("failed", "Campo --Telefono-- no encontrado", driver);
             InputText("com.soriana.appsoriana:id/editTel", "8711199728", driver);
+
+            setState("failed", "Campo --Contraseña-- no encontrado", driver);
             ScrollDown(driver);
             InputText("com.soriana.appsoriana:id/editPass", "Contramamona12.", driver);
             InputText("com.soriana.appsoriana:id/editConfirm", "Contramamona12.", driver);
+
+            setState("failed", "Boton --Registrar-- no encontrado", driver);
             ClickClass("android.widget.Button", driver);
-            CheckText("PruebaAuto" + date + "@yopmail.net", driver);
+
+            setState("failed", "Proceso de registro completado con error al final", driver);
+            ClickText("PruebaAuto" + date + "@yopmail.net", driver);
+
+            setState("passed", "Registrado con exito faltando confirmacion de email", driver);
 
             driver.Quit();
         }
@@ -224,23 +276,44 @@ namespace Registro
             AndroidDriver<AndroidElement> driver = new AndroidDriver<AndroidElement>(
                     new Uri("http://hub-cloud.browserstack.com/wd/hub"), caps);
 
-            string date = DateTime.Now.Day.ToString() + DateTime.Now.Month.ToString() + DateTime.Now.Year.ToString() + DateTime.Now.Hour.ToString();
+            string date = DateTime.Now.Day.ToString() + DateTime.Now.Month.ToString() + DateTime.Now.Year.ToString() + DateTime.Now.Hour.ToString() + DateTime.Now.Minute.ToString() + DateTime.Now.Second.ToString();
 
             //--------------------------Secuencia----------------------------------
             StartTimer();
 
+            setState("failed", "No se pudo presionar el boton de carrito", driver);
             ClickButton("com.soriana.appsoriana:id/imageCart", driver);
+
+            setState("failed", "Boton --Registrate-- no encontrado", driver);
             ClickButton("com.soriana.appsoriana:id/btnRegistrate", driver);
+
+            setState("failed", "Campo --Nombre-- no encontrado", driver);
             InputText("com.soriana.appsoriana:id/editNombre", "PruebaAuto" + date, driver);
+
+            setState("failed", "Campo --Apellido paterno-- no encontrado", driver);
             InputText("com.soriana.appsoriana:id/editAP", "Dev", driver);
+
+            setState("failed", "Campo --Apellido materno-- no encontrado", driver);
             InputText("com.soriana.appsoriana:id/editAM", "Mx", driver);
+
+            setState("failed", "Campo --Email-- no encontrado", driver);
             InputText("com.soriana.appsoriana:id/editMail", "PruebaAuto" + date + "@yopmail.net", driver);
+
+            setState("failed", "Campo --Telefono-- no encontrado", driver);
             InputText("com.soriana.appsoriana:id/editTel", "8711199728", driver);
+
+            setState("failed", "Campo --Contraseña-- no encontrado", driver);
             ScrollDown(driver);
             InputText("com.soriana.appsoriana:id/editPass", "Contramamona12.", driver);
             InputText("com.soriana.appsoriana:id/editConfirm", "Contramamona12.", driver);
+
+            setState("failed", "Boton --Registrar-- no encontrado", driver);
             ClickClass("android.widget.Button", driver);
-            CheckText("PruebaAuto" + date + "@yopmail.net", driver);
+
+            setState("failed", "Proceso de registro completado con error al final", driver);
+            ClickText("PruebaAuto" + date + "@yopmail.net", driver);
+
+            setState("passed", "Registrado con exito faltando confirmacion de email", driver);
 
             driver.Quit();
         }

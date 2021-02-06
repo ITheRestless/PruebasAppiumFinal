@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using OpenQA.Selenium.Appium.Interfaces;
 using OpenQA.Selenium.Appium.MultiTouch;
+using OpenQA.Selenium;
 
 namespace DatosFiscales
 {
@@ -100,6 +101,24 @@ namespace DatosFiscales
             }
         }
 
+        public void ClickText(string txt, AndroidDriver<AndroidElement> driver)
+        {
+            AndroidElement searchElement = (AndroidElement)new WebDriverWait(
+                driver, TimeSpan.FromSeconds(20)).Until(
+                SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(
+                    MobileBy.AndroidUIAutomator("new UiSelector().textContains(\"" + txt + "\")"))
+            );
+
+
+
+            searchElement.Click();
+        }
+
+        public void setState(string state, string arguments, AndroidDriver<AndroidElement> driver)
+        {
+            ((IJavaScriptExecutor)driver).ExecuteScript("browserstack_executor: {\"action\": \"setSessionStatus\", \"arguments\": {\"status\":\"" + state + "\", \"reason\": \" " + arguments + " \"}}");
+        }
+
         public void StartTimer()
         {
             timer = Stopwatch.StartNew();
@@ -119,26 +138,64 @@ namespace DatosFiscales
             AndroidDriver<AndroidElement> driver = new AndroidDriver<AndroidElement>(
                     new Uri("http://hub-cloud.browserstack.com/wd/hub"), caps);
 
-
             //--------------------------Secuencia----------------------------------
             StartTimer();
 
+            setState("failed", "Boton --Mi Perfil-- no encontrado", driver);
             ClickButton("com.soriana.appsoriana:id/menuPerfilFragment", driver);
+
+            setState("failed", "Boton --Iniciar session-- no encontrado", driver);
             ClickButton("com.soriana.appsoriana:id/btnIniciaSesion", driver);
+
+            setState("failed", "Boton --Iniciar session-- no encontrado", driver);
             ClickButton("com.soriana.appsoriana:id/btnIniciaSesion", driver);
+
+            setState("failed", "campo --Correo Electronico-- no encontrado", driver);
             InputText("com.soriana.appsoriana:id/editEmail", "autodevelopmx@gmail.com", driver);
+
+            setState("failed", "campo --Contraseña-- no encontrado", driver);
             InputText("com.soriana.appsoriana:id/editPass", "developmx12", driver);
+
+            setState("failed", "Boton --Iniciar session-- no encontrado", driver);
             ClickButton("com.soriana.appsoriana:id/btn_login", driver);
+
+            setState("failed", "Boton --Inicio-- no encontrado", driver);
             ClickButton("com.soriana.appsoriana:id/nuevoInicioFragment", driver);
+
+            setState("failed", "Boton --Mi perfil-- no ecnontrado", driver);
             ClickButton("com.soriana.appsoriana:id/menuPerfilFragment", driver);
+
+            setState("failed", "Boton --Mis datos de facturacion-- no encontrado", driver);
             ClickButton("com.soriana.appsoriana:id/item_facturacion", driver);
+
+            setState("failed", "Boton -- + -- no encontrado", driver);
             ClickButton("com.soriana.appsoriana:id/action_add", driver);
+
+            setState("failed", "Campo --Razon social-- no encontrado", driver);
             InputText("com.soriana.appsoriana:id/txtRazonSoc", "PruebasAutomatizadas", driver);
+
+            setState("failed", "Campo --RFC-- no encontrado", driver);
             InputText("com.soriana.appsoriana:id/txtRfc", "LAN7008173R5", driver);
+
+            setState("failed", "Campo --Codigo Postal-- no encontrado", driver);
             InputText("com.soriana.appsoriana:id/txtCP", "27268", driver);
+
+            setState("failed", "Boton --Guardar-- no encontrado", driver);
             ClickButton("com.soriana.appsoriana:id/btnGuardar", driver);
+
+            setState("failed", "Boton --Mi Perfil-- no encontrado", driver);
             ClickButton("com.soriana.appsoriana:id/menuPerfilFragment", driver);
+
+            setState("failed", "Boton --Mis datos de facturacion-- no encontrado", driver);
             ClickButton("com.soriana.appsoriana:id/item_facturacion", driver);
+
+            setState("failed", "No se registraron los datos de facturacion", driver);
+            ClickText("PruebasAutomatizadas", driver);
+
+            setState("failed", "Error Boton --Eliminar--", driver);
+            ClickButton("com.soriana.appsoriana:id/action_delete", driver);
+
+            setState("passed", "Datos fiscales registrados y eliminados con exito", driver);
 
             driver.Quit();
         }

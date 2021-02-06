@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using OpenQA.Selenium.Appium.Interfaces;
 using OpenQA.Selenium.Appium.MultiTouch;
+using OpenQA.Selenium;
 
 namespace Listas
 {
@@ -143,6 +144,11 @@ namespace Listas
             }
         }
 
+        public void setState(string state, string arguments, AndroidDriver<AndroidElement> driver)
+        {
+            ((IJavaScriptExecutor)driver).ExecuteScript("browserstack_executor: {\"action\": \"setSessionStatus\", \"arguments\": {\"status\":\"" + state + "\", \"reason\": \" " + arguments + " \"}}");
+        }
+
         public void StartTimer()
         {
             timer = Stopwatch.StartNew();
@@ -165,12 +171,24 @@ namespace Listas
             //--------------------------Secuencia----------------------------------
             StartTimer();
 
+            setState("failed", "Boton --Mi Perfil-- no encontrado", driver);
             ClickButton("com.soriana.appsoriana:id/menuPerfilFragment", driver);
+
+            setState("failed", "Boton --Iniciar session-- no encontrado", driver);
             ClickButton("com.soriana.appsoriana:id/btnIniciaSesion", driver);
+
+            setState("failed", "Boton --Iniciar session-- no encontrado", driver);
             ClickButton("com.soriana.appsoriana:id/btnIniciaSesion", driver);
+
+            setState("failed", "campo --Correo Electronico-- no encontrado", driver);
             InputText("com.soriana.appsoriana:id/editEmail", "autodevelopmx@gmail.com", driver);
+
+            setState("failed", "campo --Contraseña-- no encontrado", driver);
             InputText("com.soriana.appsoriana:id/editPass", "developmx12", driver);
+
+            setState("failed", "Boton --Iniciar session-- no encontrado", driver);
             ClickButton("com.soriana.appsoriana:id/btn_login", driver);
+            
             ClickButton("com.soriana.appsoriana:id/misListasFragment", driver);
             ClickButton("com.soriana.appsoriana:id/action_agregar_lista", driver);
             InputText("com.soriana.appsoriana:id/editNombre", "ListaPrueba", driver);
@@ -214,6 +232,8 @@ namespace Listas
                 logs.Add("Se eliminó correctamente la lista");
             }
 
+            setState("pass", "Lista registrada con exito", driver);
+
             driver.Quit();
         }
 
@@ -229,13 +249,27 @@ namespace Listas
             //--------------------------Secuencia----------------------------------
             StartTimer();
 
+            setState("failed", "Boton --Mi Perfil-- no encontrado", driver);
             ClickButton("com.soriana.appsoriana:id/menuPerfilFragment", driver);
+
+            setState("failed", "Boton --Iniciar session-- no encontrado", driver);
             ClickButton("com.soriana.appsoriana:id/btnIniciaSesion", driver);
+
+            setState("failed", "Boton --Iniciar session-- no encontrado", driver);
             ClickButton("com.soriana.appsoriana:id/btnIniciaSesion", driver);
+
+            setState("failed", "campo --Correo Electronico-- no encontrado", driver);
             InputText("com.soriana.appsoriana:id/editEmail", "autodevelopmx@gmail.com", driver);
+
+            setState("failed", "campo --Contraseña-- no encontrado", driver);
             InputText("com.soriana.appsoriana:id/editPass", "developmx12", driver);
+
+            setState("failed", "Boton --Iniciar session-- no encontrado", driver);
             ClickButton("com.soriana.appsoriana:id/btn_login", driver);
+
+            setState("failed", "Pestaña --Departamentos-- no encontrada", driver);
             ClickButton("com.soriana.appsoriana:id/productosFragment", driver);
+            
             ClickText("DESPENSA", driver);
             InputText("android:id/search_src_text", "atun", driver);
             ClickText("LOMO DE ATÚN HERDEZ EN AGUA 130 GR", driver);
@@ -256,7 +290,8 @@ namespace Listas
             ClickText("ListaPruebaDesdeCarrito", driver);
             ClickButton("com.soriana.appsoriana:id/action_delete", driver);
             ClickButton("android:id/button1", driver);
-            
+
+            setState("pass", "Lista registrada con exito", driver);
             driver.Quit();
         }
     }
