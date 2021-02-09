@@ -9,6 +9,7 @@ using System.Diagnostics;
 using OpenQA.Selenium.Appium.Interfaces;
 using OpenQA.Selenium.Appium.MultiTouch;
 using OpenQA.Selenium;
+using System.Text.RegularExpressions;
 
 namespace Registro
 {
@@ -149,6 +150,20 @@ namespace Registro
             ((IJavaScriptExecutor)driver).ExecuteScript("browserstack_executor: {\"action\": \"setSessionStatus\", \"arguments\": {\"status\":\"" + state + "\", \"reason\": \" " + arguments + " \"}}");
         }
 
+        public string ObtenerCodigoRegistro(string usr)
+        {
+
+            int count1 = usr.Length;
+            string count2 = Convert.ToString(Regex.Matches(usr, "a").Count);
+            string count3 = Convert.ToString(Regex.Matches(usr, "e").Count);
+            string count4 = Convert.ToString(Regex.Matches(usr, "i").Count);
+            string count5 = Convert.ToString(Regex.Matches(usr, "o").Count);
+            string count6 = Convert.ToString(Regex.Matches(usr, "u").Count);
+
+            var strCode = count1 + count2 + count3 + count4 + count5 + count6;
+            return strCode.Substring(0, 6);
+        }
+
         public void StartTimer()
         {
             timer = Stopwatch.StartNew();
@@ -160,10 +175,10 @@ namespace Registro
         }
 
         [TestMethod]
-        public void RegistroMenu()
+        public void CrearTarjetaVirtual()
         {
             CapsInit();
-            caps.AddAdditionalCapability("name", "Registro - Menu sin tarjeta");
+            caps.AddAdditionalCapability("name", "Registro - Crear tarjeta virtual y aceptar los terminos y condiciones");
 
             string date = DateTime.Now.Day.ToString() + DateTime.Now.Month.ToString() + DateTime.Now.Year.ToString() + DateTime.Now.Hour.ToString() + DateTime.Now.Minute.ToString() + DateTime.Now.Second.ToString();
 
@@ -205,19 +220,32 @@ namespace Registro
             setState("failed", "Boton --Registrar-- no encontrado", driver);
             ClickClass("android.widget.Button", driver);
 
-            setState("failed", "Proceso de registro completado con error al final", driver);
-            ClickText("PruebaAuto" + date + "@yopmail.net", driver);
+            setState("failed", "Error al introducir el codigo de confirmacion", driver);
+            InputText("com.soriana.appsoriana:id/editCodigoConfirmacion", ObtenerCodigoRegistro("PruebaAuto" + date + "@yopmail.net"), driver);
 
+            setState("failed", "Error al presionar el boton --Continuar--", driver);
+            ClickButton("com.soriana.appsoriana:id/btnConfirmar", driver);
+
+            setState("failed", "Error al presionar el boton --Finalizar Registro--", driver);
+            ClickText("Finalizar registro", driver);
+
+            setState("failed", "Error al presionar el boton --Comenzar-- en la pantalla de cuenta creada", driver);
+            ClickButton("com.soriana.appsoriana:id/btnComenzar", driver);
+
+            setState("failed", "Error al aceptar los terminos y condiciones", driver);
+            ClickButton("com.soriana.appsoriana:id/btnAceptar", driver);
+
+            ClickText("PruebaAuto", driver);
             setState("passed", "Registrado con exito faltando confirmacion de email", driver);
 
             driver.Quit();
         }
 
         [TestMethod]
-        public void RegistroHome()
+        public void RegistroNoAceptarTerminosYCondiciones()
         {
             CapsInit();
-            caps.AddAdditionalCapability("name", "Registro - Menu sin tarjeta");
+            caps.AddAdditionalCapability("name", "Registro - No aceptar terminos y condiciones");
 
             string date = DateTime.Now.Day.ToString() + DateTime.Now.Month.ToString() + DateTime.Now.Year.ToString() + DateTime.Now.Hour.ToString() + DateTime.Now.Minute.ToString() + DateTime.Now.Second.ToString();
 
@@ -227,10 +255,10 @@ namespace Registro
             //--------------------------Secuencia----------------------------------
             StartTimer();
 
-            setState("failed", "Boton --Mi Perfil-- no encontrado", driver);
+            setState("failed", "Boton --Inicio-- no encontrado", driver);
             ClickButton("com.soriana.appsoriana:id/menuPerfilFragment", driver);
 
-            setState("failed", "Boton --Iniciar Sesion o Registrarse-- no encontrado", driver);
+            setState("failed", "Boton --Iniciar sesion-- no encontrado", driver);
             ClickButton("com.soriana.appsoriana:id/btnIniciaSesion", driver);
 
             setState("failed", "Boton --Registrate-- no encontrado", driver);
@@ -259,60 +287,22 @@ namespace Registro
             setState("failed", "Boton --Registrar-- no encontrado", driver);
             ClickClass("android.widget.Button", driver);
 
-            setState("failed", "Proceso de registro completado con error al final", driver);
-            ClickText("PruebaAuto" + date + "@yopmail.net", driver);
+            setState("failed", "Error al introducir el codigo de confirmacion", driver);
+            InputText("com.soriana.appsoriana:id/editCodigoConfirmacion", ObtenerCodigoRegistro("PruebaAuto" + date + "@yopmail.net"), driver);
 
-            setState("passed", "Registrado con exito faltando confirmacion de email", driver);
+            setState("failed", "Error al presionar el boton --Continuar--", driver);
+            ClickButton("com.soriana.appsoriana:id/btnConfirmar", driver);
 
-            driver.Quit();
-        }
+            setState("failed", "Error al presionar el boton --Finalizar Registro--", driver);
+            ClickText("Finalizar registro", driver);
 
-        [TestMethod]
-        public void RegistroCarrito()
-        {
-            CapsInit();
-            caps.AddAdditionalCapability("name", "Registro - Carrito");
+            setState("failed", "Error al presionar el boton --Comenzar-- en la pantalla de cuenta creada", driver);
+            ClickButton("com.soriana.appsoriana:id/btnComenzar", driver);
 
-            AndroidDriver<AndroidElement> driver = new AndroidDriver<AndroidElement>(
-                    new Uri("http://hub-cloud.browserstack.com/wd/hub"), caps);
+            setState("failed", "Error al aceptar los terminos y condiciones", driver);
+            ClickButton("com.soriana.appsoriana:id/btnNoAceptar", driver);
 
-            string date = DateTime.Now.Day.ToString() + DateTime.Now.Month.ToString() + DateTime.Now.Year.ToString() + DateTime.Now.Hour.ToString() + DateTime.Now.Minute.ToString() + DateTime.Now.Second.ToString();
-
-            //--------------------------Secuencia----------------------------------
-            StartTimer();
-
-            setState("failed", "No se pudo presionar el boton de carrito", driver);
-            ClickButton("com.soriana.appsoriana:id/imageCart", driver);
-
-            setState("failed", "Boton --Registrate-- no encontrado", driver);
-            ClickButton("com.soriana.appsoriana:id/btnRegistrate", driver);
-
-            setState("failed", "Campo --Nombre-- no encontrado", driver);
-            InputText("com.soriana.appsoriana:id/editNombre", "PruebaAuto" + date, driver);
-
-            setState("failed", "Campo --Apellido paterno-- no encontrado", driver);
-            InputText("com.soriana.appsoriana:id/editAP", "Dev", driver);
-
-            setState("failed", "Campo --Apellido materno-- no encontrado", driver);
-            InputText("com.soriana.appsoriana:id/editAM", "Mx", driver);
-
-            setState("failed", "Campo --Email-- no encontrado", driver);
-            InputText("com.soriana.appsoriana:id/editMail", "PruebaAuto" + date + "@yopmail.net", driver);
-
-            setState("failed", "Campo --Telefono-- no encontrado", driver);
-            InputText("com.soriana.appsoriana:id/editTel", "8711199728", driver);
-
-            setState("failed", "Campo --Contraseña-- no encontrado", driver);
-            ScrollDown(driver);
-            InputText("com.soriana.appsoriana:id/editPass", "Contramamona12.", driver);
-            InputText("com.soriana.appsoriana:id/editConfirm", "Contramamona12.", driver);
-
-            setState("failed", "Boton --Registrar-- no encontrado", driver);
-            ClickClass("android.widget.Button", driver);
-
-            setState("failed", "Proceso de registro completado con error al final", driver);
-            ClickText("PruebaAuto" + date + "@yopmail.net", driver);
-
+            ClickText("PruebaAuto", driver);
             setState("passed", "Registrado con exito faltando confirmacion de email", driver);
 
             driver.Quit();
