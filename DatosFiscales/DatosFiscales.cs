@@ -21,6 +21,7 @@ namespace DatosFiscales
 
         public void CapsInit()
         {
+            string fecha = DateTime.Now.Day.ToString() + "/" + DateTime.Now.Month.ToString() + "/" + DateTime.Now.Year.ToString();
             caps = new AppiumOptions();
             caps.AddAdditionalCapability("newCommandTimeout", 30);
             caps.AddAdditionalCapability("browserstack.user", "mauricioemmanuel1");
@@ -32,7 +33,7 @@ namespace DatosFiscales
             caps.AddAdditionalCapability("os_version", "9.0");
             caps.PlatformName = "Android";
             caps.AddAdditionalCapability("project", "AppSoriana");
-            caps.AddAdditionalCapability("build", "Android");
+            caps.AddAdditionalCapability("build", "Android " + fecha);
         }
 
         public void ScrollDown(AndroidDriver<AndroidElement> driver)

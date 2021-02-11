@@ -23,6 +23,7 @@ namespace Registro
 
         public void CapsInit()
         {
+            string fecha = DateTime.Now.Day.ToString() + "/" + DateTime.Now.Month.ToString() + "/" + DateTime.Now.Year.ToString();
             caps = new AppiumOptions();
             caps.AddAdditionalCapability("newCommandTimeout", 30);
             caps.AddAdditionalCapability("browserstack.user", "mauricioemmanuel1");
@@ -34,7 +35,7 @@ namespace Registro
             caps.AddAdditionalCapability("os_version", "9.0");
             caps.PlatformName = "Android";
             caps.AddAdditionalCapability("project", "AppSoriana");
-            caps.AddAdditionalCapability("build", "Android");
+            caps.AddAdditionalCapability("build", "Android " + fecha);
         }
 
         public void ScrollDown(AndroidDriver<AndroidElement> driver)
@@ -302,8 +303,10 @@ namespace Registro
             setState("failed", "Error al aceptar los terminos y condiciones", driver);
             ClickButton("com.soriana.appsoriana:id/btnNoAceptar", driver);
 
-            ClickText("PruebaAuto", driver);
-            setState("passed", "Registrado con exito faltando confirmacion de email", driver);
+            setState("failed", "No regreso a la pantalla de inicio de sesion", driver);
+            ClickButton("com.soriana.appsoriana:id/btnRegistrate", driver);
+
+            setState("passed", "No registrado con exito", driver);
 
             driver.Quit();
         }
