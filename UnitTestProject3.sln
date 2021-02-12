@@ -20,7 +20,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Listas", "Listas\Listas.csp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Registro", "Registro\Registro.csproj", "{B479DD4C-2BF9-4C78-BB76-473434281556}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Perfil", "Perfil\Perfil.csproj", "{858291AF-7C8B-49F0-AB51-4A3E94945FD1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Perfil", "Perfil\Perfil.csproj", "{858291AF-7C8B-49F0-AB51-4A3E94945FD1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuperEnCasa", "SuperEnCasa\SuperEnCasa.csproj", "{FBD071A0-CBD0-4A54-862B-3947DA338714}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -56,6 +58,10 @@ Global
 		{858291AF-7C8B-49F0-AB51-4A3E94945FD1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{858291AF-7C8B-49F0-AB51-4A3E94945FD1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{858291AF-7C8B-49F0-AB51-4A3E94945FD1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FBD071A0-CBD0-4A54-862B-3947DA338714}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FBD071A0-CBD0-4A54-862B-3947DA338714}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FBD071A0-CBD0-4A54-862B-3947DA338714}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FBD071A0-CBD0-4A54-862B-3947DA338714}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
