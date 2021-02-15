@@ -80,7 +80,7 @@ namespace Mis_Direcciones
             try {
                 searchElement.Click();
             } catch (OpenQA.Selenium.NoSuchElementException e) {
-                threw e;
+                throw e;
                 Console.WriteLine("Exception: {0}", e);
             }
         }
