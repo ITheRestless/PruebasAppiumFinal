@@ -87,15 +87,19 @@ namespace Mis_Direcciones
 
         public void ClickText(string txt, AndroidDriver<AndroidElement> driver)
         {
-            AndroidElement searchElement = (AndroidElement)new WebDriverWait(
-                driver, TimeSpan.FromSeconds(20)).Until(
-                SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(
-                    MobileBy.AndroidUIAutomator("new UiSelector().textContains(\"" + txt + "\")"))
-            );
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(20));
+            AndroidElement searchElement = (AndroidElement)wait.Until(
+                    SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(
+                        MobileBy.AndroidUIAutomator("new UiSelector().textContains(\"" + txt + "\")")
+                    )
+                );
 
-
-
-            searchElement.Click();
+            try {
+                searchElement.Click();
+            } catch (OpenQA.Selenium.NoSuchElementException e) {
+                throw e;
+                Console.WriteLine("Exception: {0}", e);
+            }
         }
 
         public bool CheckElement(string id, AndroidDriver<AndroidElement> driver)
