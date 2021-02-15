@@ -152,7 +152,7 @@ namespace Mis_Direcciones
             setState("failed", "campo --Correo Electronico-- no encontrado", driver);
             InputText("com.soriana.appsoriana:id/editEmail", "autodevelopmx@gmail.com", driver);
 
-            setState("failed", "campo --Contrase�a-- no encontrado", driver);
+            setState("failed", "campo --Contraseña-- no encontrado", driver);
             InputText("com.soriana.appsoriana:id/editPass", "developmx12", driver);
 
             setState("failed", "Boton --Iniciar session-- no encontrado", driver);
@@ -167,7 +167,7 @@ namespace Mis_Direcciones
             setState("failed", "Boton --Mis direcciones-- no encontrado", driver);
             ClickButton("com.soriana.appsoriana:id/item_direcciones", driver);
 
-            setState("failed", "Boton --a�adir-- no encontrado", driver);
+            setState("failed", "Boton --añadir-- no encontrado", driver);
             ClickButton("com.soriana.appsoriana:id/action_add", driver);
 
             setState("failed", "Campo --Nombre-- no encontrado", driver);
@@ -237,7 +237,7 @@ namespace Mis_Direcciones
                 setState("failed", "campo --Correo Electronico-- no encontrado", driver);
                 InputText("com.soriana.appsoriana:id/editEmail", "autodevelopmx@gmail.com", driver);
 
-                setState("failed", "campo --Contrase�a-- no encontrado", driver);
+                setState("failed", "campo --Contraseña-- no encontrado", driver);
                 InputText("com.soriana.appsoriana:id/editPass", "developmx12", driver);
 
                 setState("failed", "Boton --Iniciar session-- no encontrado", driver);
