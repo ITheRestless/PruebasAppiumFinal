@@ -214,14 +214,15 @@ namespace Mis_Direcciones
         [TestMethod]
         public void MisDireccionesCheckout()
         {
+            CapsInit();
+            caps.AddAdditionalCapability("name", "Mis Direcciones - Checkout");
+
+            AndroidDriver<AndroidElement> driver = new AndroidDriver<AndroidElement>(
+                    new Uri("http://hub-cloud.browserstack.com/wd/hub"),
+                    caps
+                );
+
             try {
-                CapsInit();
-                caps.AddAdditionalCapability("name", "Mis Direcciones - Checkout");
-
-                AndroidDriver<AndroidElement> driver = new AndroidDriver<AndroidElement>(
-                        new Uri("http://hub-cloud.browserstack.com/wd/hub"), caps);
-
-
                 //--------------------------Secuencia----------------------------------
                 StartTimer();
 
