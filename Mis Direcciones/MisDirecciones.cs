@@ -75,7 +75,7 @@ namespace Mis_Direcciones
         public void ClickButton(string id, AndroidDriver<AndroidElement> driver)
         {
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(20));
-            AndroidElement searchElement = wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(MobileBy.Id(id)));
+            AndroidElement searchElement = (AndroidElement)wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(MobileBy.Id(id)));
 
             searchElement.Click();
         }
@@ -316,8 +316,8 @@ namespace Mis_Direcciones
 
                 setState("passed", "Se agrego y elimino la direccion con exito", driver);
             }
-            catch (Exception) {
-                return false;
+            catch (Exception e) {
+                Console.WriteLine("Exception: {0}", e);
             }
             finally {
                 driver.Quit();
