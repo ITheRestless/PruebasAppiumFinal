@@ -74,26 +74,32 @@ namespace Mis_Direcciones
 
         public void ClickButton(string id, AndroidDriver<AndroidElement> driver)
         {
-            AndroidElement searchElement = (AndroidElement)new WebDriverWait(
-                driver, TimeSpan.FromSeconds(20)).Until(
-                SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(
-                    MobileBy.Id(id))
-            );
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(20));
+            AndroidElement searchElement = (AndroidElement)wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(MobileBy.Id(id)));
 
-            searchElement.Click();
+            try {
+                searchElement.Click();
+            } catch (OpenQA.Selenium.NoSuchElementException e) {
+                throw e;
+                Console.WriteLine("Exception: {0}", e);
+            }
         }
 
         public void ClickText(string txt, AndroidDriver<AndroidElement> driver)
         {
-            AndroidElement searchElement = (AndroidElement)new WebDriverWait(
-                driver, TimeSpan.FromSeconds(20)).Until(
-                SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(
-                    MobileBy.AndroidUIAutomator("new UiSelector().textContains(\"" + txt + "\")"))
-            );
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(20));
+            AndroidElement searchElement = (AndroidElement)wait.Until(
+                    SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(
+                        MobileBy.AndroidUIAutomator("new UiSelector().textContains(\"" + txt + "\")")
+                    )
+                );
 
-
-
-            searchElement.Click();
+            try {
+                searchElement.Click();
+            } catch (OpenQA.Selenium.NoSuchElementException e) {
+                throw e;
+                Console.WriteLine("Exception: {0}", e);
+            }
         }
 
         public bool CheckElement(string id, AndroidDriver<AndroidElement> driver)
@@ -155,7 +161,7 @@ namespace Mis_Direcciones
             setState("failed", "campo --Correo Electronico-- no encontrado", driver);
             InputText("com.soriana.appsoriana:id/editEmail", "autodevelopmx@gmail.com", driver);
 
-            setState("failed", "campo --Contraseña-- no encontrado", driver);
+            setState("failed", "campo --ContraseÃ±a-- no encontrado", driver);
             InputText("com.soriana.appsoriana:id/editPass", "developmx12", driver);
 
             setState("failed", "Boton --Iniciar session-- no encontrado", driver);
@@ -170,7 +176,7 @@ namespace Mis_Direcciones
             setState("failed", "Boton --Mis direcciones-- no encontrado", driver);
             ClickButton("com.soriana.appsoriana:id/item_direcciones", driver);
 
-            setState("failed", "Boton --añadir-- no encontrado", driver);
+            setState("failed", "Boton --aÃ±adir-- no encontrado", driver);
             ClickButton("com.soriana.appsoriana:id/action_add", driver);
 
             setState("failed", "Campo --Nombre-- no encontrado", driver);
@@ -221,8 +227,9 @@ namespace Mis_Direcciones
             caps.AddAdditionalCapability("name", "Mis Direcciones - Checkout");
 
             AndroidDriver<AndroidElement> driver = new AndroidDriver<AndroidElement>(
-                    new Uri("http://hub-cloud.browserstack.com/wd/hub"), caps);
-
+                    new Uri("http://hub-cloud.browserstack.com/wd/hub"),
+                    caps
+                );
 
             //--------------------------Secuencia----------------------------------
             StartTimer();
@@ -239,7 +246,7 @@ namespace Mis_Direcciones
             setState("failed", "campo --Correo Electronico-- no encontrado", driver);
             InputText("com.soriana.appsoriana:id/editEmail", "autodevelopmx@gmail.com", driver);
 
-            setState("failed", "campo --Contraseña-- no encontrado", driver);
+            setState("failed", "campo --ContraseÃ±a-- no encontrado", driver);
             InputText("com.soriana.appsoriana:id/editPass", "developmx12", driver);
 
             setState("failed", "Boton --Iniciar session-- no encontrado", driver);
@@ -317,7 +324,6 @@ namespace Mis_Direcciones
             ClickButton("android:id/button1", driver);
 
             setState("passed", "Se agrego y elimino la direccion con exito", driver);
-
 
             driver.Quit();
         }
