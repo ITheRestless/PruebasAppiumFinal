@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.1231
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30907.101
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mis Direcciones", "Mis Direcciones\Mis Direcciones.csproj", "{55F353C1-DF63-4534-84E4-09A747CE53D4}"
 EndProject
@@ -22,7 +22,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Registro", "Registro\Regist
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Perfil", "Perfil\Perfil.csproj", "{858291AF-7C8B-49F0-AB51-4A3E94945FD1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuperEnCasa", "SuperEnCasa\SuperEnCasa.csproj", "{FBD071A0-CBD0-4A54-862B-3947DA338714}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SuperEnCasa", "SuperEnCasa\SuperEnCasa.csproj", "{FBD071A0-CBD0-4A54-862B-3947DA338714}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Feedback", "Feedback\Feedback.csproj", "{6AFBF83D-E0B2-4B89-B138-4F24453936FC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -62,6 +64,10 @@ Global
 		{FBD071A0-CBD0-4A54-862B-3947DA338714}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FBD071A0-CBD0-4A54-862B-3947DA338714}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FBD071A0-CBD0-4A54-862B-3947DA338714}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6AFBF83D-E0B2-4B89-B138-4F24453936FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6AFBF83D-E0B2-4B89-B138-4F24453936FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6AFBF83D-E0B2-4B89-B138-4F24453936FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6AFBF83D-E0B2-4B89-B138-4F24453936FC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
