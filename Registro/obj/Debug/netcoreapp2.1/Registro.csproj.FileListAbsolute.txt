@@ -1,0 +1,13 @@
+C:\Users\Mauricio\Documents\GitHub\PruebasAppiumFinal\Registro\bin\Debug\netcoreapp2.1\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\Users\Mauricio\Documents\GitHub\PruebasAppiumFinal\Registro\bin\Debug\netcoreapp2.1\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\Users\Mauricio\Documents\GitHub\PruebasAppiumFinal\Registro\bin\Debug\netcoreapp2.1\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\Users\Mauricio\Documents\GitHub\PruebasAppiumFinal\Registro\bin\Debug\netcoreapp2.1\Registro.deps.json
+C:\Users\Mauricio\Documents\GitHub\PruebasAppiumFinal\Registro\bin\Debug\netcoreapp2.1\Registro.runtimeconfig.json
+C:\Users\Mauricio\Documents\GitHub\PruebasAppiumFinal\Registro\bin\Debug\netcoreapp2.1\Registro.runtimeconfig.dev.json
+C:\Users\Mauricio\Documents\GitHub\PruebasAppiumFinal\Registro\bin\Debug\netcoreapp2.1\Registro.dll
+C:\Users\Mauricio\Documents\GitHub\PruebasAppiumFinal\Registro\bin\Debug\netcoreapp2.1\Registro.pdb
+C:\Users\Mauricio\Documents\GitHub\PruebasAppiumFinal\Registro\obj\Debug\netcoreapp2.1\Registro.csproj.CoreCompileInputs.cache
+C:\Users\Mauricio\Documents\GitHub\PruebasAppiumFinal\Registro\obj\Debug\netcoreapp2.1\Registro.AssemblyInfoInputs.cache
+C:\Users\Mauricio\Documents\GitHub\PruebasAppiumFinal\Registro\obj\Debug\netcoreapp2.1\Registro.AssemblyInfo.cs
+C:\Users\Mauricio\Documents\GitHub\PruebasAppiumFinal\Registro\obj\Debug\netcoreapp2.1\Registro.dll
+C:\Users\Mauricio\Documents\GitHub\PruebasAppiumFinal\Registro\obj\Debug\netcoreapp2.1\Registro.pdb
