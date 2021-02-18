@@ -8,7 +8,6 @@ C:\Users\Mauricio\Documents\GitHub\PruebasAppiumFinal\Feedback\bin\Debug\netcore
 C:\Users\Mauricio\Documents\GitHub\PruebasAppiumFinal\Feedback\bin\Debug\netcoreapp2.1\Feedback.runtimeconfig.dev.json
 C:\Users\Mauricio\Documents\GitHub\PruebasAppiumFinal\Feedback\bin\Debug\netcoreapp2.1\Feedback.dll
 C:\Users\Mauricio\Documents\GitHub\PruebasAppiumFinal\Feedback\bin\Debug\netcoreapp2.1\Feedback.pdb
-C:\Users\Mauricio\Documents\GitHub\PruebasAppiumFinal\Feedback\obj\Debug\netcoreapp2.1\Feedback.csprojAssemblyReference.cache
 C:\Users\Mauricio\Documents\GitHub\PruebasAppiumFinal\Feedback\obj\Debug\netcoreapp2.1\Feedback.csproj.CoreCompileInputs.cache
 C:\Users\Mauricio\Documents\GitHub\PruebasAppiumFinal\Feedback\obj\Debug\netcoreapp2.1\Feedback.AssemblyInfoInputs.cache
 C:\Users\Mauricio\Documents\GitHub\PruebasAppiumFinal\Feedback\obj\Debug\netcoreapp2.1\Feedback.AssemblyInfo.cs
