@@ -11,3 +11,4 @@ C:\Users\Mauricio\Documents\GitHub\PruebasAppiumFinal\DatosFiscales\obj\Debug\ne
 C:\Users\Mauricio\Documents\GitHub\PruebasAppiumFinal\DatosFiscales\obj\Debug\netcoreapp2.1\DatosFiscales.AssemblyInfo.cs
 C:\Users\Mauricio\Documents\GitHub\PruebasAppiumFinal\DatosFiscales\obj\Debug\netcoreapp2.1\DatosFiscales.dll
 C:\Users\Mauricio\Documents\GitHub\PruebasAppiumFinal\DatosFiscales\obj\Debug\netcoreapp2.1\DatosFiscales.pdb
+C:\Users\Mauricio\Documents\GitHub\PruebasAppiumFinal\DatosFiscales\obj\Debug\netcoreapp2.1\DatosFiscales.csprojAssemblyReference.cache

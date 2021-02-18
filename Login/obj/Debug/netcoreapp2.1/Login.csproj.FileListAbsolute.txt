@@ -11,3 +11,4 @@ C:\Users\Mauricio\Documents\GitHub\PruebasAppiumFinal\Login\obj\Debug\netcoreapp
 C:\Users\Mauricio\Documents\GitHub\PruebasAppiumFinal\Login\obj\Debug\netcoreapp2.1\Login.AssemblyInfo.cs
 C:\Users\Mauricio\Documents\GitHub\PruebasAppiumFinal\Login\obj\Debug\netcoreapp2.1\Login.dll
 C:\Users\Mauricio\Documents\GitHub\PruebasAppiumFinal\Login\obj\Debug\netcoreapp2.1\Login.pdb
+C:\Users\Mauricio\Documents\GitHub\PruebasAppiumFinal\Login\obj\Debug\netcoreapp2.1\Login.csprojAssemblyReference.cache

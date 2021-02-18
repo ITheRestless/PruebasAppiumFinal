@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.30907.101
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1231
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mis Direcciones", "Mis Direcciones\Mis Direcciones.csproj", "{55F353C1-DF63-4534-84E4-09A747CE53D4}"
 EndProject
@@ -26,9 +26,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SuperEnCasa", "SuperEnCasa\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Feedback", "Feedback\Feedback.csproj", "{6AFBF83D-E0B2-4B89-B138-4F24453936FC}"
 EndProject
+<<<<<<< Updated upstream
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Banners", "Banners\Banners.csproj", "{5362E600-98E9-482A-B88C-9AE9E081BB61}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ayuda", "Ayuda\Ayuda.csproj", "{F5E21FA2-8BC9-473C-B94B-D381B5436721}"
+=======
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Carrito", "Carrito\Carrito.csproj", "{273B4BDB-670C-443A-A01A-5CD3FE398E5E}"
+>>>>>>> Stashed changes
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -72,6 +76,7 @@ Global
 		{6AFBF83D-E0B2-4B89-B138-4F24453936FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6AFBF83D-E0B2-4B89-B138-4F24453936FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6AFBF83D-E0B2-4B89-B138-4F24453936FC}.Release|Any CPU.Build.0 = Release|Any CPU
+<<<<<<< Updated upstream
 		{5362E600-98E9-482A-B88C-9AE9E081BB61}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{5362E600-98E9-482A-B88C-9AE9E081BB61}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5362E600-98E9-482A-B88C-9AE9E081BB61}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -80,6 +85,12 @@ Global
 		{F5E21FA2-8BC9-473C-B94B-D381B5436721}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F5E21FA2-8BC9-473C-B94B-D381B5436721}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F5E21FA2-8BC9-473C-B94B-D381B5436721}.Release|Any CPU.Build.0 = Release|Any CPU
+=======
+		{273B4BDB-670C-443A-A01A-5CD3FE398E5E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{273B4BDB-670C-443A-A01A-5CD3FE398E5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{273B4BDB-670C-443A-A01A-5CD3FE398E5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{273B4BDB-670C-443A-A01A-5CD3FE398E5E}.Release|Any CPU.Build.0 = Release|Any CPU
+>>>>>>> Stashed changes
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
