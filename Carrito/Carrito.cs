@@ -23,7 +23,7 @@ namespace Carrito
         {
             string fecha = DateTime.Now.Day.ToString() + "/" + DateTime.Now.Month.ToString() + "/" + DateTime.Now.Year.ToString();
             caps = new AppiumOptions();
-            caps.AddAdditionalCapability("newCommandTimeout", 5);
+            caps.AddAdditionalCapability("newCommandTimeout", 10);
             caps.AddAdditionalCapability("browserstack.user", "mauricioemmanuel1");
             caps.AddAdditionalCapability("browserstack.key", "XZYh6tFKBx8KBDyBzbAy");
             caps.AddAdditionalCapability("autoAcceptAlerts", true);
@@ -145,6 +145,17 @@ namespace Carrito
             }
         }
 
+        public string GetElemenText(string id, AndroidDriver<AndroidElement> driver)
+        {
+            AndroidElement searchElement = (AndroidElement)new WebDriverWait(
+                driver, TimeSpan.FromSeconds(10)).Until(
+                SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(
+                    MobileBy.Id(id))
+            );
+
+            return searchElement.GetAttribute("text");
+        }
+
         public bool CheckElementText(string id, string text, AndroidDriver<AndroidElement> driver)
         {
             AndroidElement searchElement = (AndroidElement)new WebDriverWait(
@@ -211,7 +222,8 @@ namespace Carrito
             ClickButton("com.soriana.appsoriana:id/nuevoInicioFragment", driver);
 
 
-            if(!CheckElementText("com.soriana.appsoriana:id/txtItems", "2", driver)) {
+            if (!CheckElementText("com.soriana.appsoriana:id/txtItems", "2", driver))
+            {
                 setState("failed", "Cantidad de productos no concuerda o no se agregaron todos los productos", driver);
                 driver.Quit();
             }
@@ -221,9 +233,112 @@ namespace Carrito
             setState("failed", "PAPAS SABRITAS no agregado o encontrado", driver);
             CheckText("PAPAS SABRITAS", driver);
 
-            setState("failed", "AGUA MINERAL CIEL no agregado o encontrado", driver);
-            CheckText("AGUA MINERAL CIEL", driver);
+            setState("failed", "AGUA NATURAL CIEL no agregado o encontrado", driver);
+            CheckText("AGUA NATURAL CIEL", driver);
 
+            setState("failed", "Error al eliminar o presionar el boton de eliminar", driver);
+            ClickButton("com.soriana.appsoriana:id/action_delete", driver);
+            ClickButton("android:id/button1", driver);
+            setState("passed", "Productos agregados y verificados con exito", driver);
+
+            driver.Quit();
+        }
+
+        [TestMethod]
+        public void VerificarPrecios()
+        {
+            CapsInit();
+            caps.AddAdditionalCapability("name", "Carrito - Verificar precios");
+
+            AndroidDriver<AndroidElement> driver = new AndroidDriver<AndroidElement>(
+                    new Uri("http://hub-cloud.browserstack.com/wd/hub"), caps);
+
+            LogIn(driver);
+
+            setState("failed", "Error al añadir lista a carrito", driver);
+
+            ClickButton("com.soriana.appsoriana:id/misListasFragment", driver);
+            ClickText("Mis Favoritos", driver);
+            ClickButton("com.soriana.appsoriana:id/select_all", driver);
+            ClickButton("com.soriana.appsoriana:id/btnAddCart", driver);
+            ClickButton("android:id/button1", driver);
+            ClickButton("com.soriana.appsoriana:id/activity_main_content_button_back", driver);
+            ClickButton("com.soriana.appsoriana:id/nuevoInicioFragment", driver);
+
+            setState("failed", "Error al verificar articulos", driver);
+            ClickButton("com.soriana.appsoriana:id/imageCart", driver);
+
+            setState("failed", "PAPAS SABRITAS no agregado o encontrado", driver);
+            ClickText("PAPAS SABRITAS", driver);
+
+            double precioSabritas = double.Parse(GetElemenText("com.soriana.appsoriana:id/artPrecio", driver).Remove(0, 1));
+            ClickClass("android.widget.ImageButton", driver);
+
+            setState("failed", "AGUA NATURAL CIEL no agregado o encontrado", driver);
+            ClickText("AGUA NATURAL CIEL", driver);
+
+            double precioCiel = double.Parse(GetElemenText("com.soriana.appsoriana:id/artPrecio", driver).Remove(0, 1));
+            ClickClass("android.widget.ImageButton", driver);
+            
+            ScrollDown(driver);
+            ScrollDown(driver);
+
+            if (double.Parse(GetElemenText("com.soriana.appsoriana:id/puntosCompra", driver)) + double.Parse(GetElemenText("com.soriana.appsoriana:id/puntosAdicionales", driver)) != double.Parse(GetElemenText("com.soriana.appsoriana:id/puntosTotales", driver)))
+            {
+                setState("failed", "Las cantidades en la seccion --Puntos-- no concuerdan", driver);
+                driver.Quit();
+            }
+
+            ScrollDown(driver);
+            ScrollDown(driver);
+
+            if (double.Parse(GetElemenText("com.soriana.appsoriana:id/subtotal", driver).Remove(0, 1)) + double.Parse(GetElemenText("com.soriana.appsoriana:id/envio", driver).Remove(0, 1)) - double.Parse(GetElemenText("com.soriana.appsoriana:id/descuento", driver).Remove(0, 1)) != double.Parse(GetElemenText("com.soriana.appsoriana:id/totalAPagar", driver).Remove(0, 1)))
+            {
+                setState("failed", "Las cantidades en --Total a pagar-- no concuerdan", driver);
+            }
+
+            setState("failed", "Error al eliminar o presionar el boton de eliminar", driver);
+            ClickButton("com.soriana.appsoriana:id/action_delete", driver);
+            ClickButton("android:id/button1", driver);
+            setState("passed", "Productos agregados y verificados con exito", driver);
+
+            driver.Quit();
+        }
+
+        [TestMethod]
+        public void ModificarCantidad()
+        {
+            CapsInit();
+            caps.AddAdditionalCapability("name", "Carrito - Modificar cantidad");
+
+            AndroidDriver<AndroidElement> driver = new AndroidDriver<AndroidElement>(
+                    new Uri("http://hub-cloud.browserstack.com/wd/hub"), caps);
+
+            LogIn(driver);
+
+            ClickButton("com.soriana.appsoriana:id/misListasFragment", driver);
+            ClickText("Mis Favoritos", driver);
+            ClickButton("com.soriana.appsoriana:id/select_all", driver);
+            ClickButton("com.soriana.appsoriana:id/btnAddCart", driver);
+            ClickButton("android:id/button1", driver);
+            ClickButton("com.soriana.appsoriana:id/activity_main_content_button_back", driver);
+            ClickButton("com.soriana.appsoriana:id/nuevoInicioFragment", driver);
+
+            ClickButton("com.soriana.appsoriana:id/imageCart", driver);
+
+            setState("failed", "PAPAS SABRITAS no agregado o encontrado", driver);
+            ClickText("PAPAS SABRITAS", driver);
+            ClickButton("com.soriana.appsoriana:id/btnMas", driver);
+            ClickButton("com.soriana.appsoriana:id/txtButtonAddCarrito", driver);
+
+            ClickButton("com.soriana.appsoriana:id/txtDomicilio", driver);
+            InputText("com.soriana.appsoriana:id/etCodigoPostal", "27268", driver);
+            ClickButton("com.soriana.appsoriana:id/btnSeleccionar", driver);
+
+            ClickClass("android.widget.ImageButton", driver);
+
+            ScrollDown(driver);
+            
             setState("failed", "Error al eliminar o presionar el boton de eliminar", driver);
             ClickButton("com.soriana.appsoriana:id/action_delete", driver);
             ClickButton("android:id/button1", driver);

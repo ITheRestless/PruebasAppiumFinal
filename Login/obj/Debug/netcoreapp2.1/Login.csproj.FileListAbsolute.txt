@@ -6,6 +6,7 @@ C:\Users\Mauricio\Documents\GitHub\PruebasAppiumFinal\Login\bin\Debug\netcoreapp
 C:\Users\Mauricio\Documents\GitHub\PruebasAppiumFinal\Login\bin\Debug\netcoreapp2.1\Login.runtimeconfig.dev.json
 C:\Users\Mauricio\Documents\GitHub\PruebasAppiumFinal\Login\bin\Debug\netcoreapp2.1\Login.dll
 C:\Users\Mauricio\Documents\GitHub\PruebasAppiumFinal\Login\bin\Debug\netcoreapp2.1\Login.pdb
+C:\Users\Mauricio\Documents\GitHub\PruebasAppiumFinal\Login\obj\Debug\netcoreapp2.1\Login.csprojAssemblyReference.cache
 C:\Users\Mauricio\Documents\GitHub\PruebasAppiumFinal\Login\obj\Debug\netcoreapp2.1\Login.csproj.CoreCompileInputs.cache
 C:\Users\Mauricio\Documents\GitHub\PruebasAppiumFinal\Login\obj\Debug\netcoreapp2.1\Login.AssemblyInfoInputs.cache
 C:\Users\Mauricio\Documents\GitHub\PruebasAppiumFinal\Login\obj\Debug\netcoreapp2.1\Login.AssemblyInfo.cs
