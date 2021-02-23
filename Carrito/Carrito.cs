@@ -346,5 +346,48 @@ namespace Carrito
 
             driver.Quit();
         }
+
+        [TestMethod]
+        public void AñadirALista()
+        {
+            CapsInit();
+            caps.AddAdditionalCapability("name", "Carrito - Añadir a lista");
+
+            AndroidDriver<AndroidElement> driver = new AndroidDriver<AndroidElement>(
+                    new Uri("http://hub-cloud.browserstack.com/wd/hub"), caps);
+
+            LogIn(driver);
+
+            setState("failed", "Error al agregar lista", driver);
+            ClickButton("com.soriana.appsoriana:id/misListasFragment", driver);
+            ClickButton("com.soriana.appsoriana:id/action_agregar_lista", driver);
+            InputText("com.soriana.appsoriana:id/editNombre", "ListaCarrito", driver);
+            ClickButton("com.soriana.appsoriana:id/btnGuardar", driver);
+            setState("failed", "Lista no agregada", driver);
+            CheckText("ListaCarrito", driver);
+
+            setState("failed", "Error al añadir lista a carrito", driver);
+            ClickText("Mis Favoritos", driver);
+            ClickButton("com.soriana.appsoriana:id/select_all", driver);
+            ClickButton("com.soriana.appsoriana:id/btnAddCart", driver);
+            ClickButton("android:id/button1", driver);
+            ClickButton("com.soriana.appsoriana:id/activity_main_content_button_back", driver);
+            ClickButton("com.soriana.appsoriana:id/nuevoInicioFragment", driver);
+            ClickButton("com.soriana.appsoriana:id/txtItems", driver);
+
+            setState("failed", "Error al verificar articulos", driver);
+            ClickButton("com.soriana.appsoriana:id/imgOptions", driver);
+            ClickButton("com.soriana.appsoriana:id/btnAddList", driver);
+            ClickText("ListaCarrito", driver);
+            ClickClass("android.widget.ImageButton", driver);
+            ClickButton("com.soriana.appsoriana:id/misListasFragment", driver);
+            ClickText("ListaCarrito", driver);
+            ClickButton("com.soriana.appsoriana:id/action_delete", driver);
+            ClickButton("android:id/button1", driver);
+
+            setState("passed", "Añadido y eliminado con exito", driver);
+
+            driver.Quit();
+        }
     }
 }

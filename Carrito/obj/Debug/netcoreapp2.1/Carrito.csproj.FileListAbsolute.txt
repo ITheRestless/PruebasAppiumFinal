@@ -11,3 +11,4 @@ C:\Users\Mauricio\Documents\GitHub\PruebasAppiumFinal\Carrito\obj\Debug\netcorea
 C:\Users\Mauricio\Documents\GitHub\PruebasAppiumFinal\Carrito\obj\Debug\netcoreapp2.1\Carrito.AssemblyInfo.cs
 C:\Users\Mauricio\Documents\GitHub\PruebasAppiumFinal\Carrito\obj\Debug\netcoreapp2.1\Carrito.dll
 C:\Users\Mauricio\Documents\GitHub\PruebasAppiumFinal\Carrito\obj\Debug\netcoreapp2.1\Carrito.pdb
+C:\Users\Mauricio\Documents\GitHub\PruebasAppiumFinal\Carrito\obj\Debug\netcoreapp2.1\Carrito.csprojAssemblyReference.cache
