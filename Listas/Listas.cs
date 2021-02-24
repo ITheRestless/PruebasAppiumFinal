@@ -29,7 +29,7 @@ namespace Listas
             caps.AddAdditionalCapability("browserstack.key", "XZYh6tFKBx8KBDyBzbAy");
             caps.AddAdditionalCapability("autoAcceptAlerts", true);
             caps.AddAdditionalCapability("autoGrantPermissions", true);
-            caps.AddAdditionalCapability("app", "bs://c23a88d88edd54c9d25811a2eed508f30f9ae1e7");
+            caps.AddAdditionalCapability("app", "bs://62e46a9f2171f17a2869efe8964bddda54644423");
             caps.AddAdditionalCapability("device", "Google Pixel 3");
             caps.AddAdditionalCapability("os_version", "9.0");
             caps.PlatformName = "Android";
