@@ -389,5 +389,123 @@ namespace Carrito
 
             driver.Quit();
         }
+
+        [TestMethod]
+        public void ComentarArticulo()
+        {
+            CapsInit();
+            caps.AddAdditionalCapability("name", "Carrito - Comentar Articulo");
+
+            AndroidDriver<AndroidElement> driver = new AndroidDriver<AndroidElement>(
+                    new Uri("http://hub-cloud.browserstack.com/wd/hub"), caps);
+
+            LogIn(driver);
+
+            setState("failed", "Error al añadir lista a carrito", driver);
+
+            ClickButton("com.soriana.appsoriana:id/misListasFragment", driver);
+            ClickText("Mis Favoritos", driver);
+            ClickButton("com.soriana.appsoriana:id/select_all", driver);
+            ClickButton("com.soriana.appsoriana:id/btnAddCart", driver);
+            ClickButton("android:id/button1", driver);
+            ClickButton("com.soriana.appsoriana:id/activity_main_content_button_back", driver);
+            ClickButton("com.soriana.appsoriana:id/nuevoInicioFragment", driver);
+
+            setState("failed", "Error al verificar articulos", driver);
+            ClickButton("com.soriana.appsoriana:id/imageCart", driver);
+
+            setState("failed", "Error al comentar articulo", driver);
+            ClickButton("com.soriana.appsoriana:id/imgComment", driver);
+            InputText("com.soriana.appsoriana:id/editMensaje", "Esto es un comentario de prueba", driver);
+            ClickButton("com.soriana.appsoriana:id/btnGuardarComentario", driver);
+
+            ClickButton("com.soriana.appsoriana:id/imgComment", driver);
+
+            setState("failed", "No se guardo el comentario", driver);
+            CheckText("Esto es un comentario de prueba", driver);
+
+            ClickButton("com.soriana.appsoriana:id/deleteComment", driver);
+
+            setState("failed", "Error al eliminar o presionar el boton de eliminar", driver);
+            ClickButton("com.soriana.appsoriana:id/action_delete", driver);
+            ClickButton("android:id/button1", driver);
+            setState("passed", "Productos agregados y verificados con exito", driver);
+
+            driver.Quit();
+        }
+
+        [TestMethod]
+        public void ModificarComentario()
+        {
+            CapsInit();
+            caps.AddAdditionalCapability("name", "Carrito - Modificar Comentario");
+
+            AndroidDriver<AndroidElement> driver = new AndroidDriver<AndroidElement>(
+                    new Uri("http://hub-cloud.browserstack.com/wd/hub"), caps);
+
+            LogIn(driver);
+
+            setState("failed", "Error al añadir lista a carrito", driver);
+
+            ClickButton("com.soriana.appsoriana:id/misListasFragment", driver);
+            ClickText("Mis Favoritos", driver);
+            ClickButton("com.soriana.appsoriana:id/select_all", driver);
+            ClickButton("com.soriana.appsoriana:id/btnAddCart", driver);
+            ClickButton("android:id/button1", driver);
+            ClickButton("com.soriana.appsoriana:id/activity_main_content_button_back", driver);
+            ClickButton("com.soriana.appsoriana:id/nuevoInicioFragment", driver);
+
+            setState("failed", "Error al verificar articulos", driver);
+            ClickButton("com.soriana.appsoriana:id/imageCart", driver);
+
+            setState("failed", "Error al comentar articulo", driver);
+            ClickButton("com.soriana.appsoriana:id/imgComment", driver);
+            InputText("com.soriana.appsoriana:id/editMensaje", "Esto es un comentario de prueba", driver);
+            ClickButton("com.soriana.appsoriana:id/btnGuardarComentario", driver);
+
+            ClickButton("com.soriana.appsoriana:id/imgComment", driver);
+
+            setState("failed", "No se guardo el comentario", driver);
+            CheckText("Esto es un comentario de prueba", driver);
+
+            InputText("com.soriana.appsoriana:id/editMensaje", "Esto es un segundo comentario de prueba", driver);
+            ClickButton("com.soriana.appsoriana:id/btnGuardarComentario", driver);
+
+            ClickButton("com.soriana.appsoriana:id/imgComment", driver);
+
+            setState("failed", "No se modifico el comentario", driver);
+            CheckText("Esto es un segundo comentario de prueba", driver);
+
+            ClickButton("com.soriana.appsoriana:id/deleteComment", driver);
+
+            setState("failed", "Error al eliminar o presionar el boton de eliminar", driver);
+            ClickButton("com.soriana.appsoriana:id/action_delete", driver);
+            ClickButton("android:id/button1", driver);
+            setState("passed", "Productos agregados y verificados con exito", driver);
+
+            driver.Quit();
+        }
+
+        [TestMethod]
+        public void VerificarPromociones()
+        {
+            CapsInit();
+            caps.AddAdditionalCapability("name", "Carrito - Comentar Articulo");
+
+            AndroidDriver<AndroidElement> driver = new AndroidDriver<AndroidElement>(
+                    new Uri("http://hub-cloud.browserstack.com/wd/hub"), caps);
+
+            LogIn(driver);
+
+            ScrollDown(driver);
+
+
+            setState("failed", "Error al eliminar o presionar el boton de eliminar", driver);
+            ClickButton("com.soriana.appsoriana:id/action_delete", driver);
+            ClickButton("android:id/button1", driver);
+            setState("passed", "Productos agregados y verificados con exito", driver);
+
+            driver.Quit();
+        }
     }
 }
