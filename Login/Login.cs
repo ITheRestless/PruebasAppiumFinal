@@ -105,9 +105,6 @@ namespace Login
             ClickButton("com.soriana.appsoriana:id/menuPerfilFragment", driver);
             ((IJavaScriptExecutor)driver).ExecuteScript("browserstack_executor: {\"action\": \"setSessionStatus\", \"arguments\": {\"status\":\"failed\", \"reason\": \" No se mostró o no se pudó presionar el boton de inicio \"}}");
             ClickButton("com.soriana.appsoriana:id/btnIniciarSesion", driver);
-            ClickButton("com.soriana.appsoriana:id/btnIniciaSesion", driver);
-            ((IJavaScriptExecutor)driver).ExecuteScript("browserstack_executor: {\"action\": \"setSessionStatus\", \"arguments\": {\"status\":\"failed\", \"reason\": \" No se mostró o no se pudó presionar el boton de inicio \"}}");
-            ClickButton("com.soriana.appsoriana:id/btnIniciaSesion", driver);
             ((IJavaScriptExecutor)driver).ExecuteScript("browserstack_executor: {\"action\": \"setSessionStatus\", \"arguments\": {\"status\":\"failed\", \"reason\": \" No se mostró o no se pudó llenar el campo de email \"}}");
             InputText("com.soriana.appsoriana:id/editEmail", "autodevelopmx@gmail.com", driver);
             ((IJavaScriptExecutor)driver).ExecuteScript("browserstack_executor: {\"action\": \"setSessionStatus\", \"arguments\": {\"status\":\"failed\", \"reason\": \" No se mostró o no se pudó llenar el campo de contraseña \"}}");

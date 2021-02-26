@@ -192,10 +192,6 @@ namespace Registro
             setState("failed", "Boton --Inicio-- no encontrado", driver);
             ClickButton("com.soriana.appsoriana:id/menuPerfilFragment", driver);
 
-            setState("failed", "Boton --Iniciar sesion-- no encontrado", driver);
-            ClickButton("com.soriana.appsoriana:id/btnIniciarSesion", driver);
-            ClickButton("com.soriana.appsoriana:id/btnIniciaSesion", driver);
-
             setState("failed", "Boton --Registrate-- no encontrado", driver);
             ClickButton("com.soriana.appsoriana:id/btnRegistrate", driver);
 
@@ -219,6 +215,8 @@ namespace Registro
             InputText("com.soriana.appsoriana:id/editPass", "Contramamona12.", driver);
             InputText("com.soriana.appsoriana:id/editConfirm", "Contramamona12.", driver);
 
+            ClickButton("com.soriana.appsoriana:id/checkBoxTerminos", driver);
+
             setState("failed", "Boton --Registrar-- no encontrado", driver);
             ClickClass("android.widget.Button", driver);
 
@@ -233,10 +231,7 @@ namespace Registro
 
             setState("failed", "Error al presionar el boton --Comenzar-- en la pantalla de cuenta creada", driver);
             ClickButton("com.soriana.appsoriana:id/btnComenzar", driver);
-
-            setState("failed", "Error al aceptar los terminos y condiciones", driver);
-            ClickButton("com.soriana.appsoriana:id/btnAceptar", driver);
-
+            
             ClickText("PruebaAuto", driver);
             setState("passed", "Registrado con exito faltando confirmacion de email", driver);
 
@@ -260,10 +255,6 @@ namespace Registro
             setState("failed", "Boton --Inicio-- no encontrado", driver);
             ClickButton("com.soriana.appsoriana:id/menuPerfilFragment", driver);
 
-            setState("failed", "Boton --Iniciar sesion-- no encontrado", driver);
-            ClickButton("com.soriana.appsoriana:id/btnIniciarSesion", driver);
-            ClickButton("com.soriana.appsoriana:id/btnIniciaSesion", driver);
-
             setState("failed", "Boton --Registrate-- no encontrado", driver);
             ClickButton("com.soriana.appsoriana:id/btnRegistrate", driver);
 
@@ -289,24 +280,6 @@ namespace Registro
 
             setState("failed", "Boton --Registrar-- no encontrado", driver);
             ClickClass("android.widget.Button", driver);
-
-            setState("failed", "Error al introducir el codigo de confirmacion", driver);
-            InputText("com.soriana.appsoriana:id/editCodigoConfirmacion", ObtenerCodigoRegistro("PruebaAuto" + date + "@yopmail.net"), driver);
-
-            setState("failed", "Error al presionar el boton --Continuar--", driver);
-            ClickButton("com.soriana.appsoriana:id/btnConfirmar", driver);
-
-            setState("failed", "Error al presionar el boton --Finalizar Registro--", driver);
-            ClickText("Finalizar registro", driver);
-
-            setState("failed", "Error al presionar el boton --Comenzar-- en la pantalla de cuenta creada", driver);
-            ClickButton("com.soriana.appsoriana:id/btnComenzar", driver);
-
-            setState("failed", "Error al aceptar los terminos y condiciones", driver);
-            ClickButton("com.soriana.appsoriana:id/btnNoAceptar", driver);
-
-            setState("failed", "No regreso a la pantalla de inicio de sesion", driver);
-            ClickButton("com.soriana.appsoriana:id/btnRegistrate", driver);
 
             setState("passed", "No registrado con exito", driver);
 

@@ -186,7 +186,8 @@ namespace Listas
             StartTimer();
 
             LogIn(driver);
-            
+
+            setState("failed", "Error al agregar lista", driver);
             ClickButton("com.soriana.appsoriana:id/misListasFragment", driver);
             ClickButton("com.soriana.appsoriana:id/action_agregar_lista", driver);
             InputText("com.soriana.appsoriana:id/editNombre", "ListaPrueba", driver);
@@ -221,59 +222,9 @@ namespace Listas
 
             ClickButton("com.soriana.appsoriana:id/action_delete", driver);
             ClickButton("android:id/button1", driver);
-
-            if (CheckText("ListaPrueba", driver))
-            {
-                logs.Add("No se eliminó correctamente la lista");
-            } else
-            {
-                logs.Add("Se eliminó correctamente la lista");
-            }
-
-            setState("pass", "Lista registrada con exito", driver);
-
-            driver.Quit();
-        }
-
-        [TestMethod]
-        public void CarritoBotonGuardarLista()
-        {
-            CapsInit();
-            caps.AddAdditionalCapability("name", "Listas - CarritoBotonGuardar");
-
-            AndroidDriver<AndroidElement> driver = new AndroidDriver<AndroidElement>(
-                    new Uri("http://hub-cloud.browserstack.com/wd/hub"), caps);
             
-            //--------------------------Secuencia----------------------------------
-            StartTimer();
+            setState("passed", "Lista registrada y eliminada con exito", driver);
 
-            LogIn(driver);
-
-            setState("failed", "Pestaña --Departamentos-- no encontrada", driver);
-            ClickButton("com.soriana.appsoriana:id/productosFragment", driver);
-            
-            ClickText("DESPENSA", driver);
-            InputText("android:id/search_src_text", "atun", driver);
-            ClickText("LOMO DE ATÚN HERDEZ EN AGUA 130 GR", driver);
-            ScrollDown(driver);
-            ClickButton("com.soriana.appsoriana:id/bntAgregarACarrito", driver);
-            ClickButton("com.soriana.appsoriana:id/txtDomicilio", driver);
-            InputText("com.soriana.appsoriana:id/etCodigoPostal", "27268", driver);
-            ClickButton("com.soriana.appsoriana:id/btnSeleccionar", driver);
-            driver.HideKeyboard();
-            ClickButton("com.soriana.appsoriana:id/imageCart", driver);
-            ClickButton("com.soriana.appsoriana:id/action_save", driver);
-            InputText("com.soriana.appsoriana:id/editNombre", "ListaPruebaDesdeCarrito", driver);
-            ClickButton("com.soriana.appsoriana:id/btnGuardar", driver);
-            ClickClass("android.widget.ImageButton", driver);
-            driver.HideKeyboard();
-            driver.HideKeyboard();
-            ClickButton("com.soriana.appsoriana:id/misListasFragment", driver);
-            ClickText("ListaPruebaDesdeCarrito", driver);
-            ClickButton("com.soriana.appsoriana:id/action_delete", driver);
-            ClickButton("android:id/button1", driver);
-
-            setState("pass", "Lista registrada con exito", driver);
             driver.Quit();
         }
     }

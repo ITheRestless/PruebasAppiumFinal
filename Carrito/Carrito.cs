@@ -485,27 +485,5 @@ namespace Carrito
 
             driver.Quit();
         }
-
-        [TestMethod]
-        public void VerificarPromociones()
-        {
-            CapsInit();
-            caps.AddAdditionalCapability("name", "Carrito - Comentar Articulo");
-
-            AndroidDriver<AndroidElement> driver = new AndroidDriver<AndroidElement>(
-                    new Uri("http://hub-cloud.browserstack.com/wd/hub"), caps);
-
-            LogIn(driver);
-
-            ScrollDown(driver);
-
-
-            setState("failed", "Error al eliminar o presionar el boton de eliminar", driver);
-            ClickButton("com.soriana.appsoriana:id/action_delete", driver);
-            ClickButton("android:id/button1", driver);
-            setState("passed", "Productos agregados y verificados con exito", driver);
-
-            driver.Quit();
-        }
     }
 }

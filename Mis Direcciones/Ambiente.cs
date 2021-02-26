@@ -16,7 +16,7 @@ namespace UnitTestProject3
         List<string> DispositivosIOS = new List<string>();
         public string ApkProduccion;
         public string ApkPre;
-        AppiumOptions caps;
+        public AppiumOptions caps;
 
         public Ambiente()
         {
