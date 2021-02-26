@@ -24,7 +24,7 @@ namespace Listas
         {
             string fecha = DateTime.Now.Day.ToString() + "/" + DateTime.Now.Month.ToString() + "/" + DateTime.Now.Year.ToString();
             caps = new AppiumOptions();
-            caps.AddAdditionalCapability("newCommandTimeout", 10);
+            caps.AddAdditionalCapability("newCommandTimeout", 20);
             caps.AddAdditionalCapability("browserstack.user", "mauricioemmanuel1");
             caps.AddAdditionalCapability("browserstack.key", "XZYh6tFKBx8KBDyBzbAy");
             caps.AddAdditionalCapability("autoAcceptAlerts", true);
@@ -160,6 +160,19 @@ namespace Listas
             return timer.Elapsed.Seconds;
         }
 
+        public void LogIn(AndroidDriver<AndroidElement> driver)
+        {
+            ClickButton("com.soriana.appsoriana:id/imgArrow", driver);
+            ((IJavaScriptExecutor)driver).ExecuteScript("browserstack_executor: {\"action\": \"setSessionStatus\", \"arguments\": {\"status\":\"failed\", \"reason\": \" No se mostro o no se pudo presionar el boton de inicio \"}}");
+            ClickButton("com.soriana.appsoriana:id/btnIniciaSesion", driver);
+            ((IJavaScriptExecutor)driver).ExecuteScript("browserstack_executor: {\"action\": \"setSessionStatus\", \"arguments\": {\"status\":\"failed\", \"reason\": \" No se mostro o no se pudo llenar el campo de email \"}}");
+            InputText("com.soriana.appsoriana:id/editEmail", "autodevelopmx@gmail.com", driver);
+            ((IJavaScriptExecutor)driver).ExecuteScript("browserstack_executor: {\"action\": \"setSessionStatus\", \"arguments\": {\"status\":\"failed\", \"reason\": \" No se mostro o no se pudo llenar el campo de contraseña \"}}");
+            InputText("com.soriana.appsoriana:id/editPass", "developmx12", driver);
+            ((IJavaScriptExecutor)driver).ExecuteScript("browserstack_executor: {\"action\": \"setSessionStatus\", \"arguments\": {\"status\":\"failed\", \"reason\": \" No se mostro o no se pudo presionar boton de LogIn \"}}");
+            ClickButton("com.soriana.appsoriana:id/btn_login", driver);
+        }
+
         [TestMethod]
         public void DetalleDeArticulo()
         {
@@ -172,23 +185,7 @@ namespace Listas
             //--------------------------Secuencia----------------------------------
             StartTimer();
 
-            setState("failed", "Boton --Mi Perfil-- no encontrado", driver);
-            ClickButton("com.soriana.appsoriana:id/menuPerfilFragment", driver);
-
-            setState("failed", "Boton --Iniciar session-- no encontrado", driver);
-            ClickButton("com.soriana.appsoriana:id/btnIniciaSesion", driver);
-
-            setState("failed", "Boton --Iniciar session-- no encontrado", driver);
-            ClickButton("com.soriana.appsoriana:id/btnIniciaSesion", driver);
-
-            setState("failed", "campo --Correo Electronico-- no encontrado", driver);
-            InputText("com.soriana.appsoriana:id/editEmail", "autodevelopmx@gmail.com", driver);
-
-            setState("failed", "campo --Contraseña-- no encontrado", driver);
-            InputText("com.soriana.appsoriana:id/editPass", "developmx12", driver);
-
-            setState("failed", "Boton --Iniciar session-- no encontrado", driver);
-            ClickButton("com.soriana.appsoriana:id/btn_login", driver);
+            LogIn(driver);
             
             ClickButton("com.soriana.appsoriana:id/misListasFragment", driver);
             ClickButton("com.soriana.appsoriana:id/action_agregar_lista", driver);
@@ -250,23 +247,7 @@ namespace Listas
             //--------------------------Secuencia----------------------------------
             StartTimer();
 
-            setState("failed", "Boton --Mi Perfil-- no encontrado", driver);
-            ClickButton("com.soriana.appsoriana:id/menuPerfilFragment", driver);
-
-            setState("failed", "Boton --Iniciar session-- no encontrado", driver);
-            ClickButton("com.soriana.appsoriana:id/btnIniciaSesion", driver);
-
-            setState("failed", "Boton --Iniciar session-- no encontrado", driver);
-            ClickButton("com.soriana.appsoriana:id/btnIniciaSesion", driver);
-
-            setState("failed", "campo --Correo Electronico-- no encontrado", driver);
-            InputText("com.soriana.appsoriana:id/editEmail", "autodevelopmx@gmail.com", driver);
-
-            setState("failed", "campo --Contraseña-- no encontrado", driver);
-            InputText("com.soriana.appsoriana:id/editPass", "developmx12", driver);
-
-            setState("failed", "Boton --Iniciar session-- no encontrado", driver);
-            ClickButton("com.soriana.appsoriana:id/btn_login", driver);
+            LogIn(driver);
 
             setState("failed", "Pestaña --Departamentos-- no encontrada", driver);
             ClickButton("com.soriana.appsoriana:id/productosFragment", driver);

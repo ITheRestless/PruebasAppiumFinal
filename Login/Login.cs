@@ -21,7 +21,7 @@ namespace Login
         {
             string fecha = DateTime.Now.Day.ToString() + "/" + DateTime.Now.Month.ToString() + "/" + DateTime.Now.Year.ToString();
             caps = new AppiumOptions();
-            caps.AddAdditionalCapability("newCommandTimeout", 10);
+            caps.AddAdditionalCapability("newCommandTimeout", 20);
             caps.AddAdditionalCapability("browserstack.user", "mauricioemmanuel1");
             caps.AddAdditionalCapability("browserstack.key", "XZYh6tFKBx8KBDyBzbAy");
             caps.AddAdditionalCapability("autoAcceptAlerts", true);
@@ -104,6 +104,7 @@ namespace Login
             ((IJavaScriptExecutor)driver).ExecuteScript("browserstack_executor: {\"action\": \"setSessionStatus\", \"arguments\": {\"status\":\"failed\", \"reason\": \" No se mostró o no se pudó presionar el boton de Perfil \"}}");
             ClickButton("com.soriana.appsoriana:id/menuPerfilFragment", driver);
             ((IJavaScriptExecutor)driver).ExecuteScript("browserstack_executor: {\"action\": \"setSessionStatus\", \"arguments\": {\"status\":\"failed\", \"reason\": \" No se mostró o no se pudó presionar el boton de inicio \"}}");
+            ClickButton("com.soriana.appsoriana:id/btnIniciarSesion", driver);
             ClickButton("com.soriana.appsoriana:id/btnIniciaSesion", driver);
             ((IJavaScriptExecutor)driver).ExecuteScript("browserstack_executor: {\"action\": \"setSessionStatus\", \"arguments\": {\"status\":\"failed\", \"reason\": \" No se mostró o no se pudó presionar el boton de inicio \"}}");
             ClickButton("com.soriana.appsoriana:id/btnIniciaSesion", driver);

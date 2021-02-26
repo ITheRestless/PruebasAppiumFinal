@@ -25,7 +25,7 @@ namespace Registro
         {
             string fecha = DateTime.Now.Day.ToString() + "/" + DateTime.Now.Month.ToString() + "/" + DateTime.Now.Year.ToString();
             caps = new AppiumOptions();
-            caps.AddAdditionalCapability("newCommandTimeout", 10);
+            caps.AddAdditionalCapability("newCommandTimeout", 20);
             caps.AddAdditionalCapability("browserstack.user", "mauricioemmanuel1");
             caps.AddAdditionalCapability("browserstack.key", "XZYh6tFKBx8KBDyBzbAy");
             caps.AddAdditionalCapability("autoAcceptAlerts", true);
@@ -193,6 +193,7 @@ namespace Registro
             ClickButton("com.soriana.appsoriana:id/menuPerfilFragment", driver);
 
             setState("failed", "Boton --Iniciar sesion-- no encontrado", driver);
+            ClickButton("com.soriana.appsoriana:id/btnIniciarSesion", driver);
             ClickButton("com.soriana.appsoriana:id/btnIniciaSesion", driver);
 
             setState("failed", "Boton --Registrate-- no encontrado", driver);
@@ -260,6 +261,7 @@ namespace Registro
             ClickButton("com.soriana.appsoriana:id/menuPerfilFragment", driver);
 
             setState("failed", "Boton --Iniciar sesion-- no encontrado", driver);
+            ClickButton("com.soriana.appsoriana:id/btnIniciarSesion", driver);
             ClickButton("com.soriana.appsoriana:id/btnIniciaSesion", driver);
 
             setState("failed", "Boton --Registrate-- no encontrado", driver);

@@ -23,7 +23,7 @@ namespace Carrito
         {
             string fecha = DateTime.Now.Day.ToString() + "/" + DateTime.Now.Month.ToString() + "/" + DateTime.Now.Year.ToString();
             caps = new AppiumOptions();
-            caps.AddAdditionalCapability("newCommandTimeout", 10);
+            caps.AddAdditionalCapability("newCommandTimeout", 20);
             caps.AddAdditionalCapability("browserstack.user", "mauricioemmanuel1");
             caps.AddAdditionalCapability("browserstack.key", "XZYh6tFKBx8KBDyBzbAy");
             caps.AddAdditionalCapability("autoAcceptAlerts", true);
@@ -373,7 +373,7 @@ namespace Carrito
             ClickButton("android:id/button1", driver);
             ClickButton("com.soriana.appsoriana:id/activity_main_content_button_back", driver);
             ClickButton("com.soriana.appsoriana:id/nuevoInicioFragment", driver);
-            ClickButton("com.soriana.appsoriana:id/txtItems", driver);
+            ClickButton("com.soriana.appsoriana:id/imageCart", driver);
 
             setState("failed", "Error al verificar articulos", driver);
             ClickButton("com.soriana.appsoriana:id/imgOptions", driver);
