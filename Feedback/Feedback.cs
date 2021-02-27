@@ -23,8 +23,8 @@ namespace Feedback
             string fecha = DateTime.Now.Day.ToString() + "/" + DateTime.Now.Month.ToString() + "/" + DateTime.Now.Year.ToString();
             caps = new AppiumOptions();
             caps.AddAdditionalCapability("newCommandTimeout", 20);
-            caps.AddAdditionalCapability("browserstack.user", "mauricioemmanuel1");
-            caps.AddAdditionalCapability("browserstack.key", "XZYh6tFKBx8KBDyBzbAy");
+            caps.AddAdditionalCapability("browserstack.user", "ivnalejandrorodr1");
+            caps.AddAdditionalCapability("browserstack.key", "CxgPJMGN4ip3NSunHFfT");
             caps.AddAdditionalCapability("autoAcceptAlerts", true);
             caps.AddAdditionalCapability("autoGrantPermissions", true);
             caps.AddAdditionalCapability("app", "bs://62e46a9f2171f17a2869efe8964bddda54644423");
