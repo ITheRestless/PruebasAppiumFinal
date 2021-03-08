@@ -12,23 +12,53 @@ namespace UnitTestProject3
     public class Ambiente
     {
 
-        List<string> DispositivosAndroid = new List<string>();
-        List<string> DispositivosIOS = new List<string>();
-        public string ApkProduccion;
+        List<Dispositivo> DispositivosAndroid = new List<Dispositivo>();
         public string ApkPre;
-        AppiumOptions caps;
+        public AppiumOptions caps;
 
+
+        // ------------------------------------------------------------------ Metodos de ambiente ---------------------------------------------------------------------
         public Ambiente()
         {
-            ApkProduccion = "";
             ApkPre = "bs://62e46a9f2171f17a2869efe8964bddda54644423";
 
-            DispositivosAndroid.Add("Samsung Galaxy S20");
-            DispositivosAndroid.Add("Google Pixel 5");
-            DispositivosAndroid.Add("OnePlus 8");
-            DispositivosAndroid.Add("Xiaomi Redmi Note 8");
-            DispositivosAndroid.Add("Motorola Moto G7 Play");
-            DispositivosAndroid.Add("Y50");
+            // Celulares
+            //Android 11
+            DispositivosAndroid.Add(new Dispositivo("Samsung Galaxy S20", "11.0"));
+            DispositivosAndroid.Add(new Dispositivo("Google Pixel 5", "11.0"));
+            DispositivosAndroid.Add(new Dispositivo("Samsung Galaxy S21", "11.0"));
+
+            //Android 10
+            DispositivosAndroid.Add(new Dispositivo("Samsung Galaxy Note 20", "10.0"));
+            DispositivosAndroid.Add(new Dispositivo("Samsung Galaxy Tab S7", "10.0"));
+            DispositivosAndroid.Add(new Dispositivo("OnePlus 8", "10.0"));
+
+            //Android 9
+            DispositivosAndroid.Add(new Dispositivo("Google Pixel 3a XL", "9.0"));
+            DispositivosAndroid.Add(new Dispositivo("Xiaomi Redmi Note 8", "9.0"));
+            DispositivosAndroid.Add(new Dispositivo("Motorola Moto G7 Play", "9.0"));
+
+            //Android 8
+            DispositivosAndroid.Add(new Dispositivo("Samsung Galaxy S9", "8.0"));
+            DispositivosAndroid.Add(new Dispositivo("Samsung Galaxy Tab S4", "8.1"));
+            DispositivosAndroid.Add(new Dispositivo("Google Pixel 2", "8.0"));
+
+            //Android 7
+            DispositivosAndroid.Add(new Dispositivo("Samsung Galaxy S8", "7.0"));
+            DispositivosAndroid.Add(new Dispositivo("Samsung Galaxy Note 8", "7.1"));
+            DispositivosAndroid.Add(new Dispositivo("Samsung Galaxy Tab S3", "7.0"));
+
+            //Android 6
+            DispositivosAndroid.Add(new Dispositivo("Motorola Moto X 2nd Gen", "6.0"));
+            DispositivosAndroid.Add(new Dispositivo("Samsung Galaxy S7", "6.0"));
+            DispositivosAndroid.Add(new Dispositivo("Google Nexus 6", "6.0"));
+
+            //Androids Previos
+            DispositivosAndroid.Add(new Dispositivo("Samsung Galaxy S6", "5.0"));
+            DispositivosAndroid.Add(new Dispositivo("Google Nexus 6", "5.0"));
+            DispositivosAndroid.Add(new Dispositivo("Samsung Galaxy Tab 4", "4.4"));
+            
+
         }
 
         public void CapsInit()
@@ -47,6 +77,111 @@ namespace UnitTestProject3
             caps.AddAdditionalCapability("project", "AppSoriana");
             caps.AddAdditionalCapability("build", "Android " + fecha);
         }
+
+        public Dispositivo getDevice()
+        {
+            DateTime dateValue = DateTime.Now;
+            string dia = dateValue.ToString("dddd");
+            string hora = dateValue.Hour.ToString();
+
+            //Hora + 3
+            switch (dia)
+            {
+                case "Monday":
+                    switch(hora)
+                    {
+                        case "9":
+                            return DispositivosAndroid(0);
+                        case "12":
+                            return DispositivosAndroid(1);
+                        case "15":
+                            return DispositivosAndroid(2);
+                        default:
+                            return new Dispositivo("Google Pixel 3", "9.0");
+                    }
+                    break;
+                case "Tuesday":
+                    switch (hora)
+                    {
+                        case "9":
+                            return DispositivosAndroid(3);
+                        case "12":
+                            return DispositivosAndroid(4);
+                        case "15":
+                            return DispositivosAndroid(5);
+                        default:
+                            return new Dispositivo("Google Pixel 3", "9.0");
+                    }
+                    break;
+                case "Wednesday":
+                    switch (hora)
+                    {
+                        case "9":
+                            return DispositivosAndroid(6);
+                        case "12":
+                            return DispositivosAndroid(7);
+                        case "15":
+                            return DispositivosAndroid(8);
+                        default:
+                            return new Dispositivo("Google Pixel 3", "9.0");
+                    }
+                    break;
+                case "Thursday":
+                    switch (hora)
+                    {
+                        case "9":
+                            return DispositivosAndroid(9);
+                        case "12":
+                            return DispositivosAndroid(10);
+                        case "15":
+                            return DispositivosAndroid(11);
+                        default:
+                            return new Dispositivo("Google Pixel 3", "9.0");
+                    }
+                    break;
+                case "Friday":
+                    switch (hora)
+                    {
+                        case "9":
+                            return DispositivosAndroid(12);
+                        case "12":
+                            return DispositivosAndroid(13);
+                        case "15":
+                            return DispositivosAndroid(14);
+                        default:
+                            return new Dispositivo("Google Pixel 3", "9.0");
+                    }
+                    break;
+                case "Saturday":
+                    switch (hora)
+                    {
+                        case "9":
+                            return DispositivosAndroid(15);
+                        case "12":
+                            return DispositivosAndroid(16);
+                        case "15":
+                            return DispositivosAndroid(17);
+                        default:
+                            return new Dispositivo("Google Pixel 3", "9.0");
+                    }
+                    break;
+                case "Sunday":
+                    switch (hora)
+                    {
+                        case "9":
+                            return DispositivosAndroid(18);
+                        case "12":
+                            return DispositivosAndroid(19);
+                        case "15":
+                            return DispositivosAndroid(20);
+                        default:
+                            return new Dispositivo("Google Pixel 3", "9.0");
+                    }
+                    break;
+            }
+        }
+
+        // ------------------------------------------------------------------ Metodos de Ejecucion ---------------------------------------------------------------------
 
         public void ScrollDown(AndroidDriver<AndroidElement> driver)
         {
