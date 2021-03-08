@@ -78,6 +78,29 @@ namespace Login
             }
         }
 
+        public void setState(string state, string arguments, AndroidDriver<AndroidElement> driver)
+        {
+            ((IJavaScriptExecutor)driver).ExecuteScript("browserstack_executor: {\"action\": \"setSessionStatus\", \"arguments\": {\"status\":\"" + state + "\", \"reason\": \" " + arguments + " \"}}");
+        }
+
+        public bool CheckText(string txt, AndroidDriver<AndroidElement> driver)
+        {
+            AndroidElement searchElement = (AndroidElement)new WebDriverWait(
+                driver, TimeSpan.FromSeconds(10)).Until(
+                SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(
+                    MobileBy.AndroidUIAutomator("new UiSelector().textContains(\"" + txt + "\")"))
+            );
+
+            if (searchElement == null)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
         public void StartTimer()
         {
             timer = Stopwatch.StartNew();
@@ -92,32 +115,33 @@ namespace Login
         public void LogInMenu()
         {
             CapsInit();
-            caps.AddAdditionalCapability("name", "LogIn-Menu");
+            caps.AddAdditionalCapability("name", "LogIn - Menu");
 
             AndroidDriver<AndroidElement> driver = new AndroidDriver<AndroidElement>(
                     new Uri("http://hub-cloud.browserstack.com/wd/hub"), caps);
 
-
-            //--------------------------Secuencia----------------------------------
-            StartTimer();
-
-            ((IJavaScriptExecutor)driver).ExecuteScript("browserstack_executor: {\"action\": \"setSessionStatus\", \"arguments\": {\"status\":\"failed\", \"reason\": \" No se mostró o no se pudó presionar el boton de Perfil \"}}");
+            setState("failed", "Seccion --Mi perfil-- no encontrada", driver);
             ClickButton("com.soriana.appsoriana:id/menuPerfilFragment", driver);
-            ((IJavaScriptExecutor)driver).ExecuteScript("browserstack_executor: {\"action\": \"setSessionStatus\", \"arguments\": {\"status\":\"failed\", \"reason\": \" No se mostró o no se pudó presionar el boton de inicio \"}}");
+
+            setState("failed", "Boton --Inicia sesion-- no encontrado", driver);
             ClickButton("com.soriana.appsoriana:id/btnIniciarSesion", driver);
-            ((IJavaScriptExecutor)driver).ExecuteScript("browserstack_executor: {\"action\": \"setSessionStatus\", \"arguments\": {\"status\":\"failed\", \"reason\": \" No se mostró o no se pudó llenar el campo de email \"}}");
+
+            setState("failed", "Error al ingresar el correo electronico", driver);
             InputText("com.soriana.appsoriana:id/editEmail", "autodevelopmx@gmail.com", driver);
-            ((IJavaScriptExecutor)driver).ExecuteScript("browserstack_executor: {\"action\": \"setSessionStatus\", \"arguments\": {\"status\":\"failed\", \"reason\": \" No se mostró o no se pudó llenar el campo de contraseña \"}}");
+
+            setState("failed", "Error al ingresar la contrasena", driver);
             InputText("com.soriana.appsoriana:id/editPass", "developmx12", driver);
-            ((IJavaScriptExecutor)driver).ExecuteScript("browserstack_executor: {\"action\": \"setSessionStatus\", \"arguments\": {\"status\":\"failed\", \"reason\": \" No se mostró o no se pudó presionar boton de LogIn \"}}");
+
+            setState("failed", "Boton --Iniciar sesion-- no encontrado", driver);
             ClickButton("com.soriana.appsoriana:id/btn_login", driver);
-            ((IJavaScriptExecutor)driver).ExecuteScript("browserstack_executor: {\"action\": \"setSessionStatus\", \"arguments\": {\"status\":\"failed\", \"reason\": \" No se mostró el nombre del usuario en la ventana home \"}}");
+
+            setState("failed", "Seccion --Inicio-- no encontrada", driver);
             ClickButton("com.soriana.appsoriana:id/nuevoInicioFragment", driver);
 
-            if (CheckElement("com.soriana.appsoriana:id/txtNombreUsuario", driver))
-            {
-                ((IJavaScriptExecutor)driver).ExecuteScript("browserstack_executor: {\"action\": \"setSessionStatus\", \"arguments\": {\"status\":\"passed\", \"reason\": \" Iniciado sesion con exito \"}}");
-            }
+            setState("failed", "No fue posible verificar que se haya registrado el usuario correcto", driver);
+            CheckText("Hola Laboratorio", driver);
+
+            setState("passed", "Se inicio sesion de manera exitosa", driver);
 
             driver.Quit();
         }
@@ -126,7 +150,7 @@ namespace Login
         public void LogInHome()
         {
             CapsInit();
-            caps.AddAdditionalCapability("name", "LogIn-Home");
+            caps.AddAdditionalCapability("name", "LogIn - Home");
 
             AndroidDriver<AndroidElement> driver = new AndroidDriver<AndroidElement>(
                     new Uri("http://hub-cloud.browserstack.com/wd/hub"), caps);
@@ -136,20 +160,23 @@ namespace Login
             StartTimer();
 
             ClickButton("com.soriana.appsoriana:id/imgArrow", driver);
-            ((IJavaScriptExecutor)driver).ExecuteScript("browserstack_executor: {\"action\": \"setSessionStatus\", \"arguments\": {\"status\":\"failed\", \"reason\": \" No se mostró o no se pudó presionar el boton de inicio \"}}");
-            ClickButton("com.soriana.appsoriana:id/btnIniciaSesion", driver);
-            ((IJavaScriptExecutor)driver).ExecuteScript("browserstack_executor: {\"action\": \"setSessionStatus\", \"arguments\": {\"status\":\"failed\", \"reason\": \" No se mostró o no se pudó llenar el campo de email \"}}");
-            InputText("com.soriana.appsoriana:id/editEmail", "autodevelopmx@gmail.com", driver);
-            ((IJavaScriptExecutor)driver).ExecuteScript("browserstack_executor: {\"action\": \"setSessionStatus\", \"arguments\": {\"status\":\"failed\", \"reason\": \" No se mostró o no se pudó llenar el campo de contraseña \"}}");
-            InputText("com.soriana.appsoriana:id/editPass", "developmx12", driver);
-            ((IJavaScriptExecutor)driver).ExecuteScript("browserstack_executor: {\"action\": \"setSessionStatus\", \"arguments\": {\"status\":\"failed\", \"reason\": \" No se mostró o no se pudó presionar boton de LogIn \"}}");
-            ClickButton("com.soriana.appsoriana:id/btn_login", driver);
-            ((IJavaScriptExecutor)driver).ExecuteScript("browserstack_executor: {\"action\": \"setSessionStatus\", \"arguments\": {\"status\":\"failed\", \"reason\": \" No se mostró el nombre del usuario en la ventana home \"}}");
 
-            if (CheckElement("com.soriana.appsoriana:id/txtNombreUsuario", driver))
-            {
-                ((IJavaScriptExecutor)driver).ExecuteScript("browserstack_executor: {\"action\": \"setSessionStatus\", \"arguments\": {\"status\":\"passed\", \"reason\": \" Iniciado sesion con exito \"}}");
-            }
+            setState("failed", "No se mostro o no se pudo presionar el boton de inicio", driver);
+            ClickButton("com.soriana.appsoriana:id/btnIniciaSesion", driver);
+
+            setState("failed", "No se mostro o no se pudo llenar el campo de email", driver);
+            InputText("com.soriana.appsoriana:id/editEmail", "autodevelopmx@gmail.com", driver);
+
+            setState("failed", "No se mostro o no se pudo llenar el campo de contraseña", driver);
+            InputText("com.soriana.appsoriana:id/editPass", "developmx12", driver);
+
+            setState("failed", "No se mostro o no se pudo presionar boton de LogIn", driver);
+            ClickButton("com.soriana.appsoriana:id/btn_login", driver);
+
+            setState("failed", "No se mostro el nombre del usuario en la ventana home", driver);
+            CheckText("Hola Laboratorio", driver);
+
+            setState("passed", "Se inicio sesion con exito", driver);
             
             driver.Quit();
         }
@@ -164,24 +191,25 @@ namespace Login
                     new Uri("http://hub-cloud.browserstack.com/wd/hub"), caps);
 
 
-            //--------------------------Secuencia----------------------------------
-            StartTimer();
-            ((IJavaScriptExecutor)driver).ExecuteScript("browserstack_executor: {\"action\": \"setSessionStatus\", \"arguments\": {\"status\":\"failed\", \"reason\": \" No se mostró o no se pudó presionar el icono de carrito \"}}");
+            setState("failed", "No se mostró o no se pudó presionar el icono de carrito", driver);
             ClickButton("com.soriana.appsoriana:id/imageCart", driver);
-            ((IJavaScriptExecutor)driver).ExecuteScript("browserstack_executor: {\"action\": \"setSessionStatus\", \"arguments\": {\"status\":\"failed\", \"reason\": \" No se mostró o no se pudó presionar el boton de inicio \"}}");
-            ClickButton("com.soriana.appsoriana:id/btnIniciaSesion", driver);
-            ((IJavaScriptExecutor)driver).ExecuteScript("browserstack_executor: {\"action\": \"setSessionStatus\", \"arguments\": {\"status\":\"failed\", \"reason\": \" No se mostró o no se pudó llenar el campo de email \"}}");
-            InputText("com.soriana.appsoriana:id/editEmail", "autodevelopmx@gmail.com", driver);
-            ((IJavaScriptExecutor)driver).ExecuteScript("browserstack_executor: {\"action\": \"setSessionStatus\", \"arguments\": {\"status\":\"failed\", \"reason\": \" No se mostró o no se pudó llenar el campo de contraseña \"}}");
-            InputText("com.soriana.appsoriana:id/editPass", "developmx12", driver);
-            ((IJavaScriptExecutor)driver).ExecuteScript("browserstack_executor: {\"action\": \"setSessionStatus\", \"arguments\": {\"status\":\"failed\", \"reason\": \" No se mostró o no se pudó presionar boton de LogIn \"}}");
-            ClickButton("com.soriana.appsoriana:id/btn_login", driver);
-            ((IJavaScriptExecutor)driver).ExecuteScript("browserstack_executor: {\"action\": \"setSessionStatus\", \"arguments\": {\"status\":\"failed\", \"reason\": \" No se mostró el nombre del usuario en la ventana home \"}}");
 
-            if (CheckElement("com.soriana.appsoriana:id/txtNombreUsuario", driver))
-            {
-                ((IJavaScriptExecutor)driver).ExecuteScript("browserstack_executor: {\"action\": \"setSessionStatus\", \"arguments\": {\"status\":\"passed\", \"reason\": \" Iniciado sesion con exito \"}}");
-            }
+            setState("failed", "No se mostró o no se pudó presionar el boton de inicio", driver);
+            ClickButton("com.soriana.appsoriana:id/btnIniciaSesion", driver);
+
+            setState("failed", "No se mostró o no se pudó llenar el campo de email", driver);
+            InputText("com.soriana.appsoriana:id/editEmail", "autodevelopmx@gmail.com", driver);
+
+            setState("failed", "No se mostró o no se pudó llenar el campo de contraseña", driver);
+            InputText("com.soriana.appsoriana:id/editPass", "developmx12", driver);
+
+            setState("failed", "No se mostró o no se pudó presionar boton de LogIn", driver);
+            ClickButton("com.soriana.appsoriana:id/btn_login", driver);
+
+            setState("failed", "No se mostró el nombre del usuario en la ventana home", driver);
+            CheckText("Hola Laboratorio", driver);
+
+            setState("passed", "Iniciado sesion con exito", driver);
             
             driver.Quit();
         }

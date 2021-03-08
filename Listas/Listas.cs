@@ -177,7 +177,7 @@ namespace Listas
         public void DetalleDeArticulo()
         {
             CapsInit();
-            caps.AddAdditionalCapability("name", "Listas - DetalleDeArticulo");
+            caps.AddAdditionalCapability("name", "Listas - Detalle De Articulo");
 
             AndroidDriver<AndroidElement> driver = new AndroidDriver<AndroidElement>(
                     new Uri("http://hub-cloud.browserstack.com/wd/hub"), caps);
@@ -186,8 +186,7 @@ namespace Listas
             StartTimer();
 
             LogIn(driver);
-
-            setState("failed", "Error al agregar lista", driver);
+            
             ClickButton("com.soriana.appsoriana:id/misListasFragment", driver);
             ClickButton("com.soriana.appsoriana:id/action_agregar_lista", driver);
             InputText("com.soriana.appsoriana:id/editNombre", "ListaPrueba", driver);
@@ -222,9 +221,77 @@ namespace Listas
 
             ClickButton("com.soriana.appsoriana:id/action_delete", driver);
             ClickButton("android:id/button1", driver);
-            
-            setState("passed", "Lista registrada y eliminada con exito", driver);
 
+            if (CheckText("ListaPrueba", driver))
+            {
+                logs.Add("No se eliminó correctamente la lista");
+            } else
+            {
+                logs.Add("Se eliminó correctamente la lista");
+            }
+
+            setState("pass", "Lista registrada con exito", driver);
+
+            driver.Quit();
+        }
+
+        [TestMethod]
+        public void CarritoBotonGuardarLista()
+        {
+            CapsInit();
+            caps.AddAdditionalCapability("name", "Listas - Carrito Boton Guardar");
+
+            AndroidDriver<AndroidElement> driver = new AndroidDriver<AndroidElement>(
+                    new Uri("http://hub-cloud.browserstack.com/wd/hub"), caps);
+            
+            //--------------------------Secuencia----------------------------------
+            StartTimer();
+
+            LogIn(driver);
+
+            setState("failed", "Seccion --Departamentos-- no encontrada", driver);
+            ClickButton("com.soriana.appsoriana:id/productosFragment", driver);
+
+            setState("failed", "Seccion --Despensa-- no encontrada", driver);
+            ClickText("DESPENSA", driver);
+
+            setState("failed", "Error al buscar un producto", driver);
+            InputText("android:id/search_src_text", "atun", driver);
+
+            setState("failed", "Producto --LOMO DE ATUN HERDEZ EN AGUA-- no encontrado", driver);
+            ClickText("LOMO DE ATÚN HERDEZ EN AGUA", driver);
+
+            ScrollDown(driver);
+
+            setState("failed", "Boton --Agregar al carrito-- no encontrado", driver);
+            ClickButton("com.soriana.appsoriana:id/bntAgregarACarrito", driver);
+            
+            setState("failed", "Seccion --A domicilio-- no encontrada", driver);
+            ClickButton("com.soriana.appsoriana:id/txtDomicilio", driver);
+
+            setState("failed", "Error al ingresar el codigo postal", driver);
+            InputText("com.soriana.appsoriana:id/etCodigoPostal", "27268", driver);
+
+            setState("failed", "Boton --Seleccionar-- no encontrado", driver);
+            ClickButton("com.soriana.appsoriana:id/btnSeleccionar", driver);
+            driver.HideKeyboard();
+
+            setState("failed", "Boton --Carrito-- no encontrado", driver);
+            ClickButton("com.soriana.appsoriana:id/imageCart", driver);
+
+
+            ClickButton("com.soriana.appsoriana:id/action_save", driver);
+            InputText("com.soriana.appsoriana:id/editNombre", "ListaPruebaDesdeCarrito", driver);
+            ClickButton("com.soriana.appsoriana:id/btnGuardar", driver);
+            ClickClass("android.widget.ImageButton", driver);
+            driver.HideKeyboard();
+            driver.HideKeyboard();
+            ClickButton("com.soriana.appsoriana:id/misListasFragment", driver);
+            ClickText("ListaPruebaDesdeCarrito", driver);
+            ClickButton("com.soriana.appsoriana:id/action_delete", driver);
+            ClickButton("android:id/button1", driver);
+
+            setState("pass", "Lista registrada con exito", driver);
             driver.Quit();
         }
     }
