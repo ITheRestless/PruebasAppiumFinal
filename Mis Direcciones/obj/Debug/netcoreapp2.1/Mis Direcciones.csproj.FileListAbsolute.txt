@@ -12,3 +12,5 @@ C:\Users\Mauricio\Documents\GitHub\PruebasAppiumFinal\Mis Direcciones\obj\Debug\
 C:\Users\Mauricio\Documents\GitHub\PruebasAppiumFinal\Mis Direcciones\obj\Debug\netcoreapp2.1\Mis Direcciones.dll
 C:\Users\Mauricio\Documents\GitHub\PruebasAppiumFinal\Mis Direcciones\obj\Debug\netcoreapp2.1\Mis Direcciones.pdb
 C:\Users\Mauricio\Documents\GitHub\PruebasAppiumFinal\Mis Direcciones\obj\Debug\netcoreapp2.1\Mis Direcciones.csprojAssemblyReference.cache
+C:\Users\develop-user-10\Documents\GitHub\PruebasAppiumFinal\Mis Direcciones\obj\Debug\netcoreapp2.1\Mis Direcciones.dll
+C:\Users\develop-user-10\Documents\GitHub\PruebasAppiumFinal\Mis Direcciones\obj\Debug\netcoreapp2.1\Mis Direcciones.pdb

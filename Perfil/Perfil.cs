@@ -250,7 +250,7 @@ namespace Perfil
         public void ModificarContraseña()
         {
             CapsInit();
-            caps.AddAdditionalCapability("name", "Mi Perfil - Modificar contraseña");
+            caps.AddAdditionalCapability("name", "Mi Perfil - Modificar contrasena");
 
             AndroidDriver<AndroidElement> driver = new AndroidDriver<AndroidElement>(
                     new Uri("http://hub-cloud.browserstack.com/wd/hub"), caps);

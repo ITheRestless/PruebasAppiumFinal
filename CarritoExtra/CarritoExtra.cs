@@ -401,7 +401,7 @@ namespace CarritoExtra
             setState("failed", "Seccion --Mis direcciones-- no encontrada", driver);
             ClickButton("com.soriana.appsoriana:id/item_direcciones", driver);
 
-            setState("failed", "Direccion creada desde checkout no encontrada", driver);
+            setState("failed", "Direccion creada no encontrada", driver);
             ClickText("Casa de prueba", driver);
 
             setState("failed", "Boton --Eliminar-- no encontrado", driver);

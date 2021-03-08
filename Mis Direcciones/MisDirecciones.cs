@@ -127,6 +127,35 @@ namespace Mis_Direcciones
             ((IJavaScriptExecutor)driver).ExecuteScript("browserstack_executor: {\"action\": \"setSessionStatus\", \"arguments\": {\"status\":\"" + state + "\", \"reason\": \" " + arguments + " \"}}");
         }
 
+        public void ClickClass(string clss, AndroidDriver<AndroidElement> driver)
+        {
+            AndroidElement searchElement = (AndroidElement)new WebDriverWait(
+                driver, TimeSpan.FromSeconds(20)).Until(
+                SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(
+                    MobileBy.ClassName(clss))
+            );
+
+            searchElement.Click();
+        }
+
+        public bool CheckText(string txt, AndroidDriver<AndroidElement> driver)
+        {
+            AndroidElement searchElement = (AndroidElement)new WebDriverWait(
+                driver, TimeSpan.FromSeconds(10)).Until(
+                SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(
+                    MobileBy.AndroidUIAutomator("new UiSelector().textContains(\"" + txt + "\")"))
+            );
+
+            if (searchElement == null)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
         public void StartTimer()
         {
             timer = Stopwatch.StartNew();
@@ -159,58 +188,50 @@ namespace Mis_Direcciones
             AndroidDriver<AndroidElement> driver = new AndroidDriver<AndroidElement>(
                     new Uri("http://hub-cloud.browserstack.com/wd/hub"), caps);
 
-            //--------------------------Secuencia----------------------------------
-            StartTimer();
+           LogIn(driver);
 
-            LogIn(driver);
-
-            setState("failed", "Boton --Inicio-- no encontrado", driver);
-            ClickButton("com.soriana.appsoriana:id/nuevoInicioFragment", driver);
-
-            setState("failed", "Boton --Mi Perfil-- no encontrado", driver);
+            // Registrar nueva dirección
+            setState("failed", "Seccion --Mi Perfil-- no encontrada", driver);
             ClickButton("com.soriana.appsoriana:id/menuPerfilFragment", driver);
 
-            setState("failed", "Boton --Mis direcciones-- no encontrado", driver);
+            setState("failed", "Seccion --Mis direcciones-- no encontrada", driver);
             ClickButton("com.soriana.appsoriana:id/item_direcciones", driver);
 
-            setState("failed", "Boton --añadir-- no encontrado", driver);
+            setState("failed", "Boton --Agregar-- no encontrado", driver);
             ClickButton("com.soriana.appsoriana:id/action_add", driver);
 
-            setState("failed", "Campo --Nombre-- no encontrado", driver);
-            InputText("com.soriana.appsoriana:id/txtNomDir", "Casa de Pruebas", driver);
-
-            setState("failed", "Campo --Telefono-- no encontrado", driver);
-            InputText("com.soriana.appsoriana:id/txtTelefonoDomic", "8711199728", driver);
-
-            setState("failed", "Campo --Calle-- no encontrado", driver);
-            InputText("com.soriana.appsoriana:id/txtCalle", "Calle Carrara", driver);
-
-            setState("failed", "Campo --Numero Exterior-- no encontrado", driver);
-            InputText("com.soriana.appsoriana:id/txtNumeroExterior", "421", driver);
-
-            setState("failed", "Campo --Numero Interior-- no encontrado", driver);
-            InputText("com.soriana.appsoriana:id/txtNumInt", "15", driver);
-
-            setState("failed", "Error al hacer scroll", driver);
-            ScrollDown(driver);
-
-            setState("failed", "Campo --Codigo Postal-- no encontrado", driver);
+            setState("failed", "Error al registrar nueva direccion", driver);
             InputText("com.soriana.appsoriana:id/txtCP", "27268", driver);
+            driver.HideKeyboard();
+            InputText("com.soriana.appsoriana:id/txtColonia", "Colonia de prueba", driver);
+            driver.HideKeyboard();
+            InputText("com.soriana.appsoriana:id/txtCalle", "Calle de prueba", driver);
+            driver.HideKeyboard();
+            InputText("com.soriana.appsoriana:id/txtNumeroExterior", "344", driver);
+            driver.HideKeyboard();
+            ScrollDown(driver);
+            InputText("com.soriana.appsoriana:id/txtNomDir", "Casa de prueba", driver);
+            driver.HideKeyboard();
+            InputText("com.soriana.appsoriana:id/txtTelefonoDomic", "8714851911", driver);
+            driver.HideKeyboard();
 
-            setState("failed", "Campo --Colonia-- no encontrado", driver);
-            InputText("com.soriana.appsoriana:id/txtColonia", "Torreon Residencial", driver);
-
-            setState("failed", "Boton --Guardar-- no encontrado", driver);
+            setState("failed", "Boton --Guardar direccion-- no encontrado", driver);
             ClickButton("com.soriana.appsoriana:id/btnGuardar", driver);
 
-            setState("failed", "No se registro la direccion", driver);
-            ClickText("Casa de Pruebas", driver);
+            setState("failed", "Fallo al agregar nueva direcion", driver);
+            CheckText("Casa de prueba", driver);
+            // Nueva direccion registrada
+
+            // Eliminar la direccion
+            setState("failed", "Direccion creada no encontrada", driver);
+            ClickText("Casa de prueba", driver);
 
             setState("failed", "Boton --Eliminar-- no encontrado", driver);
             ClickButton("com.soriana.appsoriana:id/action_delete", driver);
 
-            setState("failed", "Se pudo aceptar el alert", driver);
+            setState("failed", "Boton --Aceptar-- no encontrado", driver);
             ClickButton("android:id/button1", driver);
+            // direccion eliminada
 
             setState("passed", "Se agrego y elimino la direccion con exito", driver);
 
@@ -234,11 +255,8 @@ namespace Mis_Direcciones
             setState("failed", "Boton --Mi Perfil-- no encontrado", driver);
             ClickButton("com.soriana.appsoriana:id/menuPerfilFragment", driver);
 
-            setState("failed", "Boton --Iniciar session-- no encontrado", driver);
-            ClickButton("com.soriana.appsoriana:id/btnIniciaSesion", driver);
-
-            setState("failed", "Boton --Iniciar session-- no encontrado", driver);
-            ClickButton("com.soriana.appsoriana:id/btnIniciaSesion", driver);
+            setState("failed", "Boton --Iniciar sesion-- no encontrado", driver);
+            ClickButton("com.soriana.appsoriana:id/btnIniciarSesion", driver);
 
             setState("failed", "campo --Correo Electronico-- no encontrado", driver);
             InputText("com.soriana.appsoriana:id/editEmail", "autodevelopmx@gmail.com", driver);
@@ -246,7 +264,7 @@ namespace Mis_Direcciones
             setState("failed", "campo --Contraseña-- no encontrado", driver);
             InputText("com.soriana.appsoriana:id/editPass", "developmx12", driver);
 
-            setState("failed", "Boton --Iniciar session-- no encontrado", driver);
+            setState("failed", "Boton --Iniciar sesion-- no encontrado", driver);
             ClickButton("com.soriana.appsoriana:id/btn_login", driver);
 
             setState("failed", "Boton --Inicio-- no encontrado", driver);
@@ -320,7 +338,33 @@ namespace Mis_Direcciones
             setState("failed", "Se pudo aceptar el alert", driver);
             ClickButton("android:id/button1", driver);
 
-            setState("passed", "Se agrego y elimino la direccion con exito", driver);
+            setState("failed", "Boton --Regresar-- no encontrado", driver);
+            ClickClass("android.widget.ImageButton", driver);
+
+            // Eliminar la direccion creada 
+            setState("failed", "Seccion --Mi Perfil-- no encontrada", driver);
+            ClickButton("com.soriana.appsoriana:id/menuPerfilFragment", driver);
+
+            setState("failed", "Seccion --Mis direcciones-- no encontrada", driver);
+            ClickButton("com.soriana.appsoriana:id/item_direcciones", driver);
+
+            setState("failed", "Direccion creada desde checkout no encontrada", driver);
+            ClickText("Casa de prueba", driver);
+
+            setState("failed", "Boton --Eliminar-- no encontrado", driver);
+            ClickButton("com.soriana.appsoriana:id/action_delete", driver);
+
+            setState("failed", "Boton --Aceptar-- no encontrado", driver);
+            ClickButton("android:id/button1", driver);
+            // direccion eliminada
+
+            setState("failed", "No fue posible comprobar que la direccion se elimino correctamente", driver);
+            CheckText("No tienes direcciones agregadas", driver);
+
+            setState("failed", "Seccion --Inicio-- no encontrada", driver);
+            ClickButton("com.soriana.appsoriana:id/nuevoInicioFragment", driver);
+
+            setState("passed", "Se registro satisfactoriamente una nueva direccion desde el checkout", driver);
 
             driver.Quit();
         }

@@ -351,7 +351,7 @@ namespace Carrito
         public void AñadirALista()
         {
             CapsInit();
-            caps.AddAdditionalCapability("name", "Carrito - Añadir a lista");
+            caps.AddAdditionalCapability("name", "Carrito - Anadir a lista");
 
             AndroidDriver<AndroidElement> driver = new AndroidDriver<AndroidElement>(
                     new Uri("http://hub-cloud.browserstack.com/wd/hub"), caps);
@@ -403,11 +403,21 @@ namespace Carrito
 
             setState("failed", "Error al añadir lista a carrito", driver);
 
+            setState("failed", "Seccion --Listas-- no encontrada", driver);
             ClickButton("com.soriana.appsoriana:id/misListasFragment", driver);
+
+            setState("failed", "Lista --Mis favoritos-- no encontrada", driver);
             ClickText("Mis Favoritos", driver);
+
+            setState("failed", "Boton --Seleccionar todo-- no encontrado", driver);
             ClickButton("com.soriana.appsoriana:id/select_all", driver);
+
+            setState("failed", "Boton --Agregar al carrito-- no encontrado", driver);
             ClickButton("com.soriana.appsoriana:id/btnAddCart", driver);
+
+            setState("failed", "Boton --Aceptar-- no encontrado", driver);
             ClickButton("android:id/button1", driver);
+
             ClickButton("com.soriana.appsoriana:id/activity_main_content_button_back", driver);
             ClickButton("com.soriana.appsoriana:id/nuevoInicioFragment", driver);
 
@@ -490,7 +500,7 @@ namespace Carrito
         public void VerificarPromociones()
         {
             CapsInit();
-            caps.AddAdditionalCapability("name", "Carrito - Comentar Articulo");
+            caps.AddAdditionalCapability("name", "Carrito - Verificar Promociones");
 
             AndroidDriver<AndroidElement> driver = new AndroidDriver<AndroidElement>(
                     new Uri("http://hub-cloud.browserstack.com/wd/hub"), caps);
@@ -499,10 +509,11 @@ namespace Carrito
 
             ScrollDown(driver);
 
-
             setState("failed", "Error al eliminar o presionar el boton de eliminar", driver);
             ClickButton("com.soriana.appsoriana:id/action_delete", driver);
+            
             ClickButton("android:id/button1", driver);
+            
             setState("passed", "Productos agregados y verificados con exito", driver);
 
             driver.Quit();
