@@ -1,3 +1,7 @@
+C:\Users\Mauricio\Documents\GitHub\PruebasAppiumFinal\AgregarACarrito\obj\Debug\netcoreapp2.1\AgregarACarrito.csprojAssemblyReference.cache
+C:\Users\Mauricio\Documents\GitHub\PruebasAppiumFinal\AgregarACarrito\obj\Debug\netcoreapp2.1\AgregarACarrito.csproj.CoreCompileInputs.cache
+C:\Users\Mauricio\Documents\GitHub\PruebasAppiumFinal\AgregarACarrito\obj\Debug\netcoreapp2.1\AgregarACarrito.AssemblyInfoInputs.cache
+C:\Users\Mauricio\Documents\GitHub\PruebasAppiumFinal\AgregarACarrito\obj\Debug\netcoreapp2.1\AgregarACarrito.AssemblyInfo.cs
 C:\Users\Mauricio\Documents\GitHub\PruebasAppiumFinal\AgregarACarrito\bin\Debug\netcoreapp2.1\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
 C:\Users\Mauricio\Documents\GitHub\PruebasAppiumFinal\AgregarACarrito\bin\Debug\netcoreapp2.1\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
 C:\Users\Mauricio\Documents\GitHub\PruebasAppiumFinal\AgregarACarrito\bin\Debug\netcoreapp2.1\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
@@ -6,9 +10,5 @@ C:\Users\Mauricio\Documents\GitHub\PruebasAppiumFinal\AgregarACarrito\bin\Debug\
 C:\Users\Mauricio\Documents\GitHub\PruebasAppiumFinal\AgregarACarrito\bin\Debug\netcoreapp2.1\AgregarACarrito.runtimeconfig.dev.json
 C:\Users\Mauricio\Documents\GitHub\PruebasAppiumFinal\AgregarACarrito\bin\Debug\netcoreapp2.1\AgregarACarrito.dll
 C:\Users\Mauricio\Documents\GitHub\PruebasAppiumFinal\AgregarACarrito\bin\Debug\netcoreapp2.1\AgregarACarrito.pdb
-C:\Users\Mauricio\Documents\GitHub\PruebasAppiumFinal\AgregarACarrito\obj\Debug\netcoreapp2.1\AgregarACarrito.csprojAssemblyReference.cache
-C:\Users\Mauricio\Documents\GitHub\PruebasAppiumFinal\AgregarACarrito\obj\Debug\netcoreapp2.1\AgregarACarrito.csproj.CoreCompileInputs.cache
-C:\Users\Mauricio\Documents\GitHub\PruebasAppiumFinal\AgregarACarrito\obj\Debug\netcoreapp2.1\AgregarACarrito.AssemblyInfoInputs.cache
-C:\Users\Mauricio\Documents\GitHub\PruebasAppiumFinal\AgregarACarrito\obj\Debug\netcoreapp2.1\AgregarACarrito.AssemblyInfo.cs
 C:\Users\Mauricio\Documents\GitHub\PruebasAppiumFinal\AgregarACarrito\obj\Debug\netcoreapp2.1\AgregarACarrito.dll
 C:\Users\Mauricio\Documents\GitHub\PruebasAppiumFinal\AgregarACarrito\obj\Debug\netcoreapp2.1\AgregarACarrito.pdb

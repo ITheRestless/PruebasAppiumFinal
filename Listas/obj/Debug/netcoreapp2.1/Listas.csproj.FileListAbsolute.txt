@@ -11,3 +11,4 @@ C:\Users\Mauricio\Documents\GitHub\PruebasAppiumFinal\Listas\obj\Debug\netcoreap
 C:\Users\Mauricio\Documents\GitHub\PruebasAppiumFinal\Listas\obj\Debug\netcoreapp2.1\Listas.AssemblyInfo.cs
 C:\Users\Mauricio\Documents\GitHub\PruebasAppiumFinal\Listas\obj\Debug\netcoreapp2.1\Listas.dll
 C:\Users\Mauricio\Documents\GitHub\PruebasAppiumFinal\Listas\obj\Debug\netcoreapp2.1\Listas.pdb
+C:\Users\Mauricio\Documents\GitHub\PruebasAppiumFinal\Listas\obj\Debug\netcoreapp2.1\Listas.csprojAssemblyReference.cache

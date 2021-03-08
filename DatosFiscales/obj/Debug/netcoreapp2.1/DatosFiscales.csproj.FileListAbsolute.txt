@@ -1,3 +1,5 @@
+C:\Users\develop-user-10\Documents\GitHub\PruebasAppiumFinal\DatosFiscales\obj\Debug\netcoreapp2.1\DatosFiscales.dll
+C:\Users\develop-user-10\Documents\GitHub\PruebasAppiumFinal\DatosFiscales\obj\Debug\netcoreapp2.1\DatosFiscales.pdb
 C:\Users\Mauricio\Documents\GitHub\PruebasAppiumFinal\DatosFiscales\bin\Debug\netcoreapp2.1\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
 C:\Users\Mauricio\Documents\GitHub\PruebasAppiumFinal\DatosFiscales\bin\Debug\netcoreapp2.1\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
 C:\Users\Mauricio\Documents\GitHub\PruebasAppiumFinal\DatosFiscales\bin\Debug\netcoreapp2.1\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
@@ -12,5 +14,3 @@ C:\Users\Mauricio\Documents\GitHub\PruebasAppiumFinal\DatosFiscales\obj\Debug\ne
 C:\Users\Mauricio\Documents\GitHub\PruebasAppiumFinal\DatosFiscales\obj\Debug\netcoreapp2.1\DatosFiscales.AssemblyInfo.cs
 C:\Users\Mauricio\Documents\GitHub\PruebasAppiumFinal\DatosFiscales\obj\Debug\netcoreapp2.1\DatosFiscales.dll
 C:\Users\Mauricio\Documents\GitHub\PruebasAppiumFinal\DatosFiscales\obj\Debug\netcoreapp2.1\DatosFiscales.pdb
-C:\Users\develop-user-10\Documents\GitHub\PruebasAppiumFinal\DatosFiscales\obj\Debug\netcoreapp2.1\DatosFiscales.dll
-C:\Users\develop-user-10\Documents\GitHub\PruebasAppiumFinal\DatosFiscales\obj\Debug\netcoreapp2.1\DatosFiscales.pdb
