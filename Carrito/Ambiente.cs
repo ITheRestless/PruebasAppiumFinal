@@ -93,11 +93,11 @@ namespace UnitTestProject3
                 case "Monday":
                     switch (hora)
                     {
-                        case "9":
+                        case "18":
                             return DispositivosAndroid[0];
-                        case "12":
+                        case "21":
                             return DispositivosAndroid[1];
-                        case "15":
+                        case "1":
                             return DispositivosAndroid[2];
                         default:
                             return new Dispositivo("Google Pixel 3", "9.0");
@@ -105,11 +105,11 @@ namespace UnitTestProject3
                 case "Tuesday":
                     switch (hora)
                     {
-                        case "9":
+                        case "18":
                             return DispositivosAndroid[3];
-                        case "12":
+                        case "24":
                             return DispositivosAndroid[4];
-                        case "15":
+                        case "1":
                             return DispositivosAndroid[5];
                         default:
                             return new Dispositivo("Google Pixel 3", "9.0");
@@ -117,11 +117,11 @@ namespace UnitTestProject3
                 case "Wednesday":
                     switch (hora)
                     {
-                        case "9":
+                        case "18":
                             return DispositivosAndroid[6];
-                        case "12":
+                        case "24":
                             return DispositivosAndroid[7];
-                        case "15":
+                        case "1":
                             return DispositivosAndroid[8];
                         default:
                             return new Dispositivo("Google Pixel 3", "9.0");
@@ -129,11 +129,11 @@ namespace UnitTestProject3
                 case "Thursday":
                     switch (hora)
                     {
-                        case "9":
+                        case "18":
                             return DispositivosAndroid[9];
-                        case "12":
+                        case "24":
                             return DispositivosAndroid[10];
-                        case "15":
+                        case "1":
                             return DispositivosAndroid[11];
                         default:
                             return new Dispositivo("Google Pixel 3", "9.0");
@@ -141,11 +141,11 @@ namespace UnitTestProject3
                 case "Friday":
                     switch (hora)
                     {
-                        case "9":
+                        case "18":
                             return DispositivosAndroid[12];
-                        case "12":
+                        case "24":
                             return DispositivosAndroid[13];
-                        case "15":
+                        case "1":
                             return DispositivosAndroid[14];
                         default:
                             return new Dispositivo("Google Pixel 3", "9.0");
@@ -153,11 +153,11 @@ namespace UnitTestProject3
                 case "Saturday":
                     switch (hora)
                     {
-                        case "9":
+                        case "18":
                             return DispositivosAndroid[15];
-                        case "12":
+                        case "24":
                             return DispositivosAndroid[16];
-                        case "15":
+                        case "1":
                             return DispositivosAndroid[17];
                         default:
                             return new Dispositivo("Google Pixel 3", "9.0");
@@ -165,11 +165,11 @@ namespace UnitTestProject3
                 case "Sunday":
                     switch (hora)
                     {
-                        case "9":
+                        case "18":
                             return DispositivosAndroid[18];
-                        case "12":
+                        case "24":
                             return DispositivosAndroid[19];
-                        case "15":
+                        case "1":
                             return DispositivosAndroid[20];
                         default:
                             return new Dispositivo("Google Pixel 3", "9.0");
