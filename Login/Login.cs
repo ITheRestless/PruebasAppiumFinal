@@ -60,10 +60,6 @@ namespace Login
             AndroidDriver<AndroidElement> driver = new AndroidDriver<AndroidElement>(
                     new Uri("http://hub-cloud.browserstack.com/wd/hub"), amb.caps);
 
-
-            //--------------------------Secuencia----------------------------------
-            amb.StartTimer();
-
             amb.ClickButton("com.soriana.appsoriana:id/imgArrow", driver);
 
             amb.setState("failed", "No se mostro o no se pudo presionar el boton de inicio", driver);

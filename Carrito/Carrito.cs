@@ -99,7 +99,7 @@ namespace Carrito
             amb.ScrollDown(driver);
             amb.ScrollDown(driver);
 
-            if (double.Parse(amb.GetElemenText("com.soriana.appsoriana:id/puntosCompra", driver)) + double.Parse(amb.GetElemenText("com.soriana.appsoriana:id/puntosAdicionales", driver)) != double.Parse(GetElemenText("com.soriana.appsoriana:id/puntosTotales", driver)))
+            if (double.Parse(amb.GetElemenText("com.soriana.appsoriana:id/puntosCompra", driver)) + double.Parse(amb.GetElemenText("com.soriana.appsoriana:id/puntosAdicionales", driver)) != double.Parse(amb.GetElemenText("com.soriana.appsoriana:id/puntosTotales", driver)))
             {
                 amb.setState("failed", "Las cantidades en la seccion --Puntos-- no concuerdan", driver);
                 driver.Quit();
