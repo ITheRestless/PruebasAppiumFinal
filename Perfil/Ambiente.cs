@@ -208,7 +208,7 @@ namespace UnitTestProject3
         public void ClickText(string txt, AndroidDriver<AndroidElement> driver)
         {
             AndroidElement searchElement = (AndroidElement)new WebDriverWait(
-                driver, TimeSpan.FromSeconds(20)).Until(
+                driver, TimeSpan.FromSeconds(7)).Until(
                 SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(
                     MobileBy.AndroidUIAutomator("new UiSelector().textContains(\"" + txt + "\")"))
             );
@@ -221,7 +221,7 @@ namespace UnitTestProject3
         public void InputText(string id, string text, AndroidDriver<AndroidElement> driver)
         {
             AndroidElement searchElement = (AndroidElement)new WebDriverWait(
-                driver, TimeSpan.FromSeconds(20)).Until(
+                driver, TimeSpan.FromSeconds(7)).Until(
                 SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(
                     MobileBy.Id(id))
             );
@@ -235,7 +235,7 @@ namespace UnitTestProject3
         public void ClickButton(string id, AndroidDriver<AndroidElement> driver)
         {
             AndroidElement searchElement = (AndroidElement)new WebDriverWait(
-                driver, TimeSpan.FromSeconds(20)).Until(
+                driver, TimeSpan.FromSeconds(7)).Until(
                 SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(
                     MobileBy.Id(id))
             );
@@ -246,7 +246,7 @@ namespace UnitTestProject3
         public void ClickClass(string clss, AndroidDriver<AndroidElement> driver)
         {
             AndroidElement searchElement = (AndroidElement)new WebDriverWait(
-                driver, TimeSpan.FromSeconds(20)).Until(
+                driver, TimeSpan.FromSeconds(7)).Until(
                 SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(
                     MobileBy.ClassName(clss))
             );
@@ -257,7 +257,7 @@ namespace UnitTestProject3
         public bool CheckElement(string id, AndroidDriver<AndroidElement> driver)
         {
             AndroidElement searchElement = (AndroidElement)new WebDriverWait(
-                driver, TimeSpan.FromSeconds(10)).Until(
+                driver, TimeSpan.FromSeconds(7)).Until(
                 SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(
                     MobileBy.Id(id))
             );
@@ -277,7 +277,7 @@ namespace UnitTestProject3
         public bool CheckText(string txt, AndroidDriver<AndroidElement> driver)
         {
             AndroidElement searchElement = (AndroidElement)new WebDriverWait(
-                driver, TimeSpan.FromSeconds(10)).Until(
+                driver, TimeSpan.FromSeconds(7)).Until(
                 SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(
                     MobileBy.AndroidUIAutomator("new UiSelector().textContains(\"" + txt + "\")"))
             );
@@ -295,7 +295,7 @@ namespace UnitTestProject3
         public string GetElemenText(string id, AndroidDriver<AndroidElement> driver)
         {
             AndroidElement searchElement = (AndroidElement)new WebDriverWait(
-                driver, TimeSpan.FromSeconds(10)).Until(
+                driver, TimeSpan.FromSeconds(7)).Until(
                 SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(
                     MobileBy.Id(id))
             );
@@ -306,7 +306,7 @@ namespace UnitTestProject3
         public bool CheckElementText(string id, string text, AndroidDriver<AndroidElement> driver)
         {
             AndroidElement searchElement = (AndroidElement)new WebDriverWait(
-                driver, TimeSpan.FromSeconds(10)).Until(
+                driver, TimeSpan.FromSeconds(7)).Until(
                 SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(
                     MobileBy.Id(id))
             );
