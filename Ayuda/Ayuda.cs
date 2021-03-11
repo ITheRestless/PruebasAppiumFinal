@@ -174,7 +174,6 @@ namespace Ayuda
 
             LogIn(driver);
 
-            //--------------------------Secuencia----------------------------------
             StartTimer();
 
             // Entramos al menú

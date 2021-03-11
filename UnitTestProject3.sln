@@ -32,7 +32,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ayuda", "Ayuda\Ayuda.csproj
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Carrito", "Carrito\Carrito.csproj", "{273B4BDB-670C-443A-A01A-5CD3FE398E5E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarritoExtra", "CarritoExtra\CarritoExtra.csproj", "{681F2239-BA6F-4A0F-9A3C-18E6A8ADA619}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarritoExtra", "CarritoExtra\CarritoExtra.csproj", "{681F2239-BA6F-4A0F-9A3C-18E6A8ADA619}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Folletos", "Folletos\Folletos.csproj", "{2C2E69A5-CA98-4A4A-A169-1A5320740131}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -92,6 +94,10 @@ Global
 		{681F2239-BA6F-4A0F-9A3C-18E6A8ADA619}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{681F2239-BA6F-4A0F-9A3C-18E6A8ADA619}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{681F2239-BA6F-4A0F-9A3C-18E6A8ADA619}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2C2E69A5-CA98-4A4A-A169-1A5320740131}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C2E69A5-CA98-4A4A-A169-1A5320740131}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C2E69A5-CA98-4A4A-A169-1A5320740131}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C2E69A5-CA98-4A4A-A169-1A5320740131}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
