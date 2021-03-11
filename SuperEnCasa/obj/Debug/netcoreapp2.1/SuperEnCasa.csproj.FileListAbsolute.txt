@@ -6,7 +6,6 @@ C:\Users\Mauricio\Documents\GitHub\PruebasAppiumFinal\SuperEnCasa\bin\Debug\netc
 C:\Users\Mauricio\Documents\GitHub\PruebasAppiumFinal\SuperEnCasa\bin\Debug\netcoreapp2.1\SuperEnCasa.runtimeconfig.dev.json
 C:\Users\Mauricio\Documents\GitHub\PruebasAppiumFinal\SuperEnCasa\bin\Debug\netcoreapp2.1\SuperEnCasa.dll
 C:\Users\Mauricio\Documents\GitHub\PruebasAppiumFinal\SuperEnCasa\bin\Debug\netcoreapp2.1\SuperEnCasa.pdb
-C:\Users\Mauricio\Documents\GitHub\PruebasAppiumFinal\SuperEnCasa\obj\Debug\netcoreapp2.1\SuperEnCasa.csprojAssemblyReference.cache
 C:\Users\Mauricio\Documents\GitHub\PruebasAppiumFinal\SuperEnCasa\obj\Debug\netcoreapp2.1\SuperEnCasa.csproj.CoreCompileInputs.cache
 C:\Users\Mauricio\Documents\GitHub\PruebasAppiumFinal\SuperEnCasa\obj\Debug\netcoreapp2.1\SuperEnCasa.AssemblyInfoInputs.cache
 C:\Users\Mauricio\Documents\GitHub\PruebasAppiumFinal\SuperEnCasa\obj\Debug\netcoreapp2.1\SuperEnCasa.AssemblyInfo.cs

@@ -78,13 +78,13 @@ namespace UnitTestProject3
             caps.AddAdditionalCapability("os_version", device.versionOs);
             caps.PlatformName = "Android";
             caps.AddAdditionalCapability("project", "AppSoriana");
-            caps.AddAdditionalCapability("build", "Android " + fecha + "Hora: " + dateValue.Hour.ToString());
+            caps.AddAdditionalCapability("build", "Android " + fecha + " - " + DateTime.Now.Hour.ToString() + ":00");
         }
 
         public Dispositivo getDevice()
         {
             DateTime dateValue = DateTime.Now;
-            int dia = dateValue.DayOfWeek;
+            int dia = (int)dateValue.DayOfWeek;
             string hora = dateValue.Hour.ToString();
 
             //Hora + 3

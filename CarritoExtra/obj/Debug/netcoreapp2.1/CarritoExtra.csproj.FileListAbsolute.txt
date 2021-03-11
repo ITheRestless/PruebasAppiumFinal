@@ -8,7 +8,6 @@ C:\Users\Mauricio\Documents\GitHub\PruebasAppiumFinal\CarritoExtra\bin\Debug\net
 C:\Users\Mauricio\Documents\GitHub\PruebasAppiumFinal\CarritoExtra\bin\Debug\netcoreapp2.1\CarritoExtra.runtimeconfig.dev.json
 C:\Users\Mauricio\Documents\GitHub\PruebasAppiumFinal\CarritoExtra\bin\Debug\netcoreapp2.1\CarritoExtra.dll
 C:\Users\Mauricio\Documents\GitHub\PruebasAppiumFinal\CarritoExtra\bin\Debug\netcoreapp2.1\CarritoExtra.pdb
-C:\Users\Mauricio\Documents\GitHub\PruebasAppiumFinal\CarritoExtra\obj\Debug\netcoreapp2.1\CarritoExtra.csprojAssemblyReference.cache
 C:\Users\Mauricio\Documents\GitHub\PruebasAppiumFinal\CarritoExtra\obj\Debug\netcoreapp2.1\CarritoExtra.csproj.CoreCompileInputs.cache
 C:\Users\Mauricio\Documents\GitHub\PruebasAppiumFinal\CarritoExtra\obj\Debug\netcoreapp2.1\CarritoExtra.AssemblyInfoInputs.cache
 C:\Users\Mauricio\Documents\GitHub\PruebasAppiumFinal\CarritoExtra\obj\Debug\netcoreapp2.1\CarritoExtra.AssemblyInfo.cs

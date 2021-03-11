@@ -21,7 +21,6 @@ C:\Users\Mauricio\Documents\GitHub\PruebasAppiumFinal\Carrito\bin\Debug\netcorea
 C:\Users\Mauricio\Documents\GitHub\PruebasAppiumFinal\Carrito\bin\Debug\netcoreapp2.1\Carrito.runtimeconfig.dev.json
 C:\Users\Mauricio\Documents\GitHub\PruebasAppiumFinal\Carrito\bin\Debug\netcoreapp2.1\Carrito.dll
 C:\Users\Mauricio\Documents\GitHub\PruebasAppiumFinal\Carrito\bin\Debug\netcoreapp2.1\Carrito.pdb
-C:\Users\Mauricio\Documents\GitHub\PruebasAppiumFinal\Carrito\obj\Debug\netcoreapp2.1\Carrito.csprojAssemblyReference.cache
 C:\Users\Mauricio\Documents\GitHub\PruebasAppiumFinal\Carrito\obj\Debug\netcoreapp2.1\Carrito.csproj.CoreCompileInputs.cache
 C:\Users\Mauricio\Documents\GitHub\PruebasAppiumFinal\Carrito\obj\Debug\netcoreapp2.1\Carrito.AssemblyInfoInputs.cache
 C:\Users\Mauricio\Documents\GitHub\PruebasAppiumFinal\Carrito\obj\Debug\netcoreapp2.1\Carrito.AssemblyInfo.cs

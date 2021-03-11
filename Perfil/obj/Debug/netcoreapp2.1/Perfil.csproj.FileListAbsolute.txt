@@ -6,7 +6,6 @@ C:\Users\Mauricio\Documents\GitHub\PruebasAppiumFinal\Perfil\bin\Debug\netcoreap
 C:\Users\Mauricio\Documents\GitHub\PruebasAppiumFinal\Perfil\bin\Debug\netcoreapp2.1\Perfil.runtimeconfig.dev.json
 C:\Users\Mauricio\Documents\GitHub\PruebasAppiumFinal\Perfil\bin\Debug\netcoreapp2.1\Perfil.dll
 C:\Users\Mauricio\Documents\GitHub\PruebasAppiumFinal\Perfil\bin\Debug\netcoreapp2.1\Perfil.pdb
-C:\Users\Mauricio\Documents\GitHub\PruebasAppiumFinal\Perfil\obj\Debug\netcoreapp2.1\Perfil.csprojAssemblyReference.cache
 C:\Users\Mauricio\Documents\GitHub\PruebasAppiumFinal\Perfil\obj\Debug\netcoreapp2.1\Perfil.csproj.CoreCompileInputs.cache
 C:\Users\Mauricio\Documents\GitHub\PruebasAppiumFinal\Perfil\obj\Debug\netcoreapp2.1\Perfil.AssemblyInfoInputs.cache
 C:\Users\Mauricio\Documents\GitHub\PruebasAppiumFinal\Perfil\obj\Debug\netcoreapp2.1\Perfil.AssemblyInfo.cs
