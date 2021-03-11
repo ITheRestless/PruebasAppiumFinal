@@ -78,19 +78,19 @@ namespace UnitTestProject3
             caps.AddAdditionalCapability("os_version", device.versionOs);
             caps.PlatformName = "Android";
             caps.AddAdditionalCapability("project", "AppSoriana");
-            caps.AddAdditionalCapability("build", "Android " + fecha);
+            caps.AddAdditionalCapability("build", "Android " + fecha + "Hora: " + dateValue.Hour.ToString());
         }
 
         public Dispositivo getDevice()
         {
             DateTime dateValue = DateTime.Now;
-            string dia = dateValue.ToString("dddd");
+            int dia = dateValue.DayOfWeek;
             string hora = dateValue.Hour.ToString();
 
             //Hora + 3
             switch (dia)
             {
-                case "Monday":
+                case 1:
                     switch (hora)
                     {
                         case "18":
@@ -100,79 +100,79 @@ namespace UnitTestProject3
                         case "1":
                             return DispositivosAndroid[2];
                         default:
-                            return new Dispositivo("Google Pixel 3", "9.0");
+                            return DispositivosAndroid[0];
                     }
-                case "Tuesday":
+                case 2:
                     switch (hora)
                     {
                         case "18":
                             return DispositivosAndroid[3];
-                        case "24":
+                        case "21":
                             return DispositivosAndroid[4];
                         case "1":
                             return DispositivosAndroid[5];
                         default:
-                            return new Dispositivo("Google Pixel 3", "9.0");
+                            return DispositivosAndroid[3];
                     }
-                case "Wednesday":
+                case 3:
                     switch (hora)
                     {
                         case "18":
                             return DispositivosAndroid[6];
-                        case "24":
+                        case "21":
                             return DispositivosAndroid[7];
                         case "1":
                             return DispositivosAndroid[8];
                         default:
-                            return new Dispositivo("Google Pixel 3", "9.0");
+                            return DispositivosAndroid[6];
                     }
-                case "Thursday":
+                case 4:
                     switch (hora)
                     {
                         case "18":
                             return DispositivosAndroid[9];
-                        case "24":
+                        case "21":
                             return DispositivosAndroid[10];
                         case "1":
                             return DispositivosAndroid[11];
                         default:
-                            return new Dispositivo("Google Pixel 3", "9.0");
+                            return DispositivosAndroid[9];
                     }
-                case "Friday":
+                case 5:
                     switch (hora)
                     {
                         case "18":
                             return DispositivosAndroid[12];
-                        case "24":
+                        case "21":
                             return DispositivosAndroid[13];
                         case "1":
                             return DispositivosAndroid[14];
                         default:
-                            return new Dispositivo("Google Pixel 3", "9.0");
+                            return DispositivosAndroid[12];
                     }
-                case "Saturday":
+                case 6:
                     switch (hora)
                     {
                         case "18":
                             return DispositivosAndroid[15];
-                        case "24":
+                        case "21":
                             return DispositivosAndroid[16];
                         case "1":
                             return DispositivosAndroid[17];
                         default:
-                            return new Dispositivo("Google Pixel 3", "9.0");
+                            return DispositivosAndroid[15];
                     }
-                case "Sunday":
+                case 0:
                     switch (hora)
                     {
                         case "18":
                             return DispositivosAndroid[18];
-                        case "24":
+                        case "21":
                             return DispositivosAndroid[19];
                         case "1":
                             return DispositivosAndroid[20];
                         default:
-                            return new Dispositivo("Google Pixel 3", "9.0");
+                            return DispositivosAndroid[18];
                     }
             }
 

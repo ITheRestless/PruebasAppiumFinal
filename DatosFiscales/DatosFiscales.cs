@@ -64,6 +64,7 @@ namespace DatosFiscales
 
             amb.setState("failed", "Error Boton --Eliminar--", driver);
             amb.ClickButton("com.soriana.appsoriana:id/action_delete", driver);
+            amb.ClickButton("android:id/button1", driver);
 
             amb.setState("passed", "Datos fiscales registrados y eliminados con exito", driver);
 
