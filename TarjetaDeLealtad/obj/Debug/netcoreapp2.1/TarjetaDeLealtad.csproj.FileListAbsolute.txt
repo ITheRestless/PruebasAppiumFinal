@@ -1,0 +1,14 @@
+C:\Users\Mauricio\Documents\GitHub\PruebasAppiumFinal\TarjetaDeLealtad\bin\Debug\netcoreapp2.1\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\Users\Mauricio\Documents\GitHub\PruebasAppiumFinal\TarjetaDeLealtad\bin\Debug\netcoreapp2.1\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\Users\Mauricio\Documents\GitHub\PruebasAppiumFinal\TarjetaDeLealtad\bin\Debug\netcoreapp2.1\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\Users\Mauricio\Documents\GitHub\PruebasAppiumFinal\TarjetaDeLealtad\bin\Debug\netcoreapp2.1\TarjetaDeLealtad.deps.json
+C:\Users\Mauricio\Documents\GitHub\PruebasAppiumFinal\TarjetaDeLealtad\bin\Debug\netcoreapp2.1\TarjetaDeLealtad.runtimeconfig.json
+C:\Users\Mauricio\Documents\GitHub\PruebasAppiumFinal\TarjetaDeLealtad\bin\Debug\netcoreapp2.1\TarjetaDeLealtad.runtimeconfig.dev.json
+C:\Users\Mauricio\Documents\GitHub\PruebasAppiumFinal\TarjetaDeLealtad\bin\Debug\netcoreapp2.1\TarjetaDeLealtad.dll
+C:\Users\Mauricio\Documents\GitHub\PruebasAppiumFinal\TarjetaDeLealtad\obj\Debug\netcoreapp2.1\TarjetaDeLealtad.csprojAssemblyReference.cache
+C:\Users\Mauricio\Documents\GitHub\PruebasAppiumFinal\TarjetaDeLealtad\obj\Debug\netcoreapp2.1\TarjetaDeLealtad.csproj.CoreCompileInputs.cache
+C:\Users\Mauricio\Documents\GitHub\PruebasAppiumFinal\TarjetaDeLealtad\obj\Debug\netcoreapp2.1\TarjetaDeLealtad.AssemblyInfoInputs.cache
+C:\Users\Mauricio\Documents\GitHub\PruebasAppiumFinal\TarjetaDeLealtad\obj\Debug\netcoreapp2.1\TarjetaDeLealtad.AssemblyInfo.cs
+C:\Users\Mauricio\Documents\GitHub\PruebasAppiumFinal\TarjetaDeLealtad\bin\Debug\netcoreapp2.1\TarjetaDeLealtad.pdb
+C:\Users\Mauricio\Documents\GitHub\PruebasAppiumFinal\TarjetaDeLealtad\obj\Debug\netcoreapp2.1\TarjetaDeLealtad.dll
+C:\Users\Mauricio\Documents\GitHub\PruebasAppiumFinal\TarjetaDeLealtad\obj\Debug\netcoreapp2.1\TarjetaDeLealtad.pdb
