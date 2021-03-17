@@ -12,6 +12,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{59F09530-0F2F-4EDE-AECC-3424991B037B}"
 	ProjectSection(SolutionItems) = preProject
 		Ayuda\Ambiente.cs = Ayuda\Ambiente.cs
+		Login\Ambiente.cs = Login\Ambiente.cs
 		..\..\..\Desktop\Dispositivo.cs = ..\..\..\Desktop\Dispositivo.cs
 	EndProjectSection
 EndProject
@@ -35,7 +36,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Carrito", "Carrito\Carrito.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarritoExtra", "CarritoExtra\CarritoExtra.csproj", "{681F2239-BA6F-4A0F-9A3C-18E6A8ADA619}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TarjetaDeLealtad", "TarjetaDeLealtad\TarjetaDeLealtad.csproj", "{9A0F3CD6-7C81-4BC9-95C2-0E82BBDF8332}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TarjetaDeLealtad", "TarjetaDeLealtad\TarjetaDeLealtad.csproj", "{9A0F3CD6-7C81-4BC9-95C2-0E82BBDF8332}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

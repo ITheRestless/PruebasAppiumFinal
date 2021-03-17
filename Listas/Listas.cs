@@ -13,61 +13,41 @@ namespace Listas
         [TestMethod]
         public void DetalleDeArticulo()
         {
-            CapsInit();
-            caps.AddAdditionalCapability("name", "Listas - Detalle De Articulo");
+            amb.CapsInit();
+            amb.caps.AddAdditionalCapability("name", "Listas - Detalle De Articulo");
 
             AndroidDriver<AndroidElement> driver = new AndroidDriver<AndroidElement>(
-                    new Uri("http://hub-cloud.browserstack.com/wd/hub"), caps);
-            
-            //--------------------------Secuencia----------------------------------
-            StartTimer();
+                    new Uri("http://hub-cloud.browserstack.com/wd/hub"), amb.caps);
 
-            LogIn(driver);
-            
-            ClickButton("com.soriana.appsoriana:id/misListasFragment", driver);
-            ClickButton("com.soriana.appsoriana:id/action_agregar_lista", driver);
-            InputText("com.soriana.appsoriana:id/editNombre", "ListaPrueba", driver);
-            ClickButton("com.soriana.appsoriana:id/btnGuardar", driver);
+            amb.LogIn(driver);
 
-            if (CheckText("ListaPrueba", driver))
-            {
-                logs.Add("Se añadió correctamente la lista");
-            } else
-            {
-                logs.Add("No se añadió correctamente la lista");
-            }
+            amb.ClickButton("com.soriana.appsoriana:id/misListasFragment", driver);
+            amb.ClickButton("com.soriana.appsoriana:id/action_agregar_lista", driver);
+            amb.InputText("com.soriana.appsoriana:id/editNombre", "ListaPrueba", driver);
+            amb.ClickButton("com.soriana.appsoriana:id/btnGuardar", driver);
 
-            ClickText("ListaPrueba", driver);
-            ClickButton("com.soriana.appsoriana:id/productosFragment", driver);
-            ClickText("DESPENSA", driver);
-            InputText("android:id/search_src_text", "atun", driver);
-            ClickText("LOMO DE ATÚN HERDEZ EN AGUA 130 GR", driver);
-            ScrollDown(driver);
-            ClickButton("com.soriana.appsoriana:id/btnAgregarALista", driver);
-            ClickText("ListaPrueba", driver);
+            amb.CheckText("ListaPrueba", driver);
+
+            amb.ClickText("ListaPrueba", driver);
+            amb.ClickButton("com.soriana.appsoriana:id/productosFragment", driver);
+            amb.ClickText("DESPENSA", driver);
+            amb.InputText("android:id/search_src_text", "atun", driver);
+            amb.ClickText("LOMO DE ATÚN HERDEZ EN AGUA 130 GR", driver);
+            amb.ScrollDown(driver);
+            amb.ClickButton("com.soriana.appsoriana:id/btnAgregarALista", driver);
+            amb.ClickText("ListaPrueba", driver);
             driver.HideKeyboard();
-            ClickButton("com.soriana.appsoriana:id/misListasFragment", driver);
-            ClickText("ListaPrueba", driver);
+            amb.ClickButton("com.soriana.appsoriana:id/misListasFragment", driver);
+            amb.ClickText("ListaPrueba", driver);
 
-            if(!CheckText("LOMO DE ATÚN", driver))
-            {
-                logs.Add("No se registró el articulo esperado");
-            } else {
-                logs.Add("Se registró el articulo esperado");
-            }
+            amb.CheckText("LOMO DE ATÚN", driver);
 
-            ClickButton("com.soriana.appsoriana:id/action_delete", driver);
-            ClickButton("android:id/button1", driver);
+            amb.ClickButton("com.soriana.appsoriana:id/action_delete", driver);
+            amb.ClickButton("android:id/button1", driver);
 
-            if (CheckText("ListaPrueba", driver))
-            {
-                logs.Add("No se eliminó correctamente la lista");
-            } else
-            {
-                logs.Add("Se eliminó correctamente la lista");
-            }
+            amb.CheckText("ListaPrueba", driver);
 
-            setState("pass", "Lista registrada con exito", driver);
+            amb.setState("pass", "Lista registrada con exito", driver);
 
             driver.Quit();
         }
@@ -75,59 +55,57 @@ namespace Listas
         [TestMethod]
         public void CarritoBotonGuardarLista()
         {
-            CapsInit();
-            caps.AddAdditionalCapability("name", "Listas - Carrito Boton Guardar");
+            amb.CapsInit();
+            amb.caps.AddAdditionalCapability("name", "Listas - Carrito Boton Guardar");
 
             AndroidDriver<AndroidElement> driver = new AndroidDriver<AndroidElement>(
-                    new Uri("http://hub-cloud.browserstack.com/wd/hub"), caps);
-            
-            StartTimer();
+                    new Uri("http://hub-cloud.browserstack.com/wd/hub"), amb.caps);
 
-            LogIn(driver);
+            amb.LogIn(driver);
 
-            setState("failed", "Seccion --Departamentos-- no encontrada", driver);
-            ClickButton("com.soriana.appsoriana:id/productosFragment", driver);
+            amb.setState("failed", "Seccion --Departamentos-- no encontrada", driver);
+            amb.ClickButton("com.soriana.appsoriana:id/productosFragment", driver);
 
-            setState("failed", "Seccion --Despensa-- no encontrada", driver);
-            ClickText("DESPENSA", driver);
+            amb.setState("failed", "Seccion --Despensa-- no encontrada", driver);
+            amb.ClickText("DESPENSA", driver);
 
-            setState("failed", "Error al buscar un producto", driver);
-            InputText("android:id/search_src_text", "atun", driver);
+            amb.setState("failed", "Error al buscar un producto", driver);
+            amb.InputText("android:id/search_src_text", "atun", driver);
 
-            setState("failed", "Producto --LOMO DE ATUN HERDEZ EN AGUA-- no encontrado", driver);
-            ClickText("LOMO DE ATÚN HERDEZ EN AGUA", driver);
+            amb.setState("failed", "Producto --LOMO DE ATUN HERDEZ EN AGUA-- no encontrado", driver);
+            amb.ClickText("LOMO DE ATÚN HERDEZ EN AGUA", driver);
 
-            ScrollDown(driver);
+            amb.ScrollDown(driver);
 
-            setState("failed", "Boton --Agregar al carrito-- no encontrado", driver);
-            ClickButton("com.soriana.appsoriana:id/bntAgregarACarrito", driver);
-            
-            setState("failed", "Seccion --A domicilio-- no encontrada", driver);
-            ClickButton("com.soriana.appsoriana:id/txtDomicilio", driver);
+            amb.setState("failed", "Boton --Agregar al carrito-- no encontrado", driver);
+            amb.ClickButton("com.soriana.appsoriana:id/bntAgregarACarrito", driver);
 
-            setState("failed", "Error al ingresar el codigo postal", driver);
-            InputText("com.soriana.appsoriana:id/etCodigoPostal", "27268", driver);
+            amb.setState("failed", "Seccion --A domicilio-- no encontrada", driver);
+            amb.ClickButton("com.soriana.appsoriana:id/txtDomicilio", driver);
 
-            setState("failed", "Boton --Seleccionar-- no encontrado", driver);
-            ClickButton("com.soriana.appsoriana:id/btnSeleccionar", driver);
+            amb.setState("failed", "Error al ingresar el codigo postal", driver);
+            amb.InputText("com.soriana.appsoriana:id/etCodigoPostal", "27268", driver);
+
+            amb.setState("failed", "Boton --Seleccionar-- no encontrado", driver);
+            amb.ClickButton("com.soriana.appsoriana:id/btnSeleccionar", driver);
             driver.HideKeyboard();
 
-            setState("failed", "Boton --Carrito-- no encontrado", driver);
-            ClickButton("com.soriana.appsoriana:id/imageCart", driver);
+            amb.setState("failed", "Boton --Carrito-- no encontrado", driver);
+            amb.ClickButton("com.soriana.appsoriana:id/imageCart", driver);
 
 
-            ClickButton("com.soriana.appsoriana:id/action_save", driver);
-            InputText("com.soriana.appsoriana:id/editNombre", "ListaPruebaDesdeCarrito", driver);
-            ClickButton("com.soriana.appsoriana:id/btnGuardar", driver);
-            ClickClass("android.widget.ImageButton", driver);
+            amb.ClickButton("com.soriana.appsoriana:id/action_save", driver);
+            amb.InputText("com.soriana.appsoriana:id/editNombre", "ListaPruebaDesdeCarrito", driver);
+            amb.ClickButton("com.soriana.appsoriana:id/btnGuardar", driver);
+            amb.ClickClass("android.widget.ImageButton", driver);
             driver.HideKeyboard();
             driver.HideKeyboard();
-            ClickButton("com.soriana.appsoriana:id/misListasFragment", driver);
-            ClickText("ListaPruebaDesdeCarrito", driver);
-            ClickButton("com.soriana.appsoriana:id/action_delete", driver);
-            ClickButton("android:id/button1", driver);
+            amb.ClickButton("com.soriana.appsoriana:id/misListasFragment", driver);
+            amb.ClickText("ListaPruebaDesdeCarrito", driver);
+            amb.ClickButton("com.soriana.appsoriana:id/action_delete", driver);
+            amb.ClickButton("android:id/button1", driver);
 
-            setState("pass", "Lista registrada con exito", driver);
+            amb.setState("pass", "Lista registrada con exito", driver);
             driver.Quit();
         }
 
@@ -135,119 +113,117 @@ namespace Listas
         [TestMethod]
         public void EliminarArticulosDeLista()
         {
-            CapsInit();
-            caps.AddAdditionalCapability("name", "Listas - Eliminar articulos de lista");
+            amb.CapsInit();
+            amb.caps.AddAdditionalCapability("name", "Listas - Eliminar articulos de lista");
 
             AndroidDriver<AndroidElement> driver = new AndroidDriver<AndroidElement>(
-                    new Uri("http://hub-cloud.browserstack.com/wd/hub"), caps);
+                    new Uri("http://hub-cloud.browserstack.com/wd/hub"), amb.caps);
 
-            StartTimer();
+            amb.LogIn(driver);
 
-            LogIn(driver);
+            amb.setState("failed", "Seccion --Listas-- no encontrada", driver);
+            amb.ClickButton("com.soriana.appsoriana:id/misListasFragment", driver);
 
-            setState("failed", "Seccion --Listas-- no encontrada", driver);
-            ClickButton("com.soriana.appsoriana:id/misListasFragment", driver);
+            amb.setState("failed", "Boton --Agregar-- no encontrado", driver);
+            amb.ClickButton("com.soriana.appsoriana:id/action_agregar_lista", driver);
 
-            setState("failed", "Boton --Agregar-- no encontrado", driver);
-            ClickButton("com.soriana.appsoriana:id/action_agregar_lista", driver);
+            amb.setState("failed", "Error al introducir el nombre de la lista", driver);
+            amb.InputText("com.soriana.appsoriana:id/editNombre", "prueba", driver);
 
-            setState("failed", "Error al introducir el nombre de la lista", driver);
-            InputText("com.soriana.appsoriana:id/editNombre", "prueba", driver);
+            amb.setState("failed", "Boton --Guardar-- no encontrado", driver);
+            amb.ClickButton("com.soriana.appsoriana:id/btnGuardar", driver);
 
-            setState("failed", "Boton --Guardar-- no encontrado", driver);
-            ClickButton("com.soriana.appsoriana:id/btnGuardar", driver);
+            amb.setState("failed", "Seccion --Inicio-- no encontrada", driver);
+            amb.ClickButton("com.soriana.appsoriana:id/nuevoInicioFragment", driver);
 
-            setState("failed", "Seccion --Inicio-- no encontrada", driver);
-            ClickButton("com.soriana.appsoriana:id/nuevoInicioFragment", driver);
+            amb.setState("failed", "Error al buscar un producto", driver);
+            amb.InputText("android:id/search_src_text", "DORITOS", driver);
 
-            setState("failed", "Error al buscar un producto", driver);
-            InputText("android:id/search_src_text", "DORITOS", driver);
+            amb.setState("failed", "Articulo --BOTANA 3D DORITOS 180-- no encontrado", driver);
+            amb.ClickText("BOTANA 3D DORITOS", driver);
 
-            setState("failed", "Articulo --BOTANA 3D DORITOS 180-- no encontrado", driver);
-            ClickText("BOTANA 3D DORITOS", driver);
+            amb.ScrollDown(driver);
 
-            ScrollDown(driver);
+            amb.setState("failed", "Boton --Anadir a lista-- no encontrado", driver);
+            amb.ClickButton("com.soriana.appsoriana:id/btnAgregarALista", driver);
 
-            setState("failed", "Boton --Anadir a lista-- no encontrado", driver);
-            ClickButton("com.soriana.appsoriana:id/btnAgregarALista", driver);
-
-            setState("failed", "Lista --prueba-- no encontrada", driver);
-            ClickText("prueba", driver);
+            amb.setState("failed", "Lista --prueba-- no encontrada", driver);
+            amb.ClickText("prueba", driver);
 
             driver.HideKeyboard();
 
-            setState("failed", "Boton --Retroceder-- no encontrado", driver);
-            ClickButton("com.soriana.appsoriana:id/btnVolver", driver);
+            amb.setState("failed", "Boton --Retroceder-- no encontrado", driver);
+            amb.ClickButton("com.soriana.appsoriana:id/btnVolver", driver);
 
-            setState("failed", "Boton --Eliminar Busqueda-- no encontrado", driver);
-            ClickButton("android:id/search_close_btn", driver);
+            amb.setState("failed", "Boton --Eliminar Busqueda-- no encontrado", driver);
+            amb.ClickButton("android:id/search_close_btn", driver);
 
-            setState("failed", "Error al buscar un producto", driver);
-            InputText("android:id/search_src_text", "AGUA", driver);
+            amb.setState("failed", "Error al buscar un producto", driver);
+            amb.InputText("android:id/search_src_text", "AGUA", driver);
 
-            setState("failed", "Articulo --LOMO DE ATUN HERDEZ EN AGUA-- no encontrado", driver);
-            ClickText("LOMO DE ATÚN HERDEZ EN AGUA", driver);
+            amb.setState("failed", "Articulo --LOMO DE ATUN HERDEZ EN AGUA-- no encontrado", driver);
+            amb.ClickText("LOMO DE ATÚN HERDEZ EN AGUA", driver);
 
-            ScrollDown(driver);
+            amb.ScrollDown(driver);
 
-            setState("failed", "Boton --Anadir a lista-- no encontrado", driver);
-            ClickButton("com.soriana.appsoriana:id/btnAgregarALista", driver);
+            amb.setState("failed", "Boton --Anadir a lista-- no encontrado", driver);
+            amb.ClickButton("com.soriana.appsoriana:id/btnAgregarALista", driver);
 
-            setState("failed", "Lista --prueba-- no encontrada", driver);
-            ClickText("prueba", driver);
-
-            driver.HideKeyboard();
-
-            setState("failed", "Boton --Retroceder-- no encontrado", driver);
-            ClickButton("com.soriana.appsoriana:id/btnVolver", driver);
-
-            setState("failed", "Boton --Eliminar Busqueda-- no encontrado", driver);
-            ClickButton("android:id/search_close_btn", driver);
-
-            setState("failed", "Error al buscar un producto", driver);
-            InputText("android:id/search_src_text", "COCA", driver);
-
-            setState("failed", "Articulo --COCA COLA-- no encontrado", driver);
-            ClickText("COCA COLA", driver);
-
-            ScrollDown(driver);
-
-            setState("failed", "Boton --Anadir a lista-- no encontrado", driver);
-            ClickButton("com.soriana.appsoriana:id/btnAgregarALista", driver);
-
-            setState("failed", "Lista --prueba-- no encontrada", driver);
-            ClickText("prueba", driver);
+            amb.setState("failed", "Lista --prueba-- no encontrada", driver);
+            amb.ClickText("prueba", driver);
 
             driver.HideKeyboard();
 
-            setState("failed", "Seccion --Listas-- no encontrada", driver);
-            ClickButton("com.soriana.appsoriana:id/misListasFragment", driver);
+            amb.setState("failed", "Boton --Retroceder-- no encontrado", driver);
+            amb.ClickButton("com.soriana.appsoriana:id/btnVolver", driver);
 
-            setState("failed", "Lista --prueba-- no encontrada", driver);
-            ClickText("prueba", driver);
+            amb.setState("failed", "Boton --Eliminar Busqueda-- no encontrado", driver);
+            amb.ClickButton("android:id/search_close_btn", driver);
 
-            setState("failed", "Boton --Opciones-- no encontrado", driver);
-            ClickButton("com.soriana.appsoriana:id/imgOptions", driver);
+            amb.setState("failed", "Error al buscar un producto", driver);
+            amb.InputText("android:id/search_src_text", "COCA", driver);
 
-            setState("failed", "Boton --Eliminar-- no encontrado", driver);
-            ClickButton("com.soriana.appsoriana:id/btnDelete", driver);
+            amb.setState("failed", "Articulo --COCA COLA-- no encontrado", driver);
+            amb.ClickText("COCA COLA", driver);
 
-            setState("failed", "Boton --Multiseleccion-- no encontrado", driver);
-            ClickButton("com.soriana.appsoriana:id/select_all", driver);
+            amb.ScrollDown(driver);
 
-            setState("failed", "Boton --Eliminar-- no encontrado", driver);
-            ClickButton("com.soriana.appsoriana:id/btnEliminar", driver);
+            amb.setState("failed", "Boton --Anadir a lista-- no encontrado", driver);
+            amb.ClickButton("com.soriana.appsoriana:id/btnAgregarALista", driver);
 
-            setState("failed", "Error al eliminar los articulos", driver);
-            CheckText("No hay articulos en tu lista", driver);
+            amb.setState("failed", "Lista --prueba-- no encontrada", driver);
+            amb.ClickText("prueba", driver);
 
-            setState("failed", "Error al eliminar la lista", driver);
-            ClickButton("com.soriana.appsoriana:id/action_delete", driver);
+            driver.HideKeyboard();
 
-            setState("failed", "Boton --Aceptar-- no encontrado", driver);
-            ClickButton("android:id/button1", driver);
+            amb.setState("failed", "Seccion --Listas-- no encontrada", driver);
+            amb.ClickButton("com.soriana.appsoriana:id/misListasFragment", driver);
 
-            setState("passed", "Se eliminaron los articulos de la lista correctamente", driver);
+            amb.setState("failed", "Lista --prueba-- no encontrada", driver);
+            amb.ClickText("prueba", driver);
+
+            amb.setState("failed", "Boton --Opciones-- no encontrado", driver);
+            amb.ClickButton("com.soriana.appsoriana:id/imgOptions", driver);
+
+            amb.setState("failed", "Boton --Eliminar-- no encontrado", driver);
+            amb.ClickButton("com.soriana.appsoriana:id/btnDelete", driver);
+
+            amb.setState("failed", "Boton --Multiseleccion-- no encontrado", driver);
+            amb.ClickButton("com.soriana.appsoriana:id/select_all", driver);
+
+            amb.setState("failed", "Boton --Eliminar-- no encontrado", driver);
+            amb.ClickButton("com.soriana.appsoriana:id/btnEliminar", driver);
+
+            amb.setState("failed", "Error al eliminar los articulos", driver);
+            amb.CheckText("No hay articulos en tu lista", driver);
+
+            amb.setState("failed", "Error al eliminar la lista", driver);
+            amb.ClickButton("com.soriana.appsoriana:id/action_delete", driver);
+
+            amb.setState("failed", "Boton --Aceptar-- no encontrado", driver);
+            amb.ClickButton("android:id/button1", driver);
+
+            amb.setState("passed", "Se eliminaron los articulos de la lista correctamente", driver);
 
             driver.Quit();
         }
