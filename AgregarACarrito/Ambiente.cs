@@ -11,7 +11,6 @@ namespace UnitTestProject3
 {
     public class Ambiente
     {
-
         List<Dispositivo> DispositivosAndroid = new List<Dispositivo>();
         public string ApkPre;
         public AppiumOptions caps;
@@ -19,7 +18,7 @@ namespace UnitTestProject3
         // ------------------------------------------------------------------ Metodos de ambiente ---------------------------------------------------------------------
         public Ambiente()
         {
-            ApkPre = "bs://62e46a9f2171f17a2869efe8964bddda54644423";
+            ApkPre = "SorianaApp";
 
             // Celulares
             //Android 11
