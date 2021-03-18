@@ -126,13 +126,18 @@ namespace Banners
             }
         }
 
-        public void CheckText(string txt, AndroidDriver<AndroidElement> driver)
+        public bool CheckText(string txt, AndroidDriver<AndroidElement> driver)
         {
             AndroidElement searchElement = (AndroidElement)new WebDriverWait(
                 driver, TimeSpan.FromSeconds(10)).Until(
                 SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(
                     MobileBy.AndroidUIAutomator("new UiSelector().textContains(\"" + txt + "\")"))
             );
+
+            if (searchElement == null)
+                return false;
+            else
+                return true;
         }
 
         public void setState(string state, string arguments, AndroidDriver<AndroidElement> driver)
@@ -174,14 +179,11 @@ namespace Banners
 
             LogIn(driver);
 
-            //--------------------------Secuencia----------------------------------
-            StartTimer();
-
             setState("failed", "Vista --Banners-- no encontrada", driver);
             ClickClass("android.view.View", driver);
 
             setState("failed", "No fue posible acceder al Banner", driver);
-            CheckText("productos", driver);
+            CheckElement("com.soriana.appsoriana:id/btnArt", driver);
 
             setState("passed", "Se accedio al Banner de forma correcta", driver);
 
