@@ -39,6 +39,9 @@ namespace Registro
             amb.CapsInit();
             amb.caps.AddAdditionalCapability("name", "Registro - Crear tarjeta virtual y aceptar los terminos y condiciones");
 
+            string fecha = DateTime.Now.Day.ToString() + "/" + DateTime.Now.Month.ToString() + "/" + DateTime.Now.Year.ToString();
+            amb.caps.AddAdditionalCapability("build", "Android (Registro)" + fecha + " - " + DateTime.Now.Hour.ToString() + ":00");
+
             string date = DateTime.Now.Day.ToString() + DateTime.Now.Month.ToString() + DateTime.Now.Year.ToString() + DateTime.Now.Hour.ToString() + DateTime.Now.Minute.ToString() + DateTime.Now.Second.ToString();
 
             AndroidDriver<AndroidElement> driver = new AndroidDriver<AndroidElement>(
@@ -98,6 +101,9 @@ namespace Registro
         {
             amb.CapsInit();
             amb.caps.AddAdditionalCapability("name", "Registro - No aceptar terminos y condiciones");
+
+            string fecha = DateTime.Now.Day.ToString() + "/" + DateTime.Now.Month.ToString() + "/" + DateTime.Now.Year.ToString();
+            amb.caps.AddAdditionalCapability("build", "Android (Registro)" + fecha + " - " + DateTime.Now.Hour.ToString() + ":00");
 
             string date = DateTime.Now.Day.ToString() + DateTime.Now.Month.ToString() + DateTime.Now.Year.ToString() + DateTime.Now.Hour.ToString() + DateTime.Now.Minute.ToString() + DateTime.Now.Second.ToString();
 

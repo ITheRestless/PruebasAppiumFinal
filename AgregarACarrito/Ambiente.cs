@@ -63,8 +63,7 @@ namespace UnitTestProject3
         {
 
             Dispositivo device = getDevice();
-
-            string fecha = DateTime.Now.Day.ToString() + "/" + DateTime.Now.Month.ToString() + "/" + DateTime.Now.Year.ToString();
+            
             caps = new AppiumOptions();
 
             caps.AddAdditionalCapability("newCommandTimeout", 10);
@@ -77,7 +76,6 @@ namespace UnitTestProject3
             caps.AddAdditionalCapability("os_version", device.versionOs);
             caps.PlatformName = "Android";
             caps.AddAdditionalCapability("project", "AppSoriana");
-            caps.AddAdditionalCapability("build", "Android " + fecha + " - " + DateTime.Now.Hour.ToString() + ":00");
         }
 
         public Dispositivo getDevice()

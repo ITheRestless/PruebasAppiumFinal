@@ -23,6 +23,9 @@ namespace Feedback
             amb.CapsInit();
             amb.caps.AddAdditionalCapability("name", "Feedback - Enviar Feedback");
 
+            string fecha = DateTime.Now.Day.ToString() + "/" + DateTime.Now.Month.ToString() + "/" + DateTime.Now.Year.ToString();
+            amb.caps.AddAdditionalCapability("build", "Android (Extras)" + fecha + " - " + DateTime.Now.Hour.ToString() + ":00");
+
             AndroidDriver<AndroidElement> driver = new AndroidDriver<AndroidElement>(
                     new Uri("http://hub-cloud.browserstack.com/wd/hub"), amb.caps);
 

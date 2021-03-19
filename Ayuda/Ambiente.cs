@@ -78,7 +78,6 @@ namespace UnitTestProject3
             caps.AddAdditionalCapability("os_version", device.versionOs);
             caps.PlatformName = "Android";
             caps.AddAdditionalCapability("project", "AppSoriana");
-            caps.AddAdditionalCapability("build", "Android " + fecha + " - " + DateTime.Now.Hour.ToString() + ":00");
         }
 
         public Dispositivo getDevice()

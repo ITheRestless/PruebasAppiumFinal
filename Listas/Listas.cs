@@ -16,6 +16,9 @@ namespace Listas
             amb.CapsInit();
             amb.caps.AddAdditionalCapability("name", "Listas - Detalle De Articulo");
 
+            string fecha = DateTime.Now.Day.ToString() + "/" + DateTime.Now.Month.ToString() + "/" + DateTime.Now.Year.ToString();
+            amb.caps.AddAdditionalCapability("build", "Android (Listas)" + fecha + " - " + DateTime.Now.Hour.ToString() + ":00");
+
             AndroidDriver<AndroidElement> driver = new AndroidDriver<AndroidElement>(
                     new Uri("http://hub-cloud.browserstack.com/wd/hub"), amb.caps);
 
@@ -57,6 +60,9 @@ namespace Listas
         {
             amb.CapsInit();
             amb.caps.AddAdditionalCapability("name", "Listas - Carrito Boton Guardar");
+
+            string fecha = DateTime.Now.Day.ToString() + "/" + DateTime.Now.Month.ToString() + "/" + DateTime.Now.Year.ToString();
+            amb.caps.AddAdditionalCapability("build", "Android (Listas)" + fecha + " - " + DateTime.Now.Hour.ToString() + ":00");
 
             AndroidDriver<AndroidElement> driver = new AndroidDriver<AndroidElement>(
                     new Uri("http://hub-cloud.browserstack.com/wd/hub"), amb.caps);
@@ -116,6 +122,9 @@ namespace Listas
             amb.CapsInit();
             amb.caps.AddAdditionalCapability("name", "Listas - Eliminar articulos de lista");
 
+            string fecha = DateTime.Now.Day.ToString() + "/" + DateTime.Now.Month.ToString() + "/" + DateTime.Now.Year.ToString();
+            amb.caps.AddAdditionalCapability("build", "Android (Listas)" + fecha + " - " + DateTime.Now.Hour.ToString() + ":00");
+
             AndroidDriver<AndroidElement> driver = new AndroidDriver<AndroidElement>(
                     new Uri("http://hub-cloud.browserstack.com/wd/hub"), amb.caps);
 
@@ -139,8 +148,8 @@ namespace Listas
             amb.setState("failed", "Error al buscar un producto", driver);
             amb.InputText("android:id/search_src_text", "DORITOS", driver);
 
-            amb.setState("failed", "Articulo --BOTANA 3D DORITOS 180-- no encontrado", driver);
-            amb.ClickText("BOTANA 3D DORITOS", driver);
+            amb.setState("failed", "Articulo --BOTANA DORITOS 155gr-- no encontrado", driver);
+            amb.ClickText("BOTANA DORITOS 155", driver);
 
             amb.ScrollDown(driver);
 

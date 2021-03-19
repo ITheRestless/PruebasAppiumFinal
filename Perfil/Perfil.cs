@@ -24,6 +24,9 @@ namespace Perfil
             amb.CapsInit();
             amb.caps.AddAdditionalCapability("name", "Mi Perfil - Verificar y cambiar datos personales");
 
+            string fecha = DateTime.Now.Day.ToString() + "/" + DateTime.Now.Month.ToString() + "/" + DateTime.Now.Year.ToString();
+            amb.caps.AddAdditionalCapability("build", "Android (Perfil)" + fecha + " - " + DateTime.Now.Hour.ToString() + ":00");
+
             AndroidDriver<AndroidElement> driver = new AndroidDriver<AndroidElement>(
                     new Uri("http://hub-cloud.browserstack.com/wd/hub"), amb.caps);
 
@@ -39,7 +42,7 @@ namespace Perfil
             amb.ClickText("Laboratorio Pruebas Automatizadas", driver);
 
             amb.setState("failed", "--Numero de tarjeta-- en --Mis Datos-- no concuerda", driver);
-            amb.ClickText("2496000021042", driver);
+            amb.ClickText("3086-XXXX-XXXX-3860", driver);
 
             amb.setState("failed", "--Correo electronico-- en --Mis Datos-- no concuerda", driver);
             amb.ClickText("autodevelopmx@gmail.com", driver);
@@ -96,6 +99,9 @@ namespace Perfil
         {
             amb.CapsInit();
             amb.caps.AddAdditionalCapability("name", "Mi Perfil - Modificar contrasena");
+
+            string fecha = DateTime.Now.Day.ToString() + "/" + DateTime.Now.Month.ToString() + "/" + DateTime.Now.Year.ToString();
+            amb.caps.AddAdditionalCapability("build", "Android (Perfil)" + fecha + " - " + DateTime.Now.Hour.ToString() + ":00");
 
             AndroidDriver<AndroidElement> driver = new AndroidDriver<AndroidElement>(
                     new Uri("http://hub-cloud.browserstack.com/wd/hub"), amb.caps);

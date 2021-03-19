@@ -1,13 +1,6 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using OpenQA.Selenium;
-using OpenQA.Selenium.Appium;
 using OpenQA.Selenium.Appium.Android;
-using OpenQA.Selenium.Appium.Interfaces;
-using OpenQA.Selenium.Appium.MultiTouch;
-using OpenQA.Selenium.Support.UI;
 using System;
-using System.Diagnostics;
-using System.Threading;
 using UnitTestProject3;
 
 namespace CarritoExtra
@@ -23,6 +16,9 @@ namespace CarritoExtra
         {
             amb.CapsInit();
             amb.caps.AddAdditionalCapability("name", "Carrito Cambio de Tienda - Elegir entrega a domicilio e ingresar CP");
+
+            string fecha = DateTime.Now.Day.ToString() + "/" + DateTime.Now.Month.ToString() + "/" + DateTime.Now.Year.ToString();
+            amb.caps.AddAdditionalCapability("build", "Android (Carrito)" + fecha + " - " + DateTime.Now.Hour.ToString() + ":00");
 
             AndroidDriver<AndroidElement> driver = new AndroidDriver<AndroidElement>(
                     new Uri("http://hub-cloud.browserstack.com/wd/hub"), amb.caps);
@@ -55,6 +51,9 @@ namespace CarritoExtra
         {
             amb.CapsInit();
             amb.caps.AddAdditionalCapability("name", "Carrito - Introducir nueva direccion desde checkout");
+
+            string fecha = DateTime.Now.Day.ToString() + "/" + DateTime.Now.Month.ToString() + "/" + DateTime.Now.Year.ToString();
+            amb.caps.AddAdditionalCapability("build", "Android (Carrito)" + fecha + " - " + DateTime.Now.Hour.ToString() + ":00");
 
             AndroidDriver<AndroidElement> driver = new AndroidDriver<AndroidElement>(
                     new Uri("http://hub-cloud.browserstack.com/wd/hub"), amb.caps);
@@ -162,6 +161,9 @@ namespace CarritoExtra
         {
             amb.CapsInit();
             amb.caps.AddAdditionalCapability("name", "Carrito - Seleccionar direccion existente desde checkout");
+
+            string fecha = DateTime.Now.Day.ToString() + "/" + DateTime.Now.Month.ToString() + "/" + DateTime.Now.Year.ToString();
+            amb.caps.AddAdditionalCapability("build", "Android (Carrito)" + fecha + " - " + DateTime.Now.Hour.ToString() + ":00");
 
             AndroidDriver<AndroidElement> driver = new AndroidDriver<AndroidElement>(
                     new Uri("http://hub-cloud.browserstack.com/wd/hub"), amb.caps);
@@ -283,6 +285,9 @@ namespace CarritoExtra
             amb.CapsInit();
             amb.caps.AddAdditionalCapability("name", "Carrito Cambio de Tienda - Elegir entrega en tienda");
 
+            string fecha = DateTime.Now.Day.ToString() + "/" + DateTime.Now.Month.ToString() + "/" + DateTime.Now.Year.ToString();
+            amb.caps.AddAdditionalCapability("build", "Android (Carrito)" + fecha + " - " + DateTime.Now.Hour.ToString() + ":00");
+
             AndroidDriver<AndroidElement> driver = new AndroidDriver<AndroidElement>(
                     new Uri("http://hub-cloud.browserstack.com/wd/hub"), amb.caps);
 
@@ -326,6 +331,9 @@ namespace CarritoExtra
         {
             amb.CapsInit();
             amb.caps.AddAdditionalCapability("name", "Carrito - Seleccionar Fecha y Hora de Envio");
+
+            string fecha = DateTime.Now.Day.ToString() + "/" + DateTime.Now.Month.ToString() + "/" + DateTime.Now.Year.ToString();
+            amb.caps.AddAdditionalCapability("build", "Android (Carrito)" + fecha + " - " + DateTime.Now.Hour.ToString() + ":00");
 
             AndroidDriver<AndroidElement> driver = new AndroidDriver<AndroidElement>(
                     new Uri("http://hub-cloud.browserstack.com/wd/hub"), amb.caps);

@@ -22,8 +22,11 @@ namespace AgregarACarrito
         [TestMethod]
         public void DetalleDeArticulo()
         {
+            string fecha = DateTime.Now.Day.ToString() + "/" + DateTime.Now.Month.ToString() + "/" + DateTime.Now.Year.ToString();
+
             amb.CapsInit();
             amb.caps.AddAdditionalCapability("name", "Carrito - Detalle de Articulo");
+            amb.caps.AddAdditionalCapability("build", "Android (Carrito)" + fecha + " - " + DateTime.Now.Hour.ToString() + ":00");
 
             AndroidDriver<AndroidElement> driver = new AndroidDriver<AndroidElement>(
                     new Uri("http://hub-cloud.browserstack.com/wd/hub"), amb.caps);
@@ -69,8 +72,11 @@ namespace AgregarACarrito
         [TestMethod]
         public void MisListas()
         {
+            string fecha = DateTime.Now.Day.ToString() + "/" + DateTime.Now.Month.ToString() + "/" + DateTime.Now.Year.ToString();
+
             amb.CapsInit();
             amb.caps.AddAdditionalCapability("name", "Carrito - Mis Listas");
+            amb.caps.AddAdditionalCapability("build", "Android (Carrito)" + fecha + " - " + DateTime.Now.Hour.ToString() + ":00");
 
             AndroidDriver<AndroidElement> driver = new AndroidDriver<AndroidElement>(
                     new Uri("http://hub-cloud.browserstack.com/wd/hub"), amb.caps);
