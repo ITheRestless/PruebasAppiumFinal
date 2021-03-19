@@ -115,7 +115,7 @@ namespace Carrito
 
             amb.setState("failed", "Error al eliminar o presionar el boton de eliminar", driver);
             amb.ClickButton("com.soriana.appsoriana:id/action_delete", driver);
-            amb.ClickButton("android:id/button1", driver);
+            amb.ClickText("Aceptar", driver);
             amb.setState("passed", "Productos agregados y verificados con exito", driver);
 
             driver.Quit();
@@ -319,32 +319,6 @@ namespace Carrito
             amb.setState("failed", "Error al eliminar o presionar el boton de eliminar", driver);
             amb.ClickButton("com.soriana.appsoriana:id/action_delete", driver);
             amb.ClickButton("android:id/button1", driver);
-            amb.setState("passed", "Productos agregados y verificados con exito", driver);
-
-            driver.Quit();
-        }
-
-        [TestMethod]
-        public void VerificarPromociones()
-        {
-            amb.CapsInit();
-            amb.caps.AddAdditionalCapability("name", "Carrito - Verificar Promociones");
-
-            string fecha = DateTime.Now.Day.ToString() + "/" + DateTime.Now.Month.ToString() + "/" + DateTime.Now.Year.ToString();
-            amb.caps.AddAdditionalCapability("build", "Android (Carrito)" + fecha + " - " + DateTime.Now.Hour.ToString() + ":00");
-
-            AndroidDriver<AndroidElement> driver = new AndroidDriver<AndroidElement>(
-                    new Uri("http://hub-cloud.browserstack.com/wd/hub"), amb.caps);
-
-            amb.LogIn(driver);
-
-            amb.ScrollDown(driver);
-
-            amb.setState("failed", "Error al eliminar o presionar el boton de eliminar", driver);
-            amb.ClickButton("com.soriana.appsoriana:id/action_delete", driver);
-
-            amb.ClickButton("android:id/button1", driver);
-
             amb.setState("passed", "Productos agregados y verificados con exito", driver);
 
             driver.Quit();

@@ -53,7 +53,7 @@ namespace Feedback
             Thread.Sleep(2000);
 
             amb.setState("failed", "Fallo al enviar el comentario", driver);
-            amb.CheckText("Folletos", driver);
+            amb.CheckText("Inicio", driver);
 
             amb.setState("passed", "Se enviaron los comentarios correctamente", driver);
 
