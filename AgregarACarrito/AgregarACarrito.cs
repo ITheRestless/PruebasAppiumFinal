@@ -9,113 +9,272 @@ using System.Diagnostics;
 using OpenQA.Selenium.Appium.Interfaces;
 using OpenQA.Selenium.Appium.MultiTouch;
 using OpenQA.Selenium;
-using UnitTestProject3;
 
 namespace AgregarACarrito
 {
     [TestClass]
     public class AgregarACarrito
     {
+        Stopwatch timer;
+        double time;
+        AppiumOptions caps;
 
-        Ambiente amb = new Ambiente();
+        public void CapsInit()
+        {
+            string fecha = DateTime.Now.Day.ToString() + "/" + DateTime.Now.Month.ToString() + "/" + DateTime.Now.Year.ToString();
+            caps = new AppiumOptions();
+            caps.AddAdditionalCapability("newCommandTimeout", 20);
+            caps.AddAdditionalCapability("browserstack.user", "mauricioemmanuel1");
+            caps.AddAdditionalCapability("browserstack.key", "XZYh6tFKBx8KBDyBzbAy");
+            caps.AddAdditionalCapability("autoAcceptAlerts", true);
+            caps.AddAdditionalCapability("autoGrantPermissions", true);
+            caps.AddAdditionalCapability("app", "bs://62e46a9f2171f17a2869efe8964bddda54644423");
+            caps.AddAdditionalCapability("device", "Google Pixel 3");
+            caps.AddAdditionalCapability("os_version", "9.0");
+            caps.PlatformName = "Android";
+            caps.AddAdditionalCapability("project", "AppSoriana");
+            caps.AddAdditionalCapability("build", "Android " + fecha);
+        }
+
+        public void ScrollDown(AndroidDriver<AndroidElement> driver)
+        {
+            ITouchAction touchAction = new TouchAction(driver)
+            .Press(200, 1000)
+            .Wait(500)
+            .MoveTo(200, 200)
+            .Release();
+
+            touchAction.Perform();
+        }
+
+        public void ScrollUp(AndroidDriver<AndroidElement> driver)
+        {
+            ITouchAction touchAction = new TouchAction(driver)
+            .Press(200, 200)
+            .Wait(500)
+            .MoveTo(200, 1000)
+            .Release();
+
+            touchAction.Perform();
+        }
+
+        public void ClickText(string txt, AndroidDriver<AndroidElement> driver)
+        {
+            AndroidElement searchElement = (AndroidElement)new WebDriverWait(
+                driver, TimeSpan.FromSeconds(20)).Until(
+                SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(
+                    MobileBy.AndroidUIAutomator("new UiSelector().textContains(\"" + txt + "\")"))
+            );
+
+
+
+            searchElement.Click();
+        }
+
+        public void InputText(string id, string text, AndroidDriver<AndroidElement> driver)
+        {
+            AndroidElement searchElement = (AndroidElement)new WebDriverWait(
+                driver, TimeSpan.FromSeconds(20)).Until(
+                SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(
+                    MobileBy.Id(id))
+            );
+
+            searchElement.Click();
+            searchElement.SendKeys(text);
+            driver.HideKeyboard();
+        }
+
+        public void ClickButton(string id, AndroidDriver<AndroidElement> driver)
+        {
+            AndroidElement searchElement = (AndroidElement)new WebDriverWait(
+                driver, TimeSpan.FromSeconds(20)).Until(
+                SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(
+                    MobileBy.Id(id))
+            );
+
+            searchElement.Click();
+        }
+
+        public void ClickClass(string clss, AndroidDriver<AndroidElement> driver)
+        {
+            AndroidElement searchElement = (AndroidElement)new WebDriverWait(
+                driver, TimeSpan.FromSeconds(20)).Until(
+                SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(
+                    MobileBy.ClassName(clss))
+            );
+
+            searchElement.Click();
+        }
+
+        public bool CheckElement(string id, AndroidDriver<AndroidElement> driver)
+        {
+            AndroidElement searchElement = (AndroidElement)new WebDriverWait(
+                driver, TimeSpan.FromSeconds(10)).Until(
+                SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(
+                    MobileBy.Id(id))
+            );
+
+            if (searchElement == null)
+            {
+                Console.WriteLine("Salida inesperada");
+                return false;
+            }
+            else
+            {
+                Console.WriteLine("Salida correcta");
+                return true;
+            }
+        }
+
+        public bool CheckText(string txt, AndroidDriver<AndroidElement> driver)
+        {
+            AndroidElement searchElement = (AndroidElement)new WebDriverWait(
+                driver, TimeSpan.FromSeconds(10)).Until(
+                SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(
+                    MobileBy.AndroidUIAutomator("new UiSelector().textContains(\"" + txt + "\")"))
+            );
+
+            if (searchElement == null)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
+        public void LogIn(AndroidDriver<AndroidElement> driver)
+        {
+            ClickButton("com.soriana.appsoriana:id/imgArrow", driver);
+            ((IJavaScriptExecutor)driver).ExecuteScript("browserstack_executor: {\"action\": \"setSessionStatus\", \"arguments\": {\"status\":\"failed\", \"reason\": \" No se mostro o no se pudo presionar el boton de inicio \"}}");
+            ClickButton("com.soriana.appsoriana:id/btnIniciaSesion", driver);
+            ((IJavaScriptExecutor)driver).ExecuteScript("browserstack_executor: {\"action\": \"setSessionStatus\", \"arguments\": {\"status\":\"failed\", \"reason\": \" No se mostro o no se pudo llenar el campo de email \"}}");
+            InputText("com.soriana.appsoriana:id/editEmail", "autodevelopmx@gmail.com", driver);
+            ((IJavaScriptExecutor)driver).ExecuteScript("browserstack_executor: {\"action\": \"setSessionStatus\", \"arguments\": {\"status\":\"failed\", \"reason\": \" No se mostro o no se pudo llenar el campo de contraseña \"}}");
+            InputText("com.soriana.appsoriana:id/editPass", "developmx12", driver);
+            ((IJavaScriptExecutor)driver).ExecuteScript("browserstack_executor: {\"action\": \"setSessionStatus\", \"arguments\": {\"status\":\"failed\", \"reason\": \" No se mostro o no se pudo presionar boton de LogIn \"}}");
+            ClickButton("com.soriana.appsoriana:id/btn_login", driver);
+        }
+
+        public void setState(string state, string arguments, AndroidDriver<AndroidElement> driver)
+        {
+            ((IJavaScriptExecutor)driver).ExecuteScript("browserstack_executor: {\"action\": \"setSessionStatus\", \"arguments\": {\"status\":\"" + state + "\", \"reason\": \" " + arguments + " \"}}");
+        }
+
+        public void StartTimer()
+        {
+            timer = Stopwatch.StartNew();
+        }
+
+        public double ExecTime()
+        {
+            return timer.Elapsed.Seconds;
+        }
+
+        [TestMethod]
+        public void SuperEnCasa()
+        {
+
+        }
 
         [TestMethod]
         public void DetalleDeArticulo()
         {
-            string fecha = DateTime.Now.Day.ToString() + "/" + DateTime.Now.Month.ToString() + "/" + DateTime.Now.Year.ToString();
-
-            amb.CapsInit();
-            amb.caps.AddAdditionalCapability("name", "Carrito - Detalle de Articulo");
-            amb.caps.AddAdditionalCapability("build", "Android (Carrito)" + fecha + " - " + DateTime.Now.Hour.ToString() + ":00");
+            CapsInit();
+            caps.AddAdditionalCapability("name", "Carrito - Detalle de Articulo");
 
             AndroidDriver<AndroidElement> driver = new AndroidDriver<AndroidElement>(
-                    new Uri("http://hub-cloud.browserstack.com/wd/hub"), amb.caps);
+                    new Uri("http://hub-cloud.browserstack.com/wd/hub"), caps);
 
-            amb.LogIn(driver);
+            LogIn(driver);
 
-            amb.setState("failed", "No se mostro o pudo llenar el campo para buscar un producto", driver);
-            amb.InputText("android:id/search_src_text", "agua natural ciel", driver);
+            setState("failed", "No se mostro o pudo llenar el campo para buscar un producto", driver);
+            InputText("android:id/search_src_text", "agua natural ciel", driver);
 
-            amb.setState("failed", "No se mostro o encontro el producto --AGUA NATURAL CIEL 1LT--", driver);
-            amb.ClickText("AGUA NATURAL CIEL 1 LT", driver);
+            setState("failed", "No se mostro o encontro el producto --AGUA NATURAL CIEL 1LT--", driver);
+            ClickText("AGUA NATURAL CIEL 1 LT", driver);
 
-            amb.setState("failed", "No se pudo hacer scroll de pantalla", driver);
-            amb.ScrollDown(driver);
+            setState("failed", "No se pudo hacer scroll de pantalla", driver);
+            ScrollDown(driver);
 
-            amb.setState("failed", "No se mostro o pudo presionar el boton --Agregar al carrito--", driver);
-            amb.ClickButton("com.soriana.appsoriana:id/txtButtonAddCarrito", driver);
+            setState("failed", "No se mostro o pudo presionar el boton --Agregar al carrito--", driver);
+            ClickButton("com.soriana.appsoriana:id/txtButtonAddCarrito", driver);
 
-            amb.setState("failed", "No se  mostro o pudo presionar el boton --Domicilio--", driver);
-            amb.ClickButton("com.soriana.appsoriana:id/txtDomicilio", driver);
+            setState("failed", "No se  mostro o pudo presionar el boton --Domicilio--", driver);
+            ClickButton("com.soriana.appsoriana:id/txtDomicilio", driver);
 
-            amb.setState("failed", "No se encontro o pudo llenar el campo --Codigo Postal--", driver);
-            amb.InputText("com.soriana.appsoriana:id/etCodigoPostal", "27268", driver);
+            setState("failed", "No se encontro o pudo llenar el campo --Codigo Postal--", driver);
+            InputText("com.soriana.appsoriana:id/etCodigoPostal", "27268", driver);
 
-            amb.setState("failed", "No se  mostro o pudo presionar el boton --Seleccionar--", driver);
-            amb.ClickButton("com.soriana.appsoriana:id/btnSeleccionar", driver);
+            setState("failed", "No se  mostro o pudo presionar el boton --Seleccionar--", driver);
+            ClickButton("com.soriana.appsoriana:id/btnSeleccionar", driver);
 
-            amb.setState("failed", "No se  mostro o pudo presionar el icono de carrito", driver);
+            setState("failed", "No se  mostro o pudo presionar el icono de carrito", driver);
             driver.HideKeyboard();
-            amb.ClickButton("com.soriana.appsoriana:id/imageCart", driver);
+            ClickButton("com.soriana.appsoriana:id/imageCart", driver);
 
-            amb.setState("failed", "No se agrego el articulo al carrito", driver);
-            amb.CheckText("AGUA NATURAL CIEL 1 LT", driver);
+            setState("failed", "No se agrego el articulo al carrito", driver);
+            CheckText("AGUA NATURAL CIEL 1 LT", driver);
 
-            amb.setState("failed", "No se pudo borrar el articulo agregado", driver);
-            amb.ClickButton("com.soriana.appsoriana:id/action_delete", driver);
+            setState("failed", "No se pudo borrar el articulo agregado", driver);
+            ClickButton("com.soriana.appsoriana:id/action_delete", driver);
 
-            amb.setState("passed", "El articulo se agrego y removio del carrito con exito", driver);
+            setState("passed", "El articulo se agrego y removio del carrito con exito", driver);
 
             driver.Quit();
         }
 
         [TestMethod]
+        public void MisPedidos()
+        {
+
+        }
+
+        [TestMethod]
         public void MisListas()
         {
-            string fecha = DateTime.Now.Day.ToString() + "/" + DateTime.Now.Month.ToString() + "/" + DateTime.Now.Year.ToString();
-
-            amb.CapsInit();
-            amb.caps.AddAdditionalCapability("name", "Carrito - Mis Listas");
-            amb.caps.AddAdditionalCapability("build", "Android (Carrito)" + fecha + " - " + DateTime.Now.Hour.ToString() + ":00");
+            CapsInit();
+            caps.AddAdditionalCapability("name", "Carrito - Mis Listas");
 
             AndroidDriver<AndroidElement> driver = new AndroidDriver<AndroidElement>(
-                    new Uri("http://hub-cloud.browserstack.com/wd/hub"), amb.caps);
+                    new Uri("http://hub-cloud.browserstack.com/wd/hub"), caps);
 
-            amb.LogIn(driver);
+            LogIn(driver);
 
-            amb.setState("failed", "No se pudo acceder o encontrar la pestaña --Listas--", driver);
-            amb.ClickButton("com.soriana.appsoriana:id/misListasFragment", driver);
+            setState("failed", "No se pudo acceder o encontrar la pestaña --Listas--", driver);
+            ClickButton("com.soriana.appsoriana:id/misListasFragment", driver);
+            
+            setState("failed", "No se encontro o pudo acceder a la lista --Mis Favoritos--", driver);
+            ClickText("Mis Favoritos", driver);
+            
+            setState("failed", "No se pudo marcar los articulos de la lista", driver);
+            ClickButton("com.soriana.appsoriana:id/select_all", driver);
+            
+            setState("failed", "No se pudó presionar el boton --Añadir al carrito--", driver);
+            ClickButton("com.soriana.appsoriana:id/btnAddCart", driver);
+            
+            setState("failed", "No se pudó aceptar la confirmacion de agregar al carrito", driver);
+            ClickButton("android:id/button1", driver);
+            
+            setState("failed", "No se encontro el boton de volver", driver);
+            ClickButton("com.soriana.appsoriana:id/activity_main_content_button_back", driver);
+            
+            setState("failed", "No se encontro el boton de home", driver);
+            ClickButton("com.soriana.appsoriana:id/nuevoInicioFragment", driver);
 
-            amb.setState("failed", "No se encontro o pudo acceder a la lista --Mis Favoritos--", driver);
-            amb.ClickText("Mis Favoritos", driver);
+            setState("failed", "No se  mostro o pudo presionar el icono de carrito", driver);
+            ClickButton("com.soriana.appsoriana:id/imageCart", driver);
 
-            amb.setState("failed", "No se pudo marcar los articulos de la lista", driver);
-            amb.ClickButton("com.soriana.appsoriana:id/select_all", driver);
+            setState("failed", "No se agrego el articulo al carrito", driver);
+            CheckText("AGUA NATURAL CIEL 1 LT", driver);
+            setState("failed", "No se agrego el articulo al carrito", driver);
+            CheckText("PAPAS SABRITAS ORIGINAL", driver);
 
-            amb.setState("failed", "No se pudó presionar el boton --Añadir al carrito--", driver);
-            amb.ClickButton("com.soriana.appsoriana:id/btnAddCart", driver);
+            setState("failed", "No se logro vaciar el carrito", driver);
+            ClickButton("com.soriana.appsoriana:id/action_delete", driver);
 
-            amb.setState("failed", "No se pudó aceptar la confirmacion de agregar al carrito", driver);
-            amb.ClickButton("android:id/button1", driver);
-
-            amb.setState("failed", "No se encontro el boton de volver", driver);
-            amb.ClickButton("com.soriana.appsoriana:id/activity_main_content_button_back", driver);
-
-            amb.setState("failed", "No se encontro el boton de home", driver);
-            amb.ClickButton("com.soriana.appsoriana:id/nuevoInicioFragment", driver);
-
-            amb.setState("failed", "No se  mostro o pudo presionar el icono de carrito", driver);
-            amb.ClickButton("com.soriana.appsoriana:id/imageCart", driver);
-
-            amb.setState("failed", "No se agrego el articulo al carrito", driver);
-            amb.CheckText("AGUA NATURAL CIEL 1 LT", driver);
-            amb.setState("failed", "No se agrego el articulo al carrito", driver);
-            amb.CheckText("PAPAS SABRITAS ORIGINAL", driver);
-
-            amb.setState("failed", "No se logro vaciar el carrito", driver);
-            amb.ClickButton("com.soriana.appsoriana:id/action_delete", driver);
-
-            amb.setState("passed", "El articulo se agrego y removio del carrito con exito", driver);
+            setState("passed", "El articulo se agrego y removio del carrito con exito", driver);
 
             driver.Quit();
         }
