@@ -213,32 +213,43 @@ namespace Carrito
 
             LogIn(driver);
 
+            setState("failed", "Seccion --Listas-- no encontrada", driver);
             ClickButton("com.soriana.appsoriana:id/misListasFragment", driver);
+
+            setState("failed", "Lista --Mis Favoritos-- no encontrada", driver);
             ClickText("Mis Favoritos", driver);
+
+            setState("failed", "Opcion --Seleccionar todo-- no encontrado", driver);
             ClickButton("com.soriana.appsoriana:id/select_all", driver);
+
+            setState("failed", "Boton --Agregar al carrito-- no encontrado", driver);
             ClickButton("com.soriana.appsoriana:id/btnAddCart", driver);
+
+            setState("failed", "Boton --Aceptar-- no encontrado", driver);
             ClickButton("android:id/button1", driver);
+
+            setState("failed", "Boton --Regresar-- no encontrado", driver);
             ClickButton("com.soriana.appsoriana:id/activity_main_content_button_back", driver);
+
+            setState("failed", "Seccion --Inicio-- no encontrado", driver);
             ClickButton("com.soriana.appsoriana:id/nuevoInicioFragment", driver);
 
+            setState("failed", "Boton --Carrito-- no enontrado", driver);
+            ClickButton("com.soriana.appsoriana:id/imageCart", driver);
 
-            if (!CheckElementText("com.soriana.appsoriana:id/txtItems", "2", driver))
-            {
-                setState("failed", "Cantidad de productos no concuerda o no se agregaron todos los productos", driver);
-                driver.Quit();
-            }
+            setState("failed", "Cantidad de productos no concuerda o no se agregaron todos los productos", driver);
+            CheckText("JUGO DEL VALLE", driver);
+            CheckText("BOTANA RUFFLES", driver);
 
-            ClickButton("com.soriana.appsoriana:id/txtItems", driver);
-
-            setState("failed", "PAPAS SABRITAS no agregado o encontrado", driver);
-            CheckText("PAPAS SABRITAS", driver);
-
-            setState("failed", "AGUA NATURAL CIEL no agregado o encontrado", driver);
-            CheckText("AGUA NATURAL CIEL", driver);
-
-            setState("failed", "Error al eliminar o presionar el boton de eliminar", driver);
+            setState("failed", "Boton --Eliminar-- no encontrado", driver);
             ClickButton("com.soriana.appsoriana:id/action_delete", driver);
+
+            setState("failed", "Boton --Aceptar-- no encontrado", driver);
             ClickButton("android:id/button1", driver);
+
+            setState("failed", "Boton --Regresar-- no encontrado", driver);
+            ClickClass("android.widget.ImageButton", driver);
+
             setState("passed", "Productos agregados y verificados con exito", driver);
 
             driver.Quit();
@@ -316,33 +327,60 @@ namespace Carrito
 
             LogIn(driver);
 
+            setState("failed", "Seccion --Listas-- no encontrada", driver);
             ClickButton("com.soriana.appsoriana:id/misListasFragment", driver);
+
+            setState("failed", "Lista --Mis Favoritos-- no encontrada", driver);
             ClickText("Mis Favoritos", driver);
+
+            setState("failed", "Boton --Seleccinar todo-- no encontrado", driver);
             ClickButton("com.soriana.appsoriana:id/select_all", driver);
+
+            setState("failed", "Boton --Agregar al carrito-- no encontrado", driver);
             ClickButton("com.soriana.appsoriana:id/btnAddCart", driver);
+
+            setState("failed", "Boton --Aceptar-- no encontrado", driver);
             ClickButton("android:id/button1", driver);
+
+            setState("failed", "Boton --Regresar-- no encontrado", driver);
             ClickButton("com.soriana.appsoriana:id/activity_main_content_button_back", driver);
+
+            setState("failed", "Seccion --Inicio-- no encontrado", driver);
             ClickButton("com.soriana.appsoriana:id/nuevoInicioFragment", driver);
 
+            setState("failed", "Boton --Carrito-- no encontrado", driver);
             ClickButton("com.soriana.appsoriana:id/imageCart", driver);
 
-            setState("failed", "PAPAS SABRITAS no agregado o encontrado", driver);
-            ClickText("PAPAS SABRITAS", driver);
+            setState("failed", "BOTANA RUFFLES no agregado o encontrado", driver);
+            ClickText("BOTANA RUFFLES", driver);
+
+            setState("failed", "Boton --Mas-- no encontrado", driver);
             ClickButton("com.soriana.appsoriana:id/btnMas", driver);
+
+            setState("failed", "Boton --Agregar al carrito-- no encontrado", driver);
             ClickButton("com.soriana.appsoriana:id/txtButtonAddCarrito", driver);
 
+            setState("failed", "Fallo al seleccionar entrega A Domicilio", driver);
             ClickButton("com.soriana.appsoriana:id/txtDomicilio", driver);
+
+            setState("failed", "Fallo al introducir Codigo Postal", driver);
             InputText("com.soriana.appsoriana:id/etCodigoPostal", "27268", driver);
+
+            setState("failed", "Boton --Seleccionar-- no encontrado", driver);
             ClickButton("com.soriana.appsoriana:id/btnSeleccionar", driver);
 
+            setState("failed", "Boton --Regresar-- no encontrado", driver);
             ClickClass("android.widget.ImageButton", driver);
 
             ScrollDown(driver);
             
             setState("failed", "Error al eliminar o presionar el boton de eliminar", driver);
             ClickButton("com.soriana.appsoriana:id/action_delete", driver);
+
+            setState("failed", "Boton --Aceptar-- no encontrado", driver);
             ClickButton("android:id/button1", driver);
-            setState("passed", "Productos agregados y verificados con exito", driver);
+
+            setState("passed", "Se modifico la cantidad con exito", driver);
 
             driver.Quit();
         }
