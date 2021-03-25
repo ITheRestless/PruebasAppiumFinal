@@ -11,3 +11,4 @@ C:\Users\Mauricio\Documents\GitHub\PruebasAppiumFinal\Registro\obj\Debug\netcore
 C:\Users\Mauricio\Documents\GitHub\PruebasAppiumFinal\Registro\obj\Debug\netcoreapp2.1\Registro.AssemblyInfo.cs
 C:\Users\Mauricio\Documents\GitHub\PruebasAppiumFinal\Registro\obj\Debug\netcoreapp2.1\Registro.dll
 C:\Users\Mauricio\Documents\GitHub\PruebasAppiumFinal\Registro\obj\Debug\netcoreapp2.1\Registro.pdb
+C:\Users\Mauricio\Documents\GitHub\PruebasAppiumFinal\Registro\obj\Debug\netcoreapp2.1\Registro.csprojAssemblyReference.cache

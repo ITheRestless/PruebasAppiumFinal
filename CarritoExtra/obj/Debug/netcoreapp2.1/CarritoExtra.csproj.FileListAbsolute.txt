@@ -1,0 +1,4 @@
+C:\Users\Mauricio\Documents\GitHub\PruebasAppiumFinal\CarritoExtra\obj\Debug\netcoreapp2.1\CarritoExtra.csprojAssemblyReference.cache
+C:\Users\Mauricio\Documents\GitHub\PruebasAppiumFinal\CarritoExtra\obj\Debug\netcoreapp2.1\CarritoExtra.csproj.CoreCompileInputs.cache
+C:\Users\Mauricio\Documents\GitHub\PruebasAppiumFinal\CarritoExtra\obj\Debug\netcoreapp2.1\CarritoExtra.AssemblyInfoInputs.cache
+C:\Users\Mauricio\Documents\GitHub\PruebasAppiumFinal\CarritoExtra\obj\Debug\netcoreapp2.1\CarritoExtra.AssemblyInfo.cs

@@ -1,156 +1,15 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
-using OpenQA.Selenium.Appium;
 using OpenQA.Selenium.Appium.Android;
-using OpenQA.Selenium.Remote;
-using OpenQA.Selenium.Support.UI;
-using System.Collections.Generic;
-using System.Diagnostics;
-using OpenQA.Selenium.Appium.Interfaces;
-using OpenQA.Selenium.Appium.MultiTouch;
-using OpenQA.Selenium;
 using System.Text.RegularExpressions;
+using UnitTestProject3;
 
 namespace Registro
 {
     [TestClass]
     public class Registro
     {
-        List<string> logs = new List<string>();
-        Stopwatch timer;
-        double time;
-        AppiumOptions caps;
-
-        public void CapsInit()
-        {
-            string fecha = DateTime.Now.Day.ToString() + "/" + DateTime.Now.Month.ToString() + "/" + DateTime.Now.Year.ToString();
-            caps = new AppiumOptions();
-            caps.AddAdditionalCapability("newCommandTimeout", 20);
-            caps.AddAdditionalCapability("browserstack.user", "mauricioemmanuel1");
-            caps.AddAdditionalCapability("browserstack.key", "XZYh6tFKBx8KBDyBzbAy");
-            caps.AddAdditionalCapability("autoAcceptAlerts", true);
-            caps.AddAdditionalCapability("autoGrantPermissions", true);
-            caps.AddAdditionalCapability("app", "bs://62e46a9f2171f17a2869efe8964bddda54644423");
-            caps.AddAdditionalCapability("device", "Google Pixel 3");
-            caps.AddAdditionalCapability("os_version", "9.0");
-            caps.PlatformName = "Android";
-            caps.AddAdditionalCapability("project", "AppSoriana");
-            caps.AddAdditionalCapability("build", "Android " + fecha);
-        }
-
-        public void ScrollDown(AndroidDriver<AndroidElement> driver)
-        {
-            ITouchAction touchAction = new TouchAction(driver)
-            .Press(200, 1000)
-            .Wait(500)
-            .MoveTo(200, 200)
-            .Release();
-
-            touchAction.Perform();
-        }
-
-        public void ScrollUp(AndroidDriver<AndroidElement> driver)
-        {
-            ITouchAction touchAction = new TouchAction(driver)
-            .Press(200, 200)
-            .Wait(500)
-            .MoveTo(200, 1000)
-            .Release();
-
-            touchAction.Perform();
-        }
-
-        public void InputText(string id, string text, AndroidDriver<AndroidElement> driver)
-        {
-            AndroidElement searchElement = (AndroidElement)new WebDriverWait(
-                driver, TimeSpan.FromSeconds(20)).Until(
-                SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(
-                    MobileBy.Id(id))
-            );
-
-            searchElement.Click();
-            searchElement.SendKeys(text);
-            driver.HideKeyboard();
-        }
-
-        public void ClickButton(string id, AndroidDriver<AndroidElement> driver)
-        {
-            AndroidElement searchElement = (AndroidElement)new WebDriverWait(
-                driver, TimeSpan.FromSeconds(20)).Until(
-                SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(
-                    MobileBy.Id(id))
-            );
-
-            searchElement.Click();
-        }
-
-        public void ClickText(string txt, AndroidDriver<AndroidElement> driver)
-        {
-            AndroidElement searchElement = (AndroidElement)new WebDriverWait(
-                driver, TimeSpan.FromSeconds(20)).Until(
-                SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(
-                    MobileBy.AndroidUIAutomator("new UiSelector().textContains(\"" + txt + "\")"))
-            );
-
-
-
-            searchElement.Click();
-        }
-
-        public void ClickClass(string clss, AndroidDriver<AndroidElement> driver)
-        {
-            AndroidElement searchElement = (AndroidElement)new WebDriverWait(
-                driver, TimeSpan.FromSeconds(20)).Until(
-                SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(
-                    MobileBy.ClassName(clss))
-            );
-
-            searchElement.Click();
-        }
-
-        public bool CheckElement(string id, AndroidDriver<AndroidElement> driver)
-        {
-            AndroidElement searchElement = (AndroidElement)new WebDriverWait(
-                driver, TimeSpan.FromSeconds(10)).Until(
-                SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(
-                    MobileBy.Id(id))
-            );
-
-            if (searchElement == null)
-            {
-                Console.WriteLine("Salida inesperada");
-                return false;
-            }
-            else
-            {
-                Console.WriteLine("Salida correcta");
-                return true;
-            }
-        }
-
-        public bool CheckText(string txt, AndroidDriver<AndroidElement> driver)
-        {
-            AndroidElement searchElement = (AndroidElement)new WebDriverWait(
-                driver, TimeSpan.FromSeconds(10)).Until(
-                SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(
-                    MobileBy.AndroidUIAutomator("new UiSelector().textContains(\"" + txt + "\")"))
-            );
-
-            if (searchElement == null)
-            {
-                return false;
-            }
-            else
-            {
-                return true;
-            }
-        }
-
-        public void setState(string state, string arguments, AndroidDriver<AndroidElement> driver)
-        {
-            ((IJavaScriptExecutor)driver).ExecuteScript("browserstack_executor: {\"action\": \"setSessionStatus\", \"arguments\": {\"status\":\"" + state + "\", \"reason\": \" " + arguments + " \"}}");
-        }
-
+        Ambiente amb = new Ambiente();
         public string ObtenerCodigoRegistro(string usr)
         {
 
@@ -165,21 +24,11 @@ namespace Registro
             return strCode.Substring(0, 6);
         }
 
-        public void StartTimer()
-        {
-            timer = Stopwatch.StartNew();
-        }
-
-        public double ExecTime()
-        {
-            return timer.Elapsed.Seconds;
-        }
-
         [TestMethod]
         public void CrearTarjetaVirtual()
         {
-            CapsInit();
-            caps.AddAdditionalCapability("name", "Registro - Crear tarjeta virtual y aceptar los terminos y condiciones");
+            amb.CapsInit();
+            amb.caps.AddAdditionalCapability("name", "Registro - Crear tarjeta virtual y aceptar los terminos y condiciones");
 
             string fecha = DateTime.Now.Day.ToString() + "/" + DateTime.Now.Month.ToString() + "/" + DateTime.Now.Year.ToString();
             amb.caps.AddAdditionalCapability("build", "Android (Registro)" + fecha + " - " + DateTime.Now.Hour.ToString() + ":00");
@@ -187,61 +36,58 @@ namespace Registro
             string date = DateTime.Now.Day.ToString() + DateTime.Now.Month.ToString() + DateTime.Now.Year.ToString() + DateTime.Now.Hour.ToString() + DateTime.Now.Minute.ToString() + DateTime.Now.Second.ToString();
 
             AndroidDriver<AndroidElement> driver = new AndroidDriver<AndroidElement>(
-                    new Uri("http://hub-cloud.browserstack.com/wd/hub"), caps);
+                    new Uri("http://hub-cloud.browserstack.com/wd/hub"), amb.caps);
 
-            //--------------------------Secuencia----------------------------------
-            StartTimer();
+            amb.setState("failed", "Boton --Inicio-- no encontrado", driver);
+            amb.ClickButton("com.soriana.appsoriana:id/menuPerfilFragment", driver);
 
-            setState("failed", "Boton --Inicio-- no encontrado", driver);
-            ClickButton("com.soriana.appsoriana:id/menuPerfilFragment", driver);
+            amb.setState("failed", "Boton --Iniciar sesion-- no encontrado", driver);
+            amb.ClickButton("com.soriana.appsoriana:id/btnIniciarSesion", driver);
+            amb.ClickButton("com.soriana.appsoriana:id/btnIniciaSesion", driver);
 
-            setState("failed", "Boton --Iniciar sesion-- no encontrado", driver);
-            ClickButton("com.soriana.appsoriana:id/btnIniciarSesion", driver);
-            ClickButton("com.soriana.appsoriana:id/btnIniciaSesion", driver);
+            amb.setState("failed", "Boton --Registrate-- no encontrado", driver);
+            amb.ClickButton("com.soriana.appsoriana:id/btnRegistrate", driver);
 
-            setState("failed", "Boton --Registrate-- no encontrado", driver);
-            ClickButton("com.soriana.appsoriana:id/btnRegistrate", driver);
+            amb.setState("failed", "Campo --Nombre-- no encontrado", driver);
+            amb.InputText("com.soriana.appsoriana:id/editNombre", "PruebaAuto" + date, driver);
 
-            setState("failed", "Campo --Nombre-- no encontrado", driver);
-            InputText("com.soriana.appsoriana:id/editNombre", "PruebaAuto" + date, driver);
+            amb.setState("failed", "Campo --Apellido paterno-- no encontrado", driver);
+            amb.InputText("com.soriana.appsoriana:id/editAP", "Dev", driver);
 
-            setState("failed", "Campo --Apellido paterno-- no encontrado", driver);
-            InputText("com.soriana.appsoriana:id/editAP", "Dev", driver);
+            amb.setState("failed", "Campo --Apellido materno-- no encontrado", driver);
+            amb.InputText("com.soriana.appsoriana:id/editAM", "Mx", driver);
 
-            setState("failed", "Campo --Apellido materno-- no encontrado", driver);
-            InputText("com.soriana.appsoriana:id/editAM", "Mx", driver);
+            amb.setState("failed", "Campo --Email-- no encontrado", driver);
+            amb.InputText("com.soriana.appsoriana:id/editMail", "PruebaAuto" + date + "@yopmail.net", driver);
 
-            setState("failed", "Campo --Email-- no encontrado", driver);
-            InputText("com.soriana.appsoriana:id/editMail", "PruebaAuto" + date + "@yopmail.net", driver);
+            amb.setState("failed", "Campo --Telefono-- no encontrado", driver);
+            amb.InputText("com.soriana.appsoriana:id/editTel", "8711199728", driver);
 
-            setState("failed", "Campo --Telefono-- no encontrado", driver);
-            InputText("com.soriana.appsoriana:id/editTel", "8711199728", driver);
+            amb.setState("failed", "Campo --Contraseña-- no encontrado", driver);
+            amb.ScrollDown(driver);
+            amb.InputText("com.soriana.appsoriana:id/editPass", "Contramamona12.", driver);
+            amb.InputText("com.soriana.appsoriana:id/editConfirm", "Contramamona12.", driver);
 
-            setState("failed", "Campo --Contraseña-- no encontrado", driver);
-            ScrollDown(driver);
-            InputText("com.soriana.appsoriana:id/editPass", "Contramamona12.", driver);
-            InputText("com.soriana.appsoriana:id/editConfirm", "Contramamona12.", driver);
+            amb.setState("failed", "Boton --Registrar-- no encontrado", driver);
+            amb.ClickClass("android.widget.Button", driver);
 
-            setState("failed", "Boton --Registrar-- no encontrado", driver);
-            ClickClass("android.widget.Button", driver);
+            amb.setState("failed", "Error al introducir el codigo de confirmacion", driver);
+            amb.InputText("com.soriana.appsoriana:id/editCodigoConfirmacion", ObtenerCodigoRegistro("PruebaAuto" + date + "@yopmail.net"), driver);
 
-            setState("failed", "Error al introducir el codigo de confirmacion", driver);
-            InputText("com.soriana.appsoriana:id/editCodigoConfirmacion", ObtenerCodigoRegistro("PruebaAuto" + date + "@yopmail.net"), driver);
+            amb.setState("failed", "Error al presionar el boton --Continuar--", driver);
+            amb.ClickButton("com.soriana.appsoriana:id/btnConfirmar", driver);
 
-            setState("failed", "Error al presionar el boton --Continuar--", driver);
-            ClickButton("com.soriana.appsoriana:id/btnConfirmar", driver);
+            amb.setState("failed", "Error al presionar el boton --Finalizar Registro--", driver);
+            amb.ClickText("Finalizar registro", driver);
 
-            setState("failed", "Error al presionar el boton --Finalizar Registro--", driver);
-            ClickText("Finalizar registro", driver);
+            amb.setState("failed", "Error al presionar el boton --Comenzar-- en la pantalla de cuenta creada", driver);
+            amb.ClickButton("com.soriana.appsoriana:id/btnComenzar", driver);
 
-            setState("failed", "Error al presionar el boton --Comenzar-- en la pantalla de cuenta creada", driver);
-            ClickButton("com.soriana.appsoriana:id/btnComenzar", driver);
+            amb.setState("failed", "Error al aceptar los terminos y condiciones", driver);
+            amb.ClickButton("com.soriana.appsoriana:id/btnAceptar", driver);
 
-            setState("failed", "Error al aceptar los terminos y condiciones", driver);
-            ClickButton("com.soriana.appsoriana:id/btnAceptar", driver);
-
-            ClickText("PruebaAuto", driver);
-            setState("passed", "Registrado con exito faltando confirmacion de email", driver);
+            amb.ClickText("PruebaAuto", driver);
+            amb.setState("passed", "Registrado con exito faltando confirmacion de email", driver);
 
             driver.Quit();
         }
@@ -249,8 +95,8 @@ namespace Registro
         [TestMethod]
         public void RegistroNoAceptarTerminosYCondiciones()
         {
-            CapsInit();
-            caps.AddAdditionalCapability("name", "Registro - No aceptar terminos y condiciones");
+            amb.CapsInit();
+            amb.caps.AddAdditionalCapability("name", "Registro - No aceptar terminos y condiciones");
 
             string fecha = DateTime.Now.Day.ToString() + "/" + DateTime.Now.Month.ToString() + "/" + DateTime.Now.Year.ToString();
             amb.caps.AddAdditionalCapability("build", "Android (Registro)" + fecha + " - " + DateTime.Now.Hour.ToString() + ":00");
@@ -258,63 +104,60 @@ namespace Registro
             string date = DateTime.Now.Day.ToString() + DateTime.Now.Month.ToString() + DateTime.Now.Year.ToString() + DateTime.Now.Hour.ToString() + DateTime.Now.Minute.ToString() + DateTime.Now.Second.ToString();
 
             AndroidDriver<AndroidElement> driver = new AndroidDriver<AndroidElement>(
-                    new Uri("http://hub-cloud.browserstack.com/wd/hub"), caps);
+                    new Uri("http://hub-cloud.browserstack.com/wd/hub"), amb.caps);
 
-            //--------------------------Secuencia----------------------------------
-            StartTimer();
+            amb.setState("failed", "Boton --Inicio-- no encontrado", driver);
+            amb.ClickButton("com.soriana.appsoriana:id/menuPerfilFragment", driver);
 
-            setState("failed", "Boton --Inicio-- no encontrado", driver);
-            ClickButton("com.soriana.appsoriana:id/menuPerfilFragment", driver);
+            amb.setState("failed", "Boton --Iniciar sesion-- no encontrado", driver);
+            amb.ClickButton("com.soriana.appsoriana:id/btnIniciarSesion", driver);
+            amb.ClickButton("com.soriana.appsoriana:id/btnIniciaSesion", driver);
 
-            setState("failed", "Boton --Iniciar sesion-- no encontrado", driver);
-            ClickButton("com.soriana.appsoriana:id/btnIniciarSesion", driver);
-            ClickButton("com.soriana.appsoriana:id/btnIniciaSesion", driver);
+            amb.setState("failed", "Boton --Registrate-- no encontrado", driver);
+            amb.ClickButton("com.soriana.appsoriana:id/btnRegistrate", driver);
 
-            setState("failed", "Boton --Registrate-- no encontrado", driver);
-            ClickButton("com.soriana.appsoriana:id/btnRegistrate", driver);
+            amb.setState("failed", "Campo --Nombre-- no encontrado", driver);
+            amb.InputText("com.soriana.appsoriana:id/editNombre", "PruebaAuto" + date, driver);
 
-            setState("failed", "Campo --Nombre-- no encontrado", driver);
-            InputText("com.soriana.appsoriana:id/editNombre", "PruebaAuto" + date, driver);
+            amb.setState("failed", "Campo --Apellido paterno-- no encontrado", driver);
+            amb.InputText("com.soriana.appsoriana:id/editAP", "Dev", driver);
 
-            setState("failed", "Campo --Apellido paterno-- no encontrado", driver);
-            InputText("com.soriana.appsoriana:id/editAP", "Dev", driver);
+            amb.setState("failed", "Campo --Apellido materno-- no encontrado", driver);
+            amb.InputText("com.soriana.appsoriana:id/editAM", "Mx", driver);
 
-            setState("failed", "Campo --Apellido materno-- no encontrado", driver);
-            InputText("com.soriana.appsoriana:id/editAM", "Mx", driver);
+            amb.setState("failed", "Campo --Email-- no encontrado", driver);
+            amb.InputText("com.soriana.appsoriana:id/editMail", "PruebaAuto" + date + "@yopmail.net", driver);
 
-            setState("failed", "Campo --Email-- no encontrado", driver);
-            InputText("com.soriana.appsoriana:id/editMail", "PruebaAuto" + date + "@yopmail.net", driver);
+            amb.setState("failed", "Campo --Telefono-- no encontrado", driver);
+            amb.InputText("com.soriana.appsoriana:id/editTel", "8711199728", driver);
 
-            setState("failed", "Campo --Telefono-- no encontrado", driver);
-            InputText("com.soriana.appsoriana:id/editTel", "8711199728", driver);
+            amb.setState("failed", "Campo --Contraseña-- no encontrado", driver);
+            amb.ScrollDown(driver);
+            amb.InputText("com.soriana.appsoriana:id/editPass", "Contramamona12.", driver);
+            amb.InputText("com.soriana.appsoriana:id/editConfirm", "Contramamona12.", driver);
 
-            setState("failed", "Campo --Contraseña-- no encontrado", driver);
-            ScrollDown(driver);
-            InputText("com.soriana.appsoriana:id/editPass", "Contramamona12.", driver);
-            InputText("com.soriana.appsoriana:id/editConfirm", "Contramamona12.", driver);
+            amb.setState("failed", "Boton --Registrar-- no encontrado", driver);
+            amb.ClickClass("android.widget.Button", driver);
 
-            setState("failed", "Boton --Registrar-- no encontrado", driver);
-            ClickClass("android.widget.Button", driver);
+            amb.setState("failed", "Error al introducir el codigo de confirmacion", driver);
+            amb.InputText("com.soriana.appsoriana:id/editCodigoConfirmacion", ObtenerCodigoRegistro("PruebaAuto" + date + "@yopmail.net"), driver);
 
-            setState("failed", "Error al introducir el codigo de confirmacion", driver);
-            InputText("com.soriana.appsoriana:id/editCodigoConfirmacion", ObtenerCodigoRegistro("PruebaAuto" + date + "@yopmail.net"), driver);
+            amb.setState("failed", "Error al presionar el boton --Continuar--", driver);
+            amb.ClickButton("com.soriana.appsoriana:id/btnConfirmar", driver);
 
-            setState("failed", "Error al presionar el boton --Continuar--", driver);
-            ClickButton("com.soriana.appsoriana:id/btnConfirmar", driver);
+            amb.setState("failed", "Error al presionar el boton --Finalizar Registro--", driver);
+            amb.ClickText("Finalizar registro", driver);
 
-            setState("failed", "Error al presionar el boton --Finalizar Registro--", driver);
-            ClickText("Finalizar registro", driver);
+            amb.setState("failed", "Error al presionar el boton --Comenzar-- en la pantalla de cuenta creada", driver);
+            amb.ClickButton("com.soriana.appsoriana:id/btnComenzar", driver);
 
-            setState("failed", "Error al presionar el boton --Comenzar-- en la pantalla de cuenta creada", driver);
-            ClickButton("com.soriana.appsoriana:id/btnComenzar", driver);
+            amb.setState("failed", "Error al aceptar los terminos y condiciones", driver);
+            amb.ClickButton("com.soriana.appsoriana:id/btnNoAceptar", driver);
 
-            setState("failed", "Error al aceptar los terminos y condiciones", driver);
-            ClickButton("com.soriana.appsoriana:id/btnNoAceptar", driver);
+            amb.setState("failed", "No regreso a la pantalla de inicio de sesion", driver);
+            amb.ClickButton("com.soriana.appsoriana:id/btnRegistrate", driver);
 
-            setState("failed", "No regreso a la pantalla de inicio de sesion", driver);
-            ClickButton("com.soriana.appsoriana:id/btnRegistrate", driver);
-
-            setState("passed", "No registrado con exito", driver);
+            amb.setState("passed", "No registrado con exito", driver);
 
             driver.Quit();
         }

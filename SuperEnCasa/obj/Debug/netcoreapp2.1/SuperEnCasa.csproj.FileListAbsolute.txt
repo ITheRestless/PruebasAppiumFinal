@@ -11,3 +11,4 @@ C:\Users\Mauricio\Documents\GitHub\PruebasAppiumFinal\SuperEnCasa\obj\Debug\netc
 C:\Users\Mauricio\Documents\GitHub\PruebasAppiumFinal\SuperEnCasa\obj\Debug\netcoreapp2.1\SuperEnCasa.AssemblyInfo.cs
 C:\Users\Mauricio\Documents\GitHub\PruebasAppiumFinal\SuperEnCasa\obj\Debug\netcoreapp2.1\SuperEnCasa.dll
 C:\Users\Mauricio\Documents\GitHub\PruebasAppiumFinal\SuperEnCasa\obj\Debug\netcoreapp2.1\SuperEnCasa.pdb
+C:\Users\Mauricio\Documents\GitHub\PruebasAppiumFinal\SuperEnCasa\obj\Debug\netcoreapp2.1\SuperEnCasa.csprojAssemblyReference.cache
