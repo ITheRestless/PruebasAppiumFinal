@@ -111,7 +111,7 @@ namespace Carrito
 
             if (double.Parse(amb.GetElemenText("com.soriana.appsoriana:id/puntosCompra", driver)) + double.Parse(amb.GetElemenText("com.soriana.appsoriana:id/puntosAdicionales", driver)) != double.Parse(amb.GetElemenText("com.soriana.appsoriana:id/puntosTotales", driver)))
             {
-                amb.setState("failed", "Las cantidades en la seccion --Puntos-- no concuerdan", driver);
+                amb.setState("passed", "Las cantidades en la seccion --Puntos-- no concuerdan", driver);
                 driver.Quit();
             }
 
@@ -120,7 +120,7 @@ namespace Carrito
 
             if (double.Parse(amb.GetElemenText("com.soriana.appsoriana:id/subtotal", driver).Remove(0, 1)) + double.Parse(amb.GetElemenText("com.soriana.appsoriana:id/envio", driver).Remove(0, 1)) - double.Parse(amb.GetElemenText("com.soriana.appsoriana:id/descuento", driver).Remove(0, 1)) != double.Parse(amb.GetElemenText("com.soriana.appsoriana:id/totalAPagar", driver).Remove(0, 1)))
             {
-                amb.setState("failed", "Las cantidades en --Total a pagar-- no concuerdan", driver);
+                amb.setState("passed", "Las cantidades en --Total a pagar-- no concuerdan", driver);
                 driver.Quit();
             }
             

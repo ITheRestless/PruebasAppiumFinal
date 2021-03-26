@@ -329,7 +329,7 @@ namespace UnitTestProject3
             ((IJavaScriptExecutor)driver).ExecuteScript("browserstack_executor: {\"action\": \"setSessionStatus\", \"arguments\": {\"status\":\"failed\", \"reason\": \" No se mostro o no se pudo presionar el boton de inicio \"}}");
             ClickButton("com.soriana.appsoriana:id/btnIniciaSesion", driver);
             ((IJavaScriptExecutor)driver).ExecuteScript("browserstack_executor: {\"action\": \"setSessionStatus\", \"arguments\": {\"status\":\"failed\", \"reason\": \" No se mostro o no se pudo llenar el campo de email \"}}");
-            InputText("com.soriana.appsoriana:id/editEmail", "autodevelopmx@gmail.com", driver);
+            InputText("com.soriana.appsoriana:id/editEmail", "pruebasdevelopcarrito2@yopmail.com", driver);
             ((IJavaScriptExecutor)driver).ExecuteScript("browserstack_executor: {\"action\": \"setSessionStatus\", \"arguments\": {\"status\":\"failed\", \"reason\": \" No se mostro o no se pudo llenar el campo de contraseña \"}}");
             InputText("com.soriana.appsoriana:id/editPass", "developmx12", driver);
             ((IJavaScriptExecutor)driver).ExecuteScript("browserstack_executor: {\"action\": \"setSessionStatus\", \"arguments\": {\"status\":\"failed\", \"reason\": \" No se mostro o no se pudo presionar boton de LogIn \"}}");
