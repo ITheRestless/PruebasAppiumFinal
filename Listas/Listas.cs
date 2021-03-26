@@ -108,8 +108,8 @@ namespace Listas
             amb.setState("failed", "Error al buscar un producto", driver);
             amb.InputText("android:id/search_src_text", "DORITOS", driver);
             
-            amb.setState("failed", "Articulo --BOTANA DORITOS 155gr-- no encontrado", driver);
-            amb.ClickText("BOTANA DORITOS 155", driver);
+            amb.setState("failed", "Articulo --BOTANA DORITOS-- no encontrado", driver);
+            amb.ClickText("BOTANA DORITOS", driver);
 
             amb.ScrollDown(driver);
 

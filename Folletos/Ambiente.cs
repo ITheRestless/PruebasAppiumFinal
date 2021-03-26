@@ -67,8 +67,8 @@ namespace UnitTestProject3
             caps = new AppiumOptions();
 
             caps.AddAdditionalCapability("newCommandTimeout", 10);
-            caps.AddAdditionalCapability("browserstack.user", "mauricioemmanuel1");
-            caps.AddAdditionalCapability("browserstack.key", "XZYh6tFKBx8KBDyBzbAy");
+            caps.AddAdditionalCapability("browserstack.user", "ivnalejandrorodr1");
+            caps.AddAdditionalCapability("browserstack.key", "CxgPJMGN4ip3NSunHFfT");
             caps.AddAdditionalCapability("autoAcceptAlerts", true);
             caps.AddAdditionalCapability("autoGrantPermissions", true);
             caps.AddAdditionalCapability("app", ApkPre);
