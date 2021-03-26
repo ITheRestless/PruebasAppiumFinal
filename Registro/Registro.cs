@@ -63,6 +63,8 @@ namespace Registro
             amb.InputText("com.soriana.appsoriana:id/editPass", "Contramamona12.", driver);
             amb.InputText("com.soriana.appsoriana:id/editConfirm", "Contramamona12.", driver);
 
+            amb.ClickButton("com.soriana.appsoriana:id/checkBoxTerminos", driver);
+
             amb.setState("failed", "Boton --Registrar-- no encontrado", driver);
             amb.ClickClass("android.widget.Button", driver);
 
@@ -126,6 +128,8 @@ namespace Registro
             amb.ScrollDown(driver);
             amb.InputText("com.soriana.appsoriana:id/editPass", "Contramamona12.", driver);
             amb.InputText("com.soriana.appsoriana:id/editConfirm", "Contramamona12.", driver);
+
+            amb.ClickButton("com.soriana.appsoriana:id/checkBoxTerminos", driver);
 
             amb.setState("failed", "Boton --Registrar-- no encontrado", driver);
             amb.ClickClass("android.widget.Button", driver);
