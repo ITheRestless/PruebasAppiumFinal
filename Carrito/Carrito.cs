@@ -94,14 +94,14 @@ namespace Carrito
             amb.setState("failed", "Error al verificar articulos", driver);
             amb.ClickButton("com.soriana.appsoriana:id/imageCart", driver);
 
-            amb.setState("failed", "PAPAS SABRITAS no agregado o encontrado", driver);
-            amb.ClickText("PAPAS SABRITAS", driver);
+            amb.setState("failed", "BOTANA RUFFLES no agregado o encontrado", driver);
+            amb.ClickText("BOTANA RUFFLES", driver);
 
             double precioSabritas = double.Parse(amb.GetElemenText("com.soriana.appsoriana:id/artPrecio", driver).Remove(0, 1));
             amb.ClickClass("android.widget.ImageButton", driver);
 
-            amb.setState("failed", "AGUA NATURAL CIEL no agregado o encontrado", driver);
-            amb.ClickText("AGUA NATURAL CIEL", driver);
+            amb.setState("failed", "JUGO DEL VALLE no agregado o encontrado", driver);
+            amb.ClickText("JUGO DEL VALLE", driver);
 
             double precioCiel = double.Parse(amb.GetElemenText("com.soriana.appsoriana:id/artPrecio", driver).Remove(0, 1));
             amb.ClickClass("android.widget.ImageButton", driver);

@@ -12,7 +12,6 @@ namespace Registro
         Ambiente amb = new Ambiente();
         public string ObtenerCodigoRegistro(string usr)
         {
-
             int count1 = usr.Length;
             string count2 = Convert.ToString(Regex.Matches(usr, "a").Count);
             string count3 = Convert.ToString(Regex.Matches(usr, "e").Count);
@@ -40,10 +39,6 @@ namespace Registro
 
             amb.setState("failed", "Boton --Inicio-- no encontrado", driver);
             amb.ClickButton("com.soriana.appsoriana:id/menuPerfilFragment", driver);
-
-            amb.setState("failed", "Boton --Iniciar sesion-- no encontrado", driver);
-            amb.ClickButton("com.soriana.appsoriana:id/btnIniciarSesion", driver);
-            amb.ClickButton("com.soriana.appsoriana:id/btnIniciaSesion", driver);
 
             amb.setState("failed", "Boton --Registrate-- no encontrado", driver);
             amb.ClickButton("com.soriana.appsoriana:id/btnRegistrate", driver);
@@ -108,10 +103,6 @@ namespace Registro
 
             amb.setState("failed", "Boton --Inicio-- no encontrado", driver);
             amb.ClickButton("com.soriana.appsoriana:id/menuPerfilFragment", driver);
-
-            amb.setState("failed", "Boton --Iniciar sesion-- no encontrado", driver);
-            amb.ClickButton("com.soriana.appsoriana:id/btnIniciarSesion", driver);
-            amb.ClickButton("com.soriana.appsoriana:id/btnIniciaSesion", driver);
 
             amb.setState("failed", "Boton --Registrate-- no encontrado", driver);
             amb.ClickButton("com.soriana.appsoriana:id/btnRegistrate", driver);
