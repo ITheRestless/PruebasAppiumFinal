@@ -100,9 +100,10 @@ namespace AgregarACarrito
             amb.ClickButton("com.soriana.appsoriana:id/imageCart", driver);
 
             amb.setState("failed", "No se agrego el articulo al carrito", driver);
-            amb.CheckText("AGUA NATURAL CIEL 1 LT", driver);
+            amb.CheckText("BOTANA RUFFLES", driver);
+
             amb.setState("failed", "No se agrego el articulo al carrito", driver);
-            amb.CheckText("PAPAS SABRITAS ORIGINAL", driver);
+            amb.CheckText("AGUA NATURAL", driver);
 
             amb.setState("failed", "No se logro vaciar el carrito", driver);
             amb.ClickButton("com.soriana.appsoriana:id/action_delete", driver);

@@ -80,9 +80,6 @@ namespace Registro
             amb.setState("failed", "Error al presionar el boton --Comenzar-- en la pantalla de cuenta creada", driver);
             amb.ClickButton("com.soriana.appsoriana:id/btnComenzar", driver);
 
-            amb.setState("failed", "Error al aceptar los terminos y condiciones", driver);
-            amb.ClickButton("com.soriana.appsoriana:id/btnAceptar", driver);
-
             amb.ClickText("PruebaAuto", driver);
             amb.setState("passed", "Registrado con exito faltando confirmacion de email", driver);
 
@@ -145,9 +142,6 @@ namespace Registro
 
             amb.setState("failed", "Error al presionar el boton --Comenzar-- en la pantalla de cuenta creada", driver);
             amb.ClickButton("com.soriana.appsoriana:id/btnComenzar", driver);
-
-            amb.setState("failed", "Error al aceptar los terminos y condiciones", driver);
-            amb.ClickButton("com.soriana.appsoriana:id/btnNoAceptar", driver);
 
             amb.setState("failed", "No regreso a la pantalla de inicio de sesion", driver);
             amb.ClickButton("com.soriana.appsoriana:id/btnRegistrate", driver);
