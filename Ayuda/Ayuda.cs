@@ -11,13 +11,14 @@ namespace Ayuda
     {
         Ambiente amb = new Ambiente();   
 
+        /*
         [TestMethod]
         public void AyudaMenu()
         {
-            string fecha = DateTime.Now.Day.ToString() + "/" + DateTime.Now.Month.ToString() + "/" + DateTime.Now.Year.ToString();
-
             amb.CapsInit();
             amb.caps.AddAdditionalCapability("name", "Ayuda - Fecha de Aceptacion Terminos y Condiciones");
+
+            string fecha = DateTime.Now.Day.ToString() + "/" + DateTime.Now.Month.ToString() + "/" + DateTime.Now.Year.ToString();
             amb.caps.AddAdditionalCapability("build", "Android (Extras)" + fecha + " - " + DateTime.Now.Hour.ToString() + ":00");
 
             AndroidDriver<AndroidElement> driver = new AndroidDriver<AndroidElement>(
@@ -59,7 +60,7 @@ namespace Ayuda
             amb.setState("passed", "Se verifico correctamente la fecha de aceptacion de los terminos y condiciones", driver);
 
             driver.Quit();
-        }
+        }*/
 
         [TestMethod]
         public void VerMas()
