@@ -81,7 +81,6 @@ namespace UnitTestProject3
 
         public Dispositivo getDevice()
         {
-            return new Dispositivo("Google Pixel 3", "9.0");
 
             DateTime dateValue = DateTime.Now;
             int dia = (int)dateValue.DayOfWeek;
