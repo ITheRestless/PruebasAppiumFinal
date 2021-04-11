@@ -3,6 +3,7 @@ using System;
 using OpenQA.Selenium.Appium.Android;
 using System.Collections.Generic;
 using UnitTestProject3;
+using OpenQA.Selenium;
 
 namespace Carrito
 {
@@ -24,7 +25,15 @@ namespace Carrito
             AndroidDriver<AndroidElement> driver = new AndroidDriver<AndroidElement>(
                     new Uri("http://hub-cloud.browserstack.com/wd/hub"), amb.caps);
 
-            amb.LogIn(driver);
+            amb.ClickButton("com.soriana.appsoriana:id/imgArrow", driver);
+            ((IJavaScriptExecutor)driver).ExecuteScript("browserstack_executor: {\"action\": \"setSessionStatus\", \"arguments\": {\"status\":\"failed\", \"reason\": \" No se mostro o no se pudo presionar el boton de inicio \"}}");
+            amb.ClickButton("com.soriana.appsoriana:id/btnIniciaSesion", driver);
+            ((IJavaScriptExecutor)driver).ExecuteScript("browserstack_executor: {\"action\": \"setSessionStatus\", \"arguments\": {\"status\":\"failed\", \"reason\": \" No se mostro o no se pudo llenar el campo de email \"}}");
+            amb.InputText("com.soriana.appsoriana:id/editEmail", "pruebasdevelopcarrito3@yopmail.com", driver);
+            ((IJavaScriptExecutor)driver).ExecuteScript("browserstack_executor: {\"action\": \"setSessionStatus\", \"arguments\": {\"status\":\"failed\", \"reason\": \" No se mostro o no se pudo llenar el campo de contraseña \"}}");
+            amb.InputText("com.soriana.appsoriana:id/editPass", "developmx12", driver);
+            ((IJavaScriptExecutor)driver).ExecuteScript("browserstack_executor: {\"action\": \"setSessionStatus\", \"arguments\": {\"status\":\"failed\", \"reason\": \" No se mostro o no se pudo presionar boton de LogIn \"}}");
+            amb.ClickButton("com.soriana.appsoriana:id/btn_login", driver);
 
             amb.setState("failed", "Seccion --Tipo de entrega-- no encontrada", driver);
             amb.ClickButton("com.soriana.appsoriana:id/textViewTipoEntrega", driver);
@@ -59,7 +68,15 @@ namespace Carrito
             AndroidDriver<AndroidElement> driver = new AndroidDriver<AndroidElement>(
                     new Uri("http://hub-cloud.browserstack.com/wd/hub"), amb.caps);
 
-            amb.LogIn(driver);
+            amb.ClickButton("com.soriana.appsoriana:id/imgArrow", driver);
+            ((IJavaScriptExecutor)driver).ExecuteScript("browserstack_executor: {\"action\": \"setSessionStatus\", \"arguments\": {\"status\":\"failed\", \"reason\": \" No se mostro o no se pudo presionar el boton de inicio \"}}");
+            amb.ClickButton("com.soriana.appsoriana:id/btnIniciaSesion", driver);
+            ((IJavaScriptExecutor)driver).ExecuteScript("browserstack_executor: {\"action\": \"setSessionStatus\", \"arguments\": {\"status\":\"failed\", \"reason\": \" No se mostro o no se pudo llenar el campo de email \"}}");
+            amb.InputText("com.soriana.appsoriana:id/editEmail", "pruebasdevelopcarrito3@yopmail.com", driver);
+            ((IJavaScriptExecutor)driver).ExecuteScript("browserstack_executor: {\"action\": \"setSessionStatus\", \"arguments\": {\"status\":\"failed\", \"reason\": \" No se mostro o no se pudo llenar el campo de contraseña \"}}");
+            amb.InputText("com.soriana.appsoriana:id/editPass", "developmx12", driver);
+            ((IJavaScriptExecutor)driver).ExecuteScript("browserstack_executor: {\"action\": \"setSessionStatus\", \"arguments\": {\"status\":\"failed\", \"reason\": \" No se mostro o no se pudo presionar boton de LogIn \"}}");
+            amb.ClickButton("com.soriana.appsoriana:id/btn_login", driver);
 
             // Comprobar que no haya direcciones registradas
             amb.setState("failed", "Seccion --Mi Perfil-- no encontrada", driver);
@@ -169,7 +186,15 @@ namespace Carrito
             AndroidDriver<AndroidElement> driver = new AndroidDriver<AndroidElement>(
                     new Uri("http://hub-cloud.browserstack.com/wd/hub"), amb.caps);
 
-            amb.LogIn(driver);
+            amb.ClickButton("com.soriana.appsoriana:id/imgArrow", driver);
+            ((IJavaScriptExecutor)driver).ExecuteScript("browserstack_executor: {\"action\": \"setSessionStatus\", \"arguments\": {\"status\":\"failed\", \"reason\": \" No se mostro o no se pudo presionar el boton de inicio \"}}");
+            amb.ClickButton("com.soriana.appsoriana:id/btnIniciaSesion", driver);
+            ((IJavaScriptExecutor)driver).ExecuteScript("browserstack_executor: {\"action\": \"setSessionStatus\", \"arguments\": {\"status\":\"failed\", \"reason\": \" No se mostro o no se pudo llenar el campo de email \"}}");
+            amb.InputText("com.soriana.appsoriana:id/editEmail", "pruebasdevelopcarrito3@yopmail.com", driver);
+            ((IJavaScriptExecutor)driver).ExecuteScript("browserstack_executor: {\"action\": \"setSessionStatus\", \"arguments\": {\"status\":\"failed\", \"reason\": \" No se mostro o no se pudo llenar el campo de contraseña \"}}");
+            amb.InputText("com.soriana.appsoriana:id/editPass", "developmx12", driver);
+            ((IJavaScriptExecutor)driver).ExecuteScript("browserstack_executor: {\"action\": \"setSessionStatus\", \"arguments\": {\"status\":\"failed\", \"reason\": \" No se mostro o no se pudo presionar boton de LogIn \"}}");
+            amb.ClickButton("com.soriana.appsoriana:id/btn_login", driver);
 
             // Registrar nueva dirección
             amb.setState("failed", "Seccion --Mi Perfil-- no encontrada", driver);
@@ -292,7 +317,15 @@ namespace Carrito
             AndroidDriver<AndroidElement> driver = new AndroidDriver<AndroidElement>(
                     new Uri("http://hub-cloud.browserstack.com/wd/hub"), amb.caps);
 
-            amb.LogIn(driver);
+            amb.ClickButton("com.soriana.appsoriana:id/imgArrow", driver);
+            ((IJavaScriptExecutor)driver).ExecuteScript("browserstack_executor: {\"action\": \"setSessionStatus\", \"arguments\": {\"status\":\"failed\", \"reason\": \" No se mostro o no se pudo presionar el boton de inicio \"}}");
+            amb.ClickButton("com.soriana.appsoriana:id/btnIniciaSesion", driver);
+            ((IJavaScriptExecutor)driver).ExecuteScript("browserstack_executor: {\"action\": \"setSessionStatus\", \"arguments\": {\"status\":\"failed\", \"reason\": \" No se mostro o no se pudo llenar el campo de email \"}}");
+            amb.InputText("com.soriana.appsoriana:id/editEmail", "pruebasdevelopcarrito3@yopmail.com", driver);
+            ((IJavaScriptExecutor)driver).ExecuteScript("browserstack_executor: {\"action\": \"setSessionStatus\", \"arguments\": {\"status\":\"failed\", \"reason\": \" No se mostro o no se pudo llenar el campo de contraseña \"}}");
+            amb.InputText("com.soriana.appsoriana:id/editPass", "developmx12", driver);
+            ((IJavaScriptExecutor)driver).ExecuteScript("browserstack_executor: {\"action\": \"setSessionStatus\", \"arguments\": {\"status\":\"failed\", \"reason\": \" No se mostro o no se pudo presionar boton de LogIn \"}}");
+            amb.ClickButton("com.soriana.appsoriana:id/btn_login", driver);
 
             amb.setState("failed", "Seccion --Tipo de entrega-- no encontrada", driver);
             amb.ClickButton("com.soriana.appsoriana:id/textViewTipoEntrega", driver);
@@ -339,7 +372,15 @@ namespace Carrito
             AndroidDriver<AndroidElement> driver = new AndroidDriver<AndroidElement>(
                     new Uri("http://hub-cloud.browserstack.com/wd/hub"), amb.caps);
 
-            amb.LogIn(driver);
+            amb.ClickButton("com.soriana.appsoriana:id/imgArrow", driver);
+            ((IJavaScriptExecutor)driver).ExecuteScript("browserstack_executor: {\"action\": \"setSessionStatus\", \"arguments\": {\"status\":\"failed\", \"reason\": \" No se mostro o no se pudo presionar el boton de inicio \"}}");
+            amb.ClickButton("com.soriana.appsoriana:id/btnIniciaSesion", driver);
+            ((IJavaScriptExecutor)driver).ExecuteScript("browserstack_executor: {\"action\": \"setSessionStatus\", \"arguments\": {\"status\":\"failed\", \"reason\": \" No se mostro o no se pudo llenar el campo de email \"}}");
+            amb.InputText("com.soriana.appsoriana:id/editEmail", "pruebasdevelopcarrito3@yopmail.com", driver);
+            ((IJavaScriptExecutor)driver).ExecuteScript("browserstack_executor: {\"action\": \"setSessionStatus\", \"arguments\": {\"status\":\"failed\", \"reason\": \" No se mostro o no se pudo llenar el campo de contraseña \"}}");
+            amb.InputText("com.soriana.appsoriana:id/editPass", "developmx12", driver);
+            ((IJavaScriptExecutor)driver).ExecuteScript("browserstack_executor: {\"action\": \"setSessionStatus\", \"arguments\": {\"status\":\"failed\", \"reason\": \" No se mostro o no se pudo presionar boton de LogIn \"}}");
+            amb.ClickButton("com.soriana.appsoriana:id/btn_login", driver);
 
             // Agregar articulos a carrito desde Mis Favoritos
             amb.setState("failed", "Seccion --Listas-- no encontrada", driver);
