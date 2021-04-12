@@ -181,11 +181,6 @@ namespace Ayuda
             amb.setState("failed", "Folleto no encontrado", driver);
             amb.ClickButton("com.soriana.appsoriana:id/imgFolleto", driver);
 
-            amb.setState("failed", "Error al cambiar de pagina", driver);
-            amb.ClickButton("com.soriana.appsoriana:id/right", driver);
-            amb.ClickButton("com.soriana.appsoriana:id/right", driver);
-            amb.ClickButton("com.soriana.appsoriana:id/right", driver);
-
             amb.setState("failed", "Boton --Regresar-- no encontrado", driver);
             amb.ClickButton("com.soriana.appsoriana:id/activity_main_content_button_back", driver);
 
