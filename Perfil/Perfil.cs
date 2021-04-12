@@ -193,6 +193,7 @@ namespace Perfil
             driver.Quit();
         }
 
+        /*
         [TestMethod]
         public void MisDireccionesMenu()
         {
@@ -260,6 +261,7 @@ namespace Perfil
             driver.Quit();
         }
 
+        
         [TestMethod]
         public void MisDireccionesCheckout()
         {
@@ -390,6 +392,7 @@ namespace Perfil
 
             driver.Quit();
         }
+        */
 
         [TestMethod]
         public void DetalleDeArticulo()
