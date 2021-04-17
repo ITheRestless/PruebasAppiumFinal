@@ -12,7 +12,6 @@ namespace Carrito
     {
         Ambiente amb = new Ambiente();
         
-
         [TestMethod]
         public void DetalleDeArticulo()
         {

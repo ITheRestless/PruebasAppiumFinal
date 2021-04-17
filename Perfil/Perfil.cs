@@ -353,9 +353,6 @@ namespace Perfil
             amb.setState("failed", "Boton --Guardar-- no encontrado", driver);
             amb.ClickButton("com.soriana.appsoriana:id/btnGuardar", driver);
 
-            amb.setState("failed", "No se registro la direccion", driver);
-            amb.ClickText("Casa de Pruebas", driver);
-
             amb.setState("failed", "Boton --Eliminar-- no encontrado", driver);
             amb.ClickButton("com.soriana.appsoriana:id/action_delete", driver);
 
