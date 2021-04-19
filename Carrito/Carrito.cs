@@ -101,7 +101,7 @@ namespace Carrito
             amb.ClickButton("com.soriana.appsoriana:id/imageCart", driver);
 
             amb.setState("failed", "No se agrego el articulo al carrito", driver);
-            amb.CheckText("BOTANA RUFFLES", driver);
+            amb.CheckText("RUFFLES", driver);
 
             amb.setState("failed", "No se agrego el articulo al carrito", driver);
             amb.CheckText("AGUA NATURAL", driver);
@@ -153,8 +153,8 @@ namespace Carrito
             amb.ClickButton("com.soriana.appsoriana:id/imageCart", driver);
 
             amb.setState("failed", "Cantidad de productos no concuerda o no se agregaron todos los productos", driver);
-            amb.CheckText("JUGO DEL VALLE", driver);
-            amb.CheckText("BOTANA RUFFLES", driver);
+            amb.CheckText("DEL VALLE", driver);
+            amb.CheckText("RUFFLES", driver);
 
             amb.setState("failed", "Boton --Eliminar-- no encontrado", driver);
             amb.ClickButton("com.soriana.appsoriana:id/action_delete", driver);
@@ -197,14 +197,14 @@ namespace Carrito
             amb.setState("failed", "Error al verificar articulos", driver);
             amb.ClickButton("com.soriana.appsoriana:id/imageCart", driver);
 
-            amb.setState("failed", "BOTANA RUFFLES no agregado o encontrado", driver);
-            amb.ClickText("BOTANA RUFFLES", driver);
+            amb.setState("failed", "RUFFLES no agregado o encontrado", driver);
+            amb.ClickText("RUFFLES", driver);
 
             double precioSabritas = double.Parse(amb.GetElemenText("com.soriana.appsoriana:id/artPrecio", driver).Remove(0, 1));
             amb.ClickClass("android.widget.ImageButton", driver);
 
-            amb.setState("failed", "JUGO DEL VALLE no agregado o encontrado", driver);
-            amb.ClickText("JUGO DEL VALLE", driver);
+            amb.setState("failed", "DEL VALLE no agregado o encontrado", driver);
+            amb.ClickText("DEL VALLE", driver);
 
             double precioCiel = double.Parse(amb.GetElemenText("com.soriana.appsoriana:id/artPrecio", driver).Remove(0, 1));
             amb.ClickClass("android.widget.ImageButton", driver);
@@ -273,8 +273,8 @@ namespace Carrito
             amb.setState("failed", "Boton --Carrito-- no encontrado", driver);
             amb.ClickButton("com.soriana.appsoriana:id/imageCart", driver);
 
-            amb.setState("failed", "BOTANA RUFFLES no agregado o encontrado", driver);
-            amb.ClickText("BOTANA RUFFLES", driver);
+            amb.setState("failed", "RUFFLES no agregado o encontrado", driver);
+            amb.ClickText("RUFFLES", driver);
 
             amb.setState("failed", "Boton --Mas-- no encontrado", driver);
             amb.ClickButton("com.soriana.appsoriana:id/btnMas", driver);
@@ -879,6 +879,9 @@ namespace Carrito
 
             amb.setState("failed", "Boton --Guardar direccion-- no encontrado", driver);
             amb.ClickButton("com.soriana.appsoriana:id/btnGuardar", driver);
+
+            amb.setState("failed", "Boton --Continuar-- no encontrado", driver);
+            amb.ClickButton("com.soriana.appsoriana:id/comprarLayout", driver);
 
             // Seleccionar fecha y hora de envío
             amb.setState("failed", "Seccion --Fecha/Hora de envio-- no encontrada", driver);
