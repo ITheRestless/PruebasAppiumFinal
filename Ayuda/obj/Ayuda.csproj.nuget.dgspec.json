@@ -1,26 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\develop-user-10\\Documents\\GitHub\\PruebasAppiumFinal\\Ayuda\\Ayuda.csproj": {}
+    "C:\\Users\\matur\\OneDrive\\Documentos\\GitHub\\PruebasAppiumFinal\\Ayuda\\Ayuda.csproj": {}
   },
   "projects": {
-    "C:\\Users\\develop-user-10\\Documents\\GitHub\\PruebasAppiumFinal\\Ayuda\\Ayuda.csproj": {
+    "C:\\Users\\matur\\OneDrive\\Documentos\\GitHub\\PruebasAppiumFinal\\Ayuda\\Ayuda.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\develop-user-10\\Documents\\GitHub\\PruebasAppiumFinal\\Ayuda\\Ayuda.csproj",
+        "projectUniqueName": "C:\\Users\\matur\\OneDrive\\Documentos\\GitHub\\PruebasAppiumFinal\\Ayuda\\Ayuda.csproj",
         "projectName": "Ayuda",
-        "projectPath": "C:\\Users\\develop-user-10\\Documents\\GitHub\\PruebasAppiumFinal\\Ayuda\\Ayuda.csproj",
-        "packagesPath": "C:\\Users\\develop-user-10\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\develop-user-10\\Documents\\GitHub\\PruebasAppiumFinal\\Ayuda\\obj\\",
+        "projectPath": "C:\\Users\\matur\\OneDrive\\Documentos\\GitHub\\PruebasAppiumFinal\\Ayuda\\Ayuda.csproj",
+        "packagesPath": "C:\\Users\\matur\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\matur\\OneDrive\\Documentos\\GitHub\\PruebasAppiumFinal\\Ayuda\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\develop-user-10\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\matur\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp2.1"
@@ -86,7 +85,7 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     }

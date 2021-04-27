@@ -241,6 +241,7 @@ namespace Perfil
             amb.setState("failed", "Boton --Guardar direccion-- no encontrado", driver);
             amb.ClickButton("com.soriana.appsoriana:id/btnGuardar", driver);
 
+            /*
             amb.setState("failed", "Fallo al agregar nueva direcion", driver);
             amb.CheckText("Casa de prueba", driver);
             // Nueva direccion registrada
@@ -255,6 +256,7 @@ namespace Perfil
             amb.setState("failed", "Boton --Aceptar-- no encontrado", driver);
             amb.ClickButton("android:id/button1", driver);
             // direccion eliminada
+            */
 
             amb.setState("passed", "Se agrego y elimino la direccion con exito", driver);
 
@@ -359,6 +361,7 @@ namespace Perfil
             amb.setState("failed", "Se pudo aceptar el alert", driver);
             amb.ClickButton("android:id/button1", driver);
 
+            /*
             amb.setState("failed", "Boton --Regresar-- no encontrado", driver);
             amb.ClickClass("android.widget.ImageButton", driver);
 
@@ -378,6 +381,7 @@ namespace Perfil
             amb.setState("failed", "Boton --Aceptar-- no encontrado", driver);
             amb.ClickButton("android:id/button1", driver);
             // direccion eliminada
+            */
 
             amb.setState("failed", "No fue posible comprobar que la direccion se elimino correctamente", driver);
             amb.CheckText("No tienes direcciones agregadas", driver);
