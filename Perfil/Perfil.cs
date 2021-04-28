@@ -327,12 +327,11 @@ namespace Perfil
             amb.setState("failed", "Texto --Agregar nueva-- no encontrado", driver);
             amb.ClickText("Agregar", driver);
 
+            amb.setState("failed", "Campo --Codigo Postal-- no encontrado", driver);
+            amb.InputText("com.soriana.appsoriana:id/txtCP", "27268", driver);
 
-            amb.setState("failed", "Campo --Nombre-- no encontrado", driver);
-            amb.InputText("com.soriana.appsoriana:id/txtNomDir", "Casa de Pruebas", driver);
-
-            amb.setState("failed", "Campo --Telefono-- no encontrado", driver);
-            amb.InputText("com.soriana.appsoriana:id/txtTelefonoDomic", "8711199728", driver);
+            amb.setState("failed", "Campo --Colonia-- no encontrado", driver);
+            amb.InputText("com.soriana.appsoriana:id/txtColonia", "Torreon Residencial", driver);
 
             amb.setState("failed", "Campo --Calle-- no encontrado", driver);
             amb.InputText("com.soriana.appsoriana:id/txtCalle", "Calle Carrara", driver);
@@ -346,11 +345,11 @@ namespace Perfil
             amb.setState("failed", "Error al hacer scroll", driver);
             amb.ScrollDown(driver);
 
-            amb.setState("failed", "Campo --Codigo Postal-- no encontrado", driver);
-            amb.InputText("com.soriana.appsoriana:id/txtCP", "27268", driver);
+            amb.setState("failed", "Campo --Nombre-- no encontrado", driver);
+            amb.InputText("com.soriana.appsoriana:id/txtNomDir", "Casa de Pruebas", driver);
 
-            amb.setState("failed", "Campo --Colonia-- no encontrado", driver);
-            amb.InputText("com.soriana.appsoriana:id/txtColonia", "Torreon Residencial", driver);
+            amb.setState("failed", "Campo --Telefono-- no encontrado", driver);
+            amb.InputText("com.soriana.appsoriana:id/txtTelefonoDomic", "8711199728", driver);
 
             amb.setState("failed", "Boton --Guardar-- no encontrado", driver);
             amb.ClickButton("com.soriana.appsoriana:id/btnGuardar", driver);
