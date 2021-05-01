@@ -831,6 +831,7 @@ namespace Carrito
             driver.Quit();
         }
 
+        
         // 56
         [TestMethod]
         public void SeleccionarFechaHoraDeEnvio()
@@ -918,6 +919,9 @@ namespace Carrito
             amb.ClickButton("com.soriana.appsoriana:id/comprarLayout", driver);
 
             // Seleccionar fecha y hora de envío
+            amb.setState("failed", "No encontrada la seccion --Direccion de envio--", driver);
+            amb.ClickText("Entrega a domicilio", driver);
+
             amb.setState("failed", "Seccion --Fecha/Hora de envio-- no encontrada", driver);
             amb.ClickText("Fecha/Hora", driver);
 
