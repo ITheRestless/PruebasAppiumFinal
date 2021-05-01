@@ -578,15 +578,31 @@ namespace Carrito
 
             // Agregar nueva direccion desde checkout
             amb.setState("failed", "Error al introducir nueva direccion", driver);
-            amb.InputText("com.soriana.appsoriana:id/txtNomDir", "Casa de prueba", driver);
-            amb.InputText("com.soriana.appsoriana:id/txtTelefonoDomic", "8714851911", driver);
-            amb.InputText("com.soriana.appsoriana:id/txtCalle", "Calle de prueba", driver);
-            amb.InputText("com.soriana.appsoriana:id/txtNumeroExterior", "344", driver);
-            amb.ScrollDown(driver);
+            amb.setState("failed", "Campo --Codigo Postal-- no encontrado", driver);
             amb.InputText("com.soriana.appsoriana:id/txtCP", "27268", driver);
-            amb.InputText("com.soriana.appsoriana:id/txtColonia", "Colonia de prueba", driver);
 
-            amb.setState("failed", "Boton --Guardar direccion-- no encontrado", driver);
+            amb.setState("failed", "Campo --Colonia-- no encontrado", driver);
+            amb.InputText("com.soriana.appsoriana:id/txtColonia", "Torreon Residencial", driver);
+
+            amb.setState("failed", "Campo --Calle-- no encontrado", driver);
+            amb.InputText("com.soriana.appsoriana:id/txtCalle", "Calle Carrara", driver);
+
+            amb.setState("failed", "Campo --Numero Exterior-- no encontrado", driver);
+            amb.InputText("com.soriana.appsoriana:id/txtNumeroExterior", "421", driver);
+
+            amb.setState("failed", "Campo --Numero Interior-- no encontrado", driver);
+            amb.InputText("com.soriana.appsoriana:id/txtNumInt", "15", driver);
+
+            amb.setState("failed", "Error al hacer scroll", driver);
+            amb.ScrollDown(driver);
+
+            amb.setState("failed", "Campo --Nombre-- no encontrado", driver);
+            amb.InputText("com.soriana.appsoriana:id/txtNomDir", "Casa de Pruebas", driver);
+
+            amb.setState("failed", "Campo --Telefono-- no encontrado", driver);
+            amb.InputText("com.soriana.appsoriana:id/txtTelefonoDomic", "8711199728", driver);
+
+            amb.setState("failed", "Boton --Guardar-- no encontrado", driver);
             amb.ClickButton("com.soriana.appsoriana:id/btnGuardar", driver);
 
             amb.setState("failed", "Boton --Vaciar carrito-- no encontrado", driver);
@@ -605,6 +621,7 @@ namespace Carrito
             amb.setState("failed", "Seccion --Mis direcciones-- no encontrada", driver);
             amb.ClickButton("com.soriana.appsoriana:id/item_direcciones", driver);
 
+            /*
             amb.setState("failed", "Direccion creada desde checkout no encontrada", driver);
             amb.ClickText("Casa de prueba", driver);
 
@@ -614,6 +631,7 @@ namespace Carrito
             amb.setState("failed", "Boton --Aceptar-- no encontrado", driver);
             amb.ClickButton("android:id/button1", driver);
             // direccion eliminada
+            */
 
             amb.setState("failed", "No fue posible comprobar que la direccion se elimino correctamente", driver);
             amb.CheckText("No tienes direcciones agregadas", driver);
@@ -626,6 +644,7 @@ namespace Carrito
             driver.Quit();
         }
 
+        /*
         // 54
         [TestMethod]
         public void SeleccionarDireccionExistenteDesdeCheckout()
@@ -755,7 +774,7 @@ namespace Carrito
             amb.setState("passed", "Se registro satisfactoriamente una nueva direccion desde el checkout", driver);
 
             driver.Quit();
-        }
+        }*/
 
         // 55
         [TestMethod]
@@ -868,16 +887,31 @@ namespace Carrito
             amb.ClickText("Agregar nueva", driver);
 
             // Agregar nueva direccion desde checkout
-            amb.setState("failed", "Error al introducir nueva direccion", driver);
-            amb.InputText("com.soriana.appsoriana:id/txtNomDir", "Casa de prueba", driver);
-            amb.InputText("com.soriana.appsoriana:id/txtTelefonoDomic", "8714851911", driver);
-            amb.InputText("com.soriana.appsoriana:id/txtCalle", "Calle de prueba", driver);
-            amb.InputText("com.soriana.appsoriana:id/txtNumeroExterior", "344", driver);
-            amb.ScrollDown(driver);
+            amb.setState("failed", "Campo --Codigo Postal-- no encontrado", driver);
             amb.InputText("com.soriana.appsoriana:id/txtCP", "27268", driver);
-            amb.InputText("com.soriana.appsoriana:id/txtColonia", "Colonia de prueba", driver);
 
-            amb.setState("failed", "Boton --Guardar direccion-- no encontrado", driver);
+            amb.setState("failed", "Campo --Colonia-- no encontrado", driver);
+            amb.InputText("com.soriana.appsoriana:id/txtColonia", "Torreon Residencial", driver);
+
+            amb.setState("failed", "Campo --Calle-- no encontrado", driver);
+            amb.InputText("com.soriana.appsoriana:id/txtCalle", "Calle Carrara", driver);
+
+            amb.setState("failed", "Campo --Numero Exterior-- no encontrado", driver);
+            amb.InputText("com.soriana.appsoriana:id/txtNumeroExterior", "421", driver);
+
+            amb.setState("failed", "Campo --Numero Interior-- no encontrado", driver);
+            amb.InputText("com.soriana.appsoriana:id/txtNumInt", "15", driver);
+
+            amb.setState("failed", "Error al hacer scroll", driver);
+            amb.ScrollDown(driver);
+
+            amb.setState("failed", "Campo --Nombre-- no encontrado", driver);
+            amb.InputText("com.soriana.appsoriana:id/txtNomDir", "Casa de Pruebas", driver);
+
+            amb.setState("failed", "Campo --Telefono-- no encontrado", driver);
+            amb.InputText("com.soriana.appsoriana:id/txtTelefonoDomic", "8711199728", driver);
+
+            amb.setState("failed", "Boton --Guardar-- no encontrado", driver);
             amb.ClickButton("com.soriana.appsoriana:id/btnGuardar", driver);
 
             amb.setState("failed", "Boton --Continuar-- no encontrado", driver);
@@ -913,6 +947,7 @@ namespace Carrito
             amb.setState("failed", "Seccion --Mis direcciones-- no encontrada", driver);
             amb.ClickButton("com.soriana.appsoriana:id/item_direcciones", driver);
 
+            /*
             amb.setState("failed", "Direccion creada desde checkout no encontrada", driver);
             amb.ClickText("Casa de prueba", driver);
 
@@ -922,6 +957,7 @@ namespace Carrito
             amb.setState("failed", "Boton --Aceptar-- no encontrado", driver);
             amb.ClickButton("android:id/button1", driver);
             // direccion eliminada
+            */
 
             amb.setState("failed", "No fue posible comprobar que la direccion se elimino correctamente", driver);
             amb.CheckText("No tienes direcciones agregadas", driver);

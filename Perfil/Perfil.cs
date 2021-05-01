@@ -360,7 +360,6 @@ namespace Perfil
             amb.setState("failed", "Se pudo aceptar el alert", driver);
             amb.ClickButton("android:id/button1", driver);
 
-            /*
             amb.setState("failed", "Boton --Regresar-- no encontrado", driver);
             amb.ClickClass("android.widget.ImageButton", driver);
 
@@ -371,6 +370,7 @@ namespace Perfil
             amb.setState("failed", "Seccion --Mis direcciones-- no encontrada", driver);
             amb.ClickButton("com.soriana.appsoriana:id/item_direcciones", driver);
 
+            /*
             amb.setState("failed", "Direccion creada desde checkout no encontrada", driver);
             amb.ClickText("Casa de prueba", driver);
 
