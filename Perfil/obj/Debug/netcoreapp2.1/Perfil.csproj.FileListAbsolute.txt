@@ -1,0 +1,15 @@
+C:\Users\matur\OneDrive\Documentos\GitHub\PruebasAppiumFinal\Perfil\bin\Debug\netcoreapp2.1\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\Users\matur\OneDrive\Documentos\GitHub\PruebasAppiumFinal\Perfil\bin\Debug\netcoreapp2.1\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\Users\matur\OneDrive\Documentos\GitHub\PruebasAppiumFinal\Perfil\bin\Debug\netcoreapp2.1\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\Users\matur\OneDrive\Documentos\GitHub\PruebasAppiumFinal\Perfil\bin\Debug\netcoreapp2.1\Perfil.deps.json
+C:\Users\matur\OneDrive\Documentos\GitHub\PruebasAppiumFinal\Perfil\bin\Debug\netcoreapp2.1\Perfil.runtimeconfig.json
+C:\Users\matur\OneDrive\Documentos\GitHub\PruebasAppiumFinal\Perfil\bin\Debug\netcoreapp2.1\Perfil.runtimeconfig.dev.json
+C:\Users\matur\OneDrive\Documentos\GitHub\PruebasAppiumFinal\Perfil\bin\Debug\netcoreapp2.1\Perfil.dll
+C:\Users\matur\OneDrive\Documentos\GitHub\PruebasAppiumFinal\Perfil\bin\Debug\netcoreapp2.1\Perfil.pdb
+C:\Users\matur\OneDrive\Documentos\GitHub\PruebasAppiumFinal\Perfil\obj\Debug\netcoreapp2.1\Perfil.csprojAssemblyReference.cache
+C:\Users\matur\OneDrive\Documentos\GitHub\PruebasAppiumFinal\Perfil\obj\Debug\netcoreapp2.1\Perfil.AssemblyInfoInputs.cache
+C:\Users\matur\OneDrive\Documentos\GitHub\PruebasAppiumFinal\Perfil\obj\Debug\netcoreapp2.1\Perfil.AssemblyInfo.cs
+C:\Users\matur\OneDrive\Documentos\GitHub\PruebasAppiumFinal\Perfil\obj\Debug\netcoreapp2.1\Perfil.csproj.CoreCompileInputs.cache
+C:\Users\matur\OneDrive\Documentos\GitHub\PruebasAppiumFinal\Perfil\obj\Debug\netcoreapp2.1\Perfil.dll
+C:\Users\matur\OneDrive\Documentos\GitHub\PruebasAppiumFinal\Perfil\obj\Debug\netcoreapp2.1\Perfil.pdb
+C:\Users\matur\OneDrive\Documentos\GitHub\PruebasAppiumFinal\Perfil\obj\Debug\netcoreapp2.1\Perfil.genruntimeconfig.cache

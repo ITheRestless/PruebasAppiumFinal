@@ -1,0 +1,17 @@
+C:\Users\matur\OneDrive\Documentos\GitHub\PruebasAppiumFinal\CarritoExtra\bin\Debug\netcoreapp2.1\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\Users\matur\OneDrive\Documentos\GitHub\PruebasAppiumFinal\CarritoExtra\bin\Debug\netcoreapp2.1\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\Users\matur\OneDrive\Documentos\GitHub\PruebasAppiumFinal\CarritoExtra\bin\Debug\netcoreapp2.1\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\Users\matur\OneDrive\Documentos\GitHub\PruebasAppiumFinal\CarritoExtra\bin\Debug\netcoreapp2.1\testhost.exe
+C:\Users\matur\OneDrive\Documentos\GitHub\PruebasAppiumFinal\CarritoExtra\bin\Debug\netcoreapp2.1\testhost.dll
+C:\Users\matur\OneDrive\Documentos\GitHub\PruebasAppiumFinal\CarritoExtra\bin\Debug\netcoreapp2.1\CarritoExtra.deps.json
+C:\Users\matur\OneDrive\Documentos\GitHub\PruebasAppiumFinal\CarritoExtra\bin\Debug\netcoreapp2.1\CarritoExtra.runtimeconfig.json
+C:\Users\matur\OneDrive\Documentos\GitHub\PruebasAppiumFinal\CarritoExtra\bin\Debug\netcoreapp2.1\CarritoExtra.runtimeconfig.dev.json
+C:\Users\matur\OneDrive\Documentos\GitHub\PruebasAppiumFinal\CarritoExtra\bin\Debug\netcoreapp2.1\CarritoExtra.dll
+C:\Users\matur\OneDrive\Documentos\GitHub\PruebasAppiumFinal\CarritoExtra\bin\Debug\netcoreapp2.1\CarritoExtra.pdb
+C:\Users\matur\OneDrive\Documentos\GitHub\PruebasAppiumFinal\CarritoExtra\obj\Debug\netcoreapp2.1\CarritoExtra.csprojAssemblyReference.cache
+C:\Users\matur\OneDrive\Documentos\GitHub\PruebasAppiumFinal\CarritoExtra\obj\Debug\netcoreapp2.1\CarritoExtra.AssemblyInfoInputs.cache
+C:\Users\matur\OneDrive\Documentos\GitHub\PruebasAppiumFinal\CarritoExtra\obj\Debug\netcoreapp2.1\CarritoExtra.AssemblyInfo.cs
+C:\Users\matur\OneDrive\Documentos\GitHub\PruebasAppiumFinal\CarritoExtra\obj\Debug\netcoreapp2.1\CarritoExtra.csproj.CoreCompileInputs.cache
+C:\Users\matur\OneDrive\Documentos\GitHub\PruebasAppiumFinal\CarritoExtra\obj\Debug\netcoreapp2.1\CarritoExtra.dll
+C:\Users\matur\OneDrive\Documentos\GitHub\PruebasAppiumFinal\CarritoExtra\obj\Debug\netcoreapp2.1\CarritoExtra.pdb
+C:\Users\matur\OneDrive\Documentos\GitHub\PruebasAppiumFinal\CarritoExtra\obj\Debug\netcoreapp2.1\CarritoExtra.genruntimeconfig.cache
