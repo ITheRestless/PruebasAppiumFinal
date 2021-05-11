@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.1231
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31205.134
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Login", "Login\Login.csproj", "{CCD603E1-5568-4439-B013-099726DE7756}"
 EndProject
@@ -17,6 +17,8 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Carrito", "Carrito\Carrito.csproj", "{273B4BDB-670C-443A-A01A-5CD3FE398E5E}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarritoExtra", "CarritoExtra\CarritoExtra.csproj", "{121FBA44-518D-4A14-9811-1AFC4FD7FC73}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Carrito, Listas y Entregas", "Carrito, Listas y Entregas\Carrito, Listas y Entregas.csproj", "{7D8A2BD6-022F-4B4C-8F89-188391611B81}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -44,6 +46,10 @@ Global
 		{121FBA44-518D-4A14-9811-1AFC4FD7FC73}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{121FBA44-518D-4A14-9811-1AFC4FD7FC73}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{121FBA44-518D-4A14-9811-1AFC4FD7FC73}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7D8A2BD6-022F-4B4C-8F89-188391611B81}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D8A2BD6-022F-4B4C-8F89-188391611B81}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D8A2BD6-022F-4B4C-8F89-188391611B81}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D8A2BD6-022F-4B4C-8F89-188391611B81}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
