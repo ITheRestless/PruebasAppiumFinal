@@ -1,2 +1,0 @@
-C:\Users\develop-user-10\Documents\GitHub\PruebasAppiumFinal\DatosFiscales\obj\Debug\netcoreapp2.1\DatosFiscales.dll
-C:\Users\develop-user-10\Documents\GitHub\PruebasAppiumFinal\DatosFiscales\obj\Debug\netcoreapp2.1\DatosFiscales.pdb
