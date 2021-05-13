@@ -4,10 +4,10 @@ using OpenQA.Selenium.Appium.Android;
 using UnitTestProject3;
 using OpenQA.Selenium;
 
-namespace Carrito__Listas_y_Entregas
+namespace CarritoListasYEntregas
 {
     [TestClass]
-    public class Carrito__Listas_y_Entregas
+    public class CarritoListasYEntregas
     {
         Ambiente amb = new Ambiente();
 
